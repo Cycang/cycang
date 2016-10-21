@@ -1,2 +1,3 @@
-# OFashion
-OFashion 迷橙
+# 次元仓
+
+**次元仓-最好玩的二次元周边网站(cycang.com)**
