@@ -21,6 +21,7 @@ module.exports = {
   devServer: {
     contentBase: __dirname + '/prd',
     port: 8080,
+    color:true,
     inline: true
   },
 
@@ -57,13 +58,16 @@ module.exports = {
   //vue
   vue:{
      loaders:{
-        js:'babel'
+        js:'babel',
+        css:ET.extract('vue-style-loader','css','sass')
      }
  },
   //plugins定义
   plugins: [
     // new webpack.optimize.UglifyJsPlugin(),
-    new ET('bundle.css')
+    new ET('bundle.css',{
+      allChunks:true
+   })
   ]
 
 }

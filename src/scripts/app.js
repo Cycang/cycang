@@ -2,9 +2,8 @@ import "../styles/usage/page/app.scss";
 
 // views
 import index from "./components/index.vue";
-import main from "./components/main.vue";
-import search from "./components/search.vue";
 import detail from "./components/detail.vue";
+import buy from "./components/buy.vue";
 
 // router
 import Vue from "./libs/vue.js";
@@ -20,17 +19,13 @@ router.map({
     component: index,
     //配置子路由 ，“/”是自动进入的路由页面
     subRoutes: {
-      '/': {
-        component: main
+      '/':{
+         component:buy
       },
-      '/search': {
-        component: search
-      }
+      '/buy': {
+        component: detail
+       }
     }
-   },
-   '/detail/:id':{
-      name:'goodsid',
-      component:detail
    }
 });
 
