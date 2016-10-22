@@ -76,9 +76,6 @@
         this.$http.get('/mock/classify.json')
           .then((res) => {
             this.list = res.data.result[10].child;
-            setTimeout(function() {
-              new IScroll('#index-scroll');
-            }, 500);
           })
       }
   }

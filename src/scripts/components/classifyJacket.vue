@@ -77,9 +77,6 @@
           .then((res) => {
             this.list = res.data.result[1].child;
             // console.log(this.list);
-            setTimeout(function() {
-              new IScroll('#index-scroll');
-            }, 500);
           })
       }
   }

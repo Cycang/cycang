@@ -43,7 +43,6 @@ body > div{
   width: 100%;
   overflow: hidden;
   .classifySection{
-    @include flex(1);
     height: 100%;
     width: 100%;
     display: flex;
@@ -57,8 +56,8 @@ body > div{
       background: #eee;
       // align-items: center;
       li{
+        height: 9.1%;
         width: 100%;
-        height: 100%;
         text-align: center;
         line-height: 60px;
         border: 0.5px solid #d8d8d8;
@@ -140,12 +139,47 @@ body > div{
                 width: 100%;
                 height: 100%;
                 display: block;
+                font-size: 12px;
                 text-align: center;
                 color: #555;
               }
             }
           }
         }
+      }
+    }
+  }
+}
+#label-scroll{
+  width: 100%;
+  height: 100%;
+  background: white;
+  ul{
+    width: 100%;
+    height: auto;
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;;
+    li{
+      width: 28%;
+      height: 80px;
+      display: block;
+      border-radius: 50%;
+      margin-top: 20px;
+      text-align: center;
+      line-height: 80px;
+      font-size: 12px;
+      background: url("/images/tag-border.png")no-repeat center;
+      background-size: contain;
+      &.class1{
+        color: #f2a421;
+      }
+      &.class2{
+        color: #47a4e2;
+      }
+      &.class3{
+        color: #ee7790;
       }
     }
   }

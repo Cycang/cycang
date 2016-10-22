@@ -11,7 +11,9 @@
       </ul>
     </header>
     <section class="classifySectionBox">
-      <router-view></router-view>
+      <router-view>
+        
+      </router-view>
     </section>
   </div>
 </template>

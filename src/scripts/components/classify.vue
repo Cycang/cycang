@@ -4,7 +4,7 @@
       <li v-for="shop in shoplist" v-bind:class="bur == $index ? 'active' : ''"
       v-on:click="changShop($index)" v-link="{path:shop.path}">{{shop.name}}</li>
     </ul>
-    <div id="index-scroll">
+    <div id="classify-scroll">
       <div id="scrollbox">
         <router-view></router-view>
       </div>
@@ -33,7 +33,7 @@ export default {
   },
   ready: function() {
         setTimeout(function() {
-          new IScroll('#index-scroll');
+          new IScroll('#classify-scroll');
         }, 500);
   },
 
