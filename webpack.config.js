@@ -20,7 +20,7 @@ module.exports = {
   // devserver配置
   devServer: {
     contentBase: __dirname + '/prd',
-    port: 80,
+    port: 8080,
     inline: true
   },
 
@@ -42,12 +42,21 @@ module.exports = {
       {
         test: /\.string$/,
         loader: 'string'
+      },
+      {
+        test:/\.vue$/,
+        loader:'vue'
       }
     ]
   },
+  vue:{
+    loaders:{
+      js:'babel'
+    }
+  },
 
   //plugins定义
-  plugins: [
+  plugins:[
     // new webpack.optimize.UglifyJsPlugin(),
     new ET('bundle.css')
   ]
