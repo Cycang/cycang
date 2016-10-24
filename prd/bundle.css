@@ -718,15 +718,11 @@ body > div {
   width: 100%;
   overflow: hidden; }
   .classifySectionBox .classifySection {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-    width: .1px;
     height: 100%;
     width: 100%;
     display: flex;
     background: white; }
-    .classifySectionBox .classifySection ul {
+    .classifySectionBox .classifySection .shopUl {
       -webkit-box-flex: 2;
       -webkit-flex: 2;
       flex: 2;
@@ -736,13 +732,14 @@ body > div {
       display: flex;
       flex-direction: column;
       background: #eee; }
-      .classifySectionBox .classifySection ul li {
+      .classifySectionBox .classifySection .shopUl li {
+        height: 9.1%;
         width: 100%;
-        height: 100%;
+        padding-top: 4%;
         text-align: center;
-        line-height: 60px;
+        line-height: 48px;
         border: 0.5px solid #d8d8d8; }
-        .classifySectionBox .classifySection ul li.active {
+        .classifySectionBox .classifySection .shopUl li.active {
           background: white;
           color: #ed3f3f;
           border: none; }
@@ -752,19 +749,94 @@ body > div {
       flex: 5;
       width: .1px;
       padding: 5px; }
-      .classifySectionBox .classifySection div.hot-sale {
+      .classifySectionBox .classifySection div .scrollbox {
         width: 100%;
-        height: 30%;
-        display: flex; }
-        .classifySectionBox .classifySection div.hot-sale p {
-          display: block;
+        height: auto; }
+        .classifySectionBox .classifySection div .scrollbox .hot-sale {
           width: 100%;
-          height: 50px; }
-        .classifySectionBox .classifySection div.hot-sale ul {
+          height: 30%;
+          display: flex;
+          flex-direction: column; }
+          .classifySectionBox .classifySection div .scrollbox .hot-sale p {
+            display: block;
+            width: 100%;
+            height: 50px;
+            line-height: 50px; }
+          .classifySectionBox .classifySection div .scrollbox .hot-sale .hotSale {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row; }
+            .classifySectionBox .classifySection div .scrollbox .hot-sale .hotSale li {
+              width: 33%;
+              height: 100%;
+              display: flex;
+              flex-direction: column; }
+              .classifySectionBox .classifySection div .scrollbox .hot-sale .hotSale li img {
+                width: 100%;
+                height: 80%; }
+              .classifySectionBox .classifySection div .scrollbox .hot-sale .hotSale li p {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: #666;
+                font-size: 16px; }
+        .classifySectionBox .classifySection div .scrollbox .comm-cat {
           width: 100%;
-          -webkit-box-flex: 1;
-          -webkit-flex: 1;
-          flex: 1;
-          width: .1px; }
+          height: auto;
+          display: flex;
+          flex-direction: column; }
+          .classifySectionBox .classifySection div .scrollbox .comm-cat p {
+            display: block;
+            width: 100%;
+            height: 50px;
+            line-height: 50px; }
+          .classifySectionBox .classifySection div .scrollbox .comm-cat .commUl {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap; }
+            .classifySectionBox .classifySection div .scrollbox .comm-cat .commUl li {
+              width: 33%;
+              height: 25%; }
+              .classifySectionBox .classifySection div .scrollbox .comm-cat .commUl li img {
+                width: 100%;
+                height: 80%; }
+              .classifySectionBox .classifySection div .scrollbox .comm-cat .commUl li p {
+                width: 100%;
+                height: 100%;
+                display: block;
+                font-size: 12px;
+                text-align: center;
+                color: #555; }
+
+#label-scroll {
+  width: 100%;
+  height: 100%;
+  background: white; }
+  #label-scroll ul {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    #label-scroll ul li {
+      width: 28%;
+      height: 80px;
+      display: block;
+      border-radius: 50%;
+      margin-top: 20px;
+      text-align: center;
+      line-height: 80px;
+      font-size: 12px;
+      background: url("/images/tag-border.png") no-repeat center;
+      background-size: contain; }
+      #label-scroll ul li.class1 {
+        color: #f2a421; }
+      #label-scroll ul li.class2 {
+        color: #47a4e2; }
+      #label-scroll ul li.class3 {
+        color: #ee7790; }
 
 /*# sourceMappingURL=bundle.css.map*/

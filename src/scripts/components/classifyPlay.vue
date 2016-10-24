@@ -1,4 +1,5 @@
 <template>
+  <div class="scrollbox">
     <div class="hot-sale">
       <p>热卖推荐</p>
       <ul class="hotSale">
@@ -17,11 +18,10 @@
         </li>
       </ul>
     </div>
+
+  </div>
 </template>
 <script>
-  var Vue = require('../libs/vue.js');
-  var VueResource = require('../libs/vue-resource.js');
-  Vue.use(VueResource);
 
   var mySwiper = null;
   export default {

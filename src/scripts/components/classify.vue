@@ -5,13 +5,12 @@
       v-on:click="changShop($index)" v-link="{path:shop.path}">{{shop.name}}</li>
     </ul>
     <div id="classify-scroll">
-      <div id="scrollbox">
         <router-view></router-view>
-      </div>
     </div>
   </div>
 </template>
 <script>
+import commonUtil from "../utils/commonUtil";
 export default {
   data() {
     return {
@@ -32,9 +31,13 @@ export default {
     }
   },
   ready: function() {
-        setTimeout(function() {
-          new IScroll('#classify-scroll');
-        }, 500);
+    Vue.nextTick(function(){
+      commonUtil.isAlloaded('#classify-scroll',function(){
+        new IScroll('#classify-scroll',{
+          click:true
+        })
+      })
+    })
   },
 
   methods: {

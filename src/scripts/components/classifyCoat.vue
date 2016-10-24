@@ -1,27 +1,27 @@
 <template>
-    <div class="hot-sale">
-      <p>热卖推荐</p>
-      <ul class="hotSale">
-        <li v-for="hot in hot_sale">
-          <img v-bind:src="hot.figure"/>
-          <p>￥{{hot.cover_price}}</p>
-        </li>
-      </ul>
-    </div>
-    <div class="comm-cat">
-      <p>常用分类</p>
-      <ul class="commUl">
-        <li v-for="l in list">
-          <img v-bind:src="l.pic"/>
-          <p>{{l.name}}</p>
-        </li>
-      </ul>
+    <div class="scrollbox">      
+      <div class="hot-sale">
+        <p>热卖推荐</p>
+        <ul class="hotSale">
+          <li v-for="hot in hot_sale">
+            <img v-bind:src="hot.figure"/>
+            <p>￥{{hot.cover_price}}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="comm-cat">
+        <p>常用分类</p>
+        <ul class="commUl">
+          <li v-for="l in list">
+            <img v-bind:src="l.pic"/>
+            <p>{{l.name}}</p>
+          </li>
+        </ul>
+      </div>
     </div>
 </template>
 <script>
-  var Vue = require('../libs/vue.js');
-  var VueResource = require('../libs/vue-resource.js');
-  Vue.use(VueResource);
+
 
   var mySwiper = null;
   export default {

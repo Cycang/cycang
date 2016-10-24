@@ -18,10 +18,8 @@ import classifyStationery from "./components/classifyStationery.vue";
 import classifyNumeral from "./components/classifyNumeral.vue";
 import classifyPlay from "./components/classifyPlay.vue";
 
-
-import Vue from "./libs/vue.js";
-import VueRouter from "./libs/vue-router.js";
-Vue.use(VueRouter);
+import commonUtil from "./utils/commonUtil.js";
+commonUtil.dirScroll();
 
 let router = new VueRouter();
 

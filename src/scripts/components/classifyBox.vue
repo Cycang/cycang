@@ -12,7 +12,7 @@
     </header>
     <section class="classifySectionBox">
       <router-view>
-        
+
       </router-view>
     </section>
   </div>
