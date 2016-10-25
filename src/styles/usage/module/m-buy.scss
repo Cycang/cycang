@@ -4,6 +4,23 @@
    height: 100%;
    width: 100%;
    font-family: Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+   .yo-dialog{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @include transform(translate(-50%,-50%));
+      p{
+         font-size: 14px;
+      }
+      .ft{
+         button:nth-child(1){
+            color: black;
+         }
+         button{
+            font-size: 14px;
+         }
+      }
+   }
    header{
       @include flexbox();
       @include align-items(center);
@@ -166,6 +183,30 @@
          font-size: 16px;
          @include flex(1.5);
          background-color: rgb(236, 63, 63);
+      }
+      .deleteorcollect{
+         text-align: right;
+         button{
+            margin-right: 0.12rem;
+         }
+         button:nth-child(1){
+            width: 0.71rem;
+            height: .33rem;
+            border: 2px solid #333;
+            border-radius: 3px;
+            background-color: #eee;
+            font-size: 16px;
+            color: #333;
+         }
+         button:nth-child(2){
+            width: 0.71rem;
+            height: .33rem;
+            border: 2px solid #ed3f3f;
+            border-radius: 3px;
+            background-color: #eee;
+            font-size: 16px;
+            color: #ed3f3f;
+         }
       }
    }
 }

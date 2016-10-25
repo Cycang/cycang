@@ -231,6 +231,11 @@ body{
                @include justify-content(center);
                box-sizing: border-box;
                height: 100%;
+               a{
+                  @include flexbox();
+                  @include flex-direction(column);
+                  @include align-items(center);
+               }
                img{
                   width: 21px;
                   height: 20px;

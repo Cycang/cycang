@@ -1,8 +1,8 @@
 <template>
    <div class="detail-container">
-      <header  v-for='item in goodsInfor'>
+      <header>
          <img src="/images/back1.png" >
-         <h2>{{item.result.product_info.name}}</h2>
+         <h2 v-for="item in goodsInfor">{{item.result.product_info.name}}</h2>
          <img src="/images/home.png" >
       </header>
       <section id="detail-scroll">
@@ -65,8 +65,10 @@
       <footer>
          <ul>
             <li>
+               <a href="https://static.meiqia.com/dist/standalone.html?eid=17853&metadata=%7B%22%5Cu5546%5Cu54c1%5Cu94fe%5Cu63a5%22%3A%22http%3A%5C%2F%5C%2Fcycang.com%5C%2Findex.php%3Fa%3Dp%26id%3D2855%22%7D">
                <img src="/images/service_icon.png" v-link={path:'./service'} />
                <b>联系客服</b>
+               </a>
             </li>
             <li>
                <img :src="isstore? '/images/fav_is.png' :'/images/fav_not.png'" v-on:click="store" />
@@ -82,9 +84,9 @@
    </div>
 </template>
 <script type="text/javascript">
-   import {setUserName} from '../vuex/actions';
    import {getUserName} from '../vuex/getters';
    var myScroll=null;
+   var timer="";
 
    export default{
       data(){
@@ -100,23 +102,61 @@
          }
       },
       vuex:{
-         actions:{
-            setName:setUserName
-         },
          getters:{
             getName:getUserName
          }
       },
       ready:function () {
-         this.$http.get('/mock/detail.json').then((res)=>{
+         var that=this;
+         this.$http.get('/mock/detail2.json').then((res)=>{
             this.goodsInfor=res.data;
-            setTimeout(function () {
-               myScroll=new IScroll('#detail-scroll',{
-                  click:true
-               });
-            },500);
+            Vue.nextTick(function () {
+               let imgs=document.getElementsByTagName('img');
+               let iscomplete=0;
+               timer=setInterval(function () {
+                  for (let i = 0; i < imgs.length; i++) {
+                     if (imgs[i].complete) {
+                        iscomplete++;
+                        if (iscomplete==imgs.length) {
+                           clearInterval(timer);
+                           myScroll=new IScroll('#detail-scroll',{
+                              probeType:3,
+                              click:true,
+                              mouseWheel: true
+                           });
+                           myScroll.on('scroll',function () {
+                              var y=this.y,
+                                  maxY=this.maxScrollY-y;
+                              // console.log(y+" "+maxY);
+                              if (maxY>=60) {
+                                 that.more=true;
+                                 that.$http.get('/mock/detail-more2.json').then((res)=>{
+                                    that.moreInfor=res.data;
+                                    Vue.nextTick(function () {
+                                       let imgs=document.getElementsByTagName('img');
+                                       let iscomplete=0;
+                                       timer=setInterval(function () {
+                                          for (var i = 0; i < imgs.length; i++) {
+                                             if (imgs[i].complete) {
+                                                iscomplete++;
+                                                if (iscomplete==imgs.length) {
+                                                   clearInterval(timer);
+                                                   myScroll.refresh();
+                                                }
+                                             }
+                                          }
+                                       },100);
+                                    });
+                                 });
+                              }
+                           });
+                        }
+                     }
+                  }
+               },100);
+            });
          });
-         this.name=this.getName();
+         this.name=this.getName;
          if (this.name&&localStorage.getItem(name)) {
             let goodsCart=JSON.parse(localStorage.getItem(name));
             this.cartnum=goodsCart.goods.length;
@@ -141,12 +181,24 @@
             this.more=true;
             this.$http.get('/mock/detail-more.json').then((res)=>{
                this.moreInfor=res.data;
-               console.log(res.data);
-               setTimeout(function () {
-                  myScroll.refresh();
-               },500);
+               Vue.nextTick(function () {
+                  let imgs=document.getElementsByTagName('img');
+                  let iscomplete=0;
+                  timer=setInterval(function () {
+                     for (var i = 0; i < imgs.length; i++) {
+                        if (imgs[i].complete) {
+                           iscomplete++;
+                           if (iscomplete==imgs.length) {
+                              clearInterval(timer);
+                              myScroll.refresh();
+                           }
+                        }
+                     }
+                  },100);
+               });
             });
-         },
+
+      },
          store(){
             this.isstore=!this.isstore;
          },

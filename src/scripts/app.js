@@ -5,13 +5,6 @@ import index from "./components/index.vue";
 import detail from "./components/detail.vue";
 import buy from "./components/buy.vue";
 import service from './components/service.vue';
-import {getUserName} from './vuex/getters';
-
-// router
-// import Vue from "./libs/vue.js";
-// import VueRouter from "./libs/vue-router.js";
-// Vue.use(VueRouter);
-
 import store from './vuex/store';
 
 let router = new VueRouter();

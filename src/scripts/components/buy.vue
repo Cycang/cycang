@@ -3,7 +3,8 @@
       <header>
          <img src="/images/back1.png" />
          <h2>购物车</h2>
-         <p>编辑</p>
+         <p v-on:click="edit" v-if="isedit">完成</p>
+         <p v-on:click="edit" v-else>编辑</p>
       </header>
       <section id="buy-scroll">
          <div>
@@ -43,12 +44,40 @@
       <footer>
          <img v-bind:src="chooseall? '/images/sel-order.png':'/images/unsel.png'" v-on:click="chooseAll" />
          <b>全选</b>
-         <div>
+         <div v-if="!isedit">
             <span>合计:</span>
             <i>￥{{total}}</i>
          </div>
-         <button>去结算({{buynum}})</button>
+         <template v-if="isedit">
+            <div class="deleteorcollect">
+               <button type="button" v-on:click="delete">删除</button>
+               <button type="button" v-on:click="collection">收藏</button>
+            </div>
+         </template>
+         <button v-else v-on:click="account">去结算({{buynum}})</button>
       </footer>
+      <!-- dialong的代码 -->
+      <!-- 登录 的dialog -->
+      <div v-if="islog" class="yo-dialog yo-dialog-test">
+          <div class="bd">
+              <p>只有登录才能支付哦~</p>
+          </div>
+          <div class="ft">
+              <button class="yo-btn yo-btn-dialog yo-btn-l" v-on:click="cancle">取消</button>
+              <button class="yo-btn yo-btn-dialog yo-btn-l" v-link="{path:'/'}">登录</button>
+          </div>
+      </div>
+      <!-- 收藏的dialog -->
+      <div v-if="iscollect" class="yo-dialog yo-dialog-test">
+          <div class="bd">
+              <p>收藏成功~</p>
+          </div>
+          <div class="ft">
+              <button class="yo-btn yo-btn-dialog yo-btn-l" v-on:click="confirmcollect">确定</button>
+          </div>
+      </div>
+      <!-- 遮罩 -->
+      <div v-if="ismark" class="yo-mask"></div>
    </div>
 </template>
 
@@ -63,7 +92,11 @@ export default{
          buylist:[],
          total:0,
          chooseall:true,
-         buynum:0
+         buynum:0,
+         ismark:false,
+         islog:false,
+         isedit:false,
+         iscollect:false
       }
    },
    vuex:{
@@ -181,6 +214,33 @@ export default{
                this.buynum=this.buynum+this.buylist[i].number;
             }
          }
+      },
+      account(){
+         if (this.getName=='') {
+               this.ismark=true;
+               this.islog=true;
+         }else {
+
+         }
+      },
+      cancle(){
+         this.islog=false;
+         this.ismark=false;
+      },
+      edit(){
+         this.isedit=!this.isedit;
+         this.chooseall=true;
+      },
+      delete(){
+
+      },
+      collection(){
+         this.iscollect=true;
+         this.ismark=true;
+      },
+      confirmcollect(){
+         this.iscollect=false;
+         this.ismark=false;
       }
    }
 }
