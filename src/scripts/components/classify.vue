@@ -1,7 +1,7 @@
 <template>
   <div class="classifySection">
     <ul class="shopUl">
-      <li v-for="shop in shoplist" v-bind:class="bur == $index ? 'active' : ''"
+      <li v-for="shop in shoplist" v-bind:class="classindex == $index ? 'active' : ''"
       v-on:click="changShop($index)" v-link="{path:shop.path}">{{shop.name}}</li>
     </ul>
     <div id="classify-scroll">
@@ -11,10 +11,19 @@
 </template>
 <script>
 import commonUtil from "../utils/commonUtil";
+import { classifyChanger } from "../vuex/action";
+import { getTabindex } from "../vuex/getters";
 export default {
+  vuex :{
+    getters:{
+      classindex:getTabindex
+    },
+    actions:{
+      classChange:classifyChanger
+    }
+  },
   data() {
     return {
-      bur: 0,
       shoplist:[
         {name:'小裙子',path:'/'},
         {name:'上衣',path:'/classifyJacket'},
@@ -42,7 +51,7 @@ export default {
 
   methods: {
     changShop(i){
-      this.bur = i;
+      // this.bur = i;
     }
   }
 }

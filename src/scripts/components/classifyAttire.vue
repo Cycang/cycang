@@ -21,8 +21,14 @@
     </div>
 </template>
 <script>
-  var mySwiper = null;
-  export default {
+import { classifyChanger } from "../vuex/action";
+var mySwiper = null;
+export default {
+  vuex:{
+    actions:{
+        classChange:classifyChanger
+    }
+  },
     data() {
         return {
           list: [],
@@ -74,7 +80,8 @@
         this.$http.get('/mock/classify.json')
           .then((res) => {
             this.list = res.data.result[6].child;
-          })
+          });
+          this.classChange(6);
       }
   }
 </script>

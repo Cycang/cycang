@@ -1,10 +1,11 @@
-const stste = {
-  tabIndex:0
+const state = {
+  classifyIndex:0
 }
 
 const mutations = {
   CLASSIFYCHANGETAB(state,currentTabindex){
-    state.tabIndex = currentTabindex;
+    state.classifyIndex = currentTabindex;
+    // console.log(currentTabindex);
   }
 }
 

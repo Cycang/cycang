@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       cur: 0,
-      bur: 0,
+      classifyIndex: 0,
       tablist: [
         {path: '/',name:'分类'},
         {path: '/label',name:'标签'}

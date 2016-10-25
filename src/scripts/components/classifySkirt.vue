@@ -23,11 +23,18 @@
 </template>
 <script>
 
-
+  import { classifyChanger } from "../vuex/action";
   var mySwiper = null;
+  // console.log(classifyChanger);
   export default {
+    vuex:{
+      actions:{
+          classChange:classifyChanger
+      }
+    },
     data() {
         return {
+          currentTabindex: 0,
           list: [],
           hot_sale: [{
             "product_id": "2704",
@@ -78,7 +85,9 @@
           .then((res) => {
             this.list = res.data.result[0].child;
             // console.log(this.list);
-          })
+          });
+        this.classChange(0);
+        // console.log(classifyIndex);
       }
   }
 </script>

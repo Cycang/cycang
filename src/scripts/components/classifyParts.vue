@@ -4,7 +4,7 @@
       <p>热卖推荐</p>
       <ul class="hotSale">
         <li v-for="hot in hot_sale">
-          <img v-bind:src="hot.figure"/>
+          <img v-bind:src="hot.figure" />
           <p>￥{{hot.cover_price}}</p>
         </li>
       </ul>
@@ -13,19 +13,22 @@
       <p>常用分类</p>
       <ul class="commUl">
         <li v-for="l in list">
-          <img v-bind:src="l.pic"/>
+          <img v-bind:src="l.pic" />
           <p>{{l.name}}</p>
         </li>
       </ul>
     </div>
-
   </div>
 </template>
 <script>
-
-
-  var mySwiper = null;
-  export default {
+import { classifyChanger } from "../vuex/action";
+var mySwiper = null;
+export default {
+  vuex:{
+    actions:{
+        classChange:classifyChanger
+    }
+  },
     data() {
         return {
           list: [],
@@ -77,7 +80,9 @@
         this.$http.get('/mock/classify.json')
           .then((res) => {
             this.list = res.data.result[4].child;
-          })
+            // console.log(this.list);
+          });
+          this.classChange(4);
       }
   }
 </script>

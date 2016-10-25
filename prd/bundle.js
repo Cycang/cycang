@@ -56,57 +56,61 @@
 	
 	var _classify2 = _interopRequireDefault(_classify);
 	
-	var _label = __webpack_require__(12);
+	var _label = __webpack_require__(14);
 	
 	var _label2 = _interopRequireDefault(_label);
 	
-	var _classifySkirt = __webpack_require__(15);
+	var _classifySkirt = __webpack_require__(17);
 	
 	var _classifySkirt2 = _interopRequireDefault(_classifySkirt);
 	
-	var _classifyJacket = __webpack_require__(18);
+	var _classifyJacket = __webpack_require__(20);
 	
 	var _classifyJacket2 = _interopRequireDefault(_classifyJacket);
 	
-	var _classifyPants = __webpack_require__(21);
+	var _classifyPants = __webpack_require__(23);
 	
 	var _classifyPants2 = _interopRequireDefault(_classifyPants);
 	
-	var _classifyCoat = __webpack_require__(24);
+	var _classifyCoat = __webpack_require__(26);
 	
 	var _classifyCoat2 = _interopRequireDefault(_classifyCoat);
 	
-	var _classifyParts = __webpack_require__(27);
+	var _classifyParts = __webpack_require__(29);
 	
 	var _classifyParts2 = _interopRequireDefault(_classifyParts);
 	
-	var _classifyBag = __webpack_require__(30);
+	var _classifyBag = __webpack_require__(32);
 	
 	var _classifyBag2 = _interopRequireDefault(_classifyBag);
 	
-	var _classifyAttire = __webpack_require__(33);
+	var _classifyAttire = __webpack_require__(35);
 	
 	var _classifyAttire2 = _interopRequireDefault(_classifyAttire);
 	
-	var _classifyHome = __webpack_require__(36);
+	var _classifyHome = __webpack_require__(38);
 	
 	var _classifyHome2 = _interopRequireDefault(_classifyHome);
 	
-	var _classifyStationery = __webpack_require__(39);
+	var _classifyStationery = __webpack_require__(41);
 	
 	var _classifyStationery2 = _interopRequireDefault(_classifyStationery);
 	
-	var _classifyNumeral = __webpack_require__(42);
+	var _classifyNumeral = __webpack_require__(44);
 	
 	var _classifyNumeral2 = _interopRequireDefault(_classifyNumeral);
 	
-	var _classifyPlay = __webpack_require__(45);
+	var _classifyPlay = __webpack_require__(47);
 	
 	var _classifyPlay2 = _interopRequireDefault(_classifyPlay);
 	
 	var _commonUtil = __webpack_require__(10);
 	
 	var _commonUtil2 = _interopRequireDefault(_commonUtil);
+	
+	var _store = __webpack_require__(50);
+	
+	var _store2 = _interopRequireDefault(_store);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -119,7 +123,9 @@
 	
 	var router = new VueRouter();
 	
-	var App = Vue.extend({});
+	var App = Vue.extend({
+	  store: _store2.default
+	});
 	
 	router.map({
 	  // '/': {
@@ -250,7 +256,7 @@
 	  data: function data() {
 	    return {
 	      cur: 0,
-	      bur: 0,
+	      classifyIndex: 0,
 	      tablist: [{ path: '/', name: '分类' }, { path: '/label', name: '标签' }]
 	    };
 	  },
@@ -282,7 +288,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classify.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(11)
+	__vue_template__ = __webpack_require__(13)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -304,7 +310,7 @@
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -314,12 +320,23 @@
 	
 	var _commonUtil2 = _interopRequireDefault(_commonUtil);
 	
+	var _action = __webpack_require__(11);
+	
+	var _getters = __webpack_require__(12);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
+	  vuex: {
+	    getters: {
+	      classindex: _getters.getTabindex
+	    },
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
-	      bur: 0,
 	      shoplist: [{ name: '小裙子', path: '/' }, { name: '上衣', path: '/classifyJacket' }, { name: '下装', path: '/classifyPants' }, { name: '外套', path: '/classifyCoat' }, { name: '配件', path: '/classifyParts' }, { name: '包包', path: '/classifyBag' }, { name: '装扮', path: 'classifyAttire' }, { name: '居家宅品', path: '/classifyHome' }, { name: '办公文具', path: '/classifyStationery' }, { name: '数码周边', path: '/classifyNumeral' }, { name: '游戏专区', path: '/classifyPlay' }]
 	    };
 	  },
@@ -336,7 +353,7 @@
 	
 	  methods: {
 	    changShop: function changShop(i) {
-	      this.bur = i;
+	      // this.bur = i;
 	    }
 	  }
 	};
@@ -346,7 +363,7 @@
 	// <template>
 	//   <div class="classifySection">
 	//     <ul class="shopUl">
-	//       <li v-for="shop in shoplist" v-bind:class="bur == $index ? 'active' : ''"
+	//       <li v-for="shop in shoplist" v-bind:class="classindex == $index ? 'active' : ''"
 	//       v-on:click="changShop($index)" v-link="{path:shop.path}">{{shop.name}}</li>
 	//     </ul>
 	//     <div id="classify-scroll">
@@ -415,19 +432,51 @@
 /* 11 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"classifySection\">\n  <ul class=\"shopUl\">\n    <li v-for=\"shop in shoplist\" v-bind:class=\"bur == $index ? 'active' : ''\"\n    v-on:click=\"changShop($index)\" v-link=\"{path:shop.path}\">{{shop.name}}</li>\n  </ul>\n  <div id=\"classify-scroll\">\n      <router-view></router-view>\n  </div>\n</div>\n";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var classifyChanger = exports.classifyChanger = function classifyChanger(_ref, classifyIndex) {
+	  var dispatch = _ref.dispatch;
+	  var state = _ref.state;
+	
+	  dispatch('CLASSIFYCHANGETAB', classifyIndex);
+	};
+	//子路有引用入口
 
 /***/ },
 /* 12 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// export const getTabindex = state => state.tabIndex;
+	var getTabindex = exports.getTabindex = function getTabindex(state) {
+	  return state.classifyIndex;
+	  console.log(state.classifyIndex);
+	};
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"classifySection\">\n  <ul class=\"shopUl\">\n    <li v-for=\"shop in shoplist\" v-bind:class=\"classindex == $index ? 'active' : ''\"\n    v-on:click=\"changShop($index)\" v-link=\"{path:shop.path}\">{{shop.name}}</li>\n  </ul>\n  <div id=\"classify-scroll\">\n      <router-view></router-view>\n  </div>\n</div>\n";
+
+/***/ },
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(13)
+	__vue_script__ = __webpack_require__(15)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\label.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(14)
+	__vue_template__ = __webpack_require__(16)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -446,7 +495,7 @@
 	})()}
 
 /***/ },
-/* 13 */
+/* 15 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -482,22 +531,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"label-scroll\">\n  <ul>\n    <li v-for=\"l in list\" class=\"{{l.group}}\">\n      <p>{{l.tittle}}</p>\n    </li>\n  </ul>\n</div>\n";
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(16)
+	__vue_script__ = __webpack_require__(18)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifySkirt.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(17)
+	__vue_template__ = __webpack_require__(19)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -516,14 +565,19 @@
 	})()}
 
 /***/ },
-/* 16 */
-/***/ function(module, exports) {
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null;
+	// console.log(classifyChanger);
 	// <template>
 	//   <div class="scrollbox">
 	//
@@ -549,11 +603,15 @@
 	// </template>
 	// <script>
 	
-	
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
+	      currentTabindex: 0,
 	      list: [],
 	      hot_sale: [{
 	        "product_id": "2704",
@@ -607,6 +665,8 @@
 	      _this.list = res.data.result[0].child;
 	      // console.log(this.list);
 	    });
+	    this.classChange(0);
+	    // console.log(classifyIndex);
 	  }
 	};
 	// </script>
@@ -614,22 +674,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(19)
+	__vue_script__ = __webpack_require__(21)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyJacket.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(20)
+	__vue_template__ = __webpack_require__(22)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -648,42 +708,46 @@
 	})()}
 
 /***/ },
-/* 19 */
-/***/ function(module, exports) {
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
-	//
-	//   <div class="hot-sale">
-	//   <p>热卖推荐</p>
-	//   <ul class="hotSale">
-	//   <li v-for="hot in hot_sale">
-	//   <img v-bind:src="hot.figure"/>
-	//   <p>￥{{hot.cover_price}}</p>
-	//   </li>
-	//   </ul>
-	//   </div>
-	//   <div class="comm-cat">
-	//   <p>常用分类</p>
-	//   <ul class="commUl">
-	//   <li v-for="l in list">
-	//   <img v-bind:src="l.pic"/>
-	//   <p>{{l.name}}</p>
-	//   </li>
-	//   </ul>
-	//   </div>
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
 	//   </div>
 	// </template>
 	// <script>
-	
-	
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -739,6 +803,7 @@
 	      _this.list = res.data.result[1].child;
 	      // console.log(this.list);
 	    });
+	    this.classChange(1);
 	  }
 	};
 	// </script>
@@ -746,22 +811,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 20 */
+/* 22 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"scrollbox\">\n\n<div class=\"hot-sale\">\n<p>热卖推荐</p>\n<ul class=\"hotSale\">\n<li v-for=\"hot in hot_sale\">\n<img v-bind:src=\"hot.figure\"/>\n<p>￥{{hot.cover_price}}</p>\n</li>\n</ul>\n</div>\n<div class=\"comm-cat\">\n<p>常用分类</p>\n<ul class=\"commUl\">\n<li v-for=\"l in list\">\n<img v-bind:src=\"l.pic\"/>\n<p>{{l.name}}</p>\n</li>\n</ul>\n</div>\n</div>\n";
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 21 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(22)
+	__vue_script__ = __webpack_require__(24)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyPants.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(23)
+	__vue_template__ = __webpack_require__(25)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -780,22 +845,24 @@
 	})()}
 
 /***/ },
-/* 22 */
-/***/ function(module, exports) {
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
-	//
 	//     <div class="hot-sale">
 	//       <p>热卖推荐</p>
 	//       <ul class="hotSale">
 	//         <li v-for="hot in hot_sale">
-	//           <img v-bind:src="hot.figure"/>
+	//           <img v-bind:src="hot.figure" />
 	//           <p>￥{{hot.cover_price}}</p>
 	//         </li>
 	//       </ul>
@@ -804,7 +871,7 @@
 	//       <p>常用分类</p>
 	//       <ul class="commUl">
 	//         <li v-for="l in list">
-	//           <img v-bind:src="l.pic"/>
+	//           <img v-bind:src="l.pic" />
 	//           <p>{{l.name}}</p>
 	//         </li>
 	//       </ul>
@@ -812,10 +879,12 @@
 	//   </div>
 	// </template>
 	// <script>
-	
-	
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -871,6 +940,7 @@
 	      _this.list = res.data.result[2].child;
 	      // console.log(this.list);
 	    });
+	    this.classChange(2);
 	  }
 	};
 	// </script>
@@ -878,22 +948,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"scrollbox\">\n\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(25)
+	__vue_script__ = __webpack_require__(27)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyCoat.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(26)
+	__vue_template__ = __webpack_require__(28)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -912,41 +982,46 @@
 	})()}
 
 /***/ },
-/* 25 */
-/***/ function(module, exports) {
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
-	//     <div class="scrollbox">      
-	//       <div class="hot-sale">
-	//         <p>热卖推荐</p>
-	//         <ul class="hotSale">
-	//           <li v-for="hot in hot_sale">
-	//             <img v-bind:src="hot.figure"/>
-	//             <p>￥{{hot.cover_price}}</p>
-	//           </li>
-	//         </ul>
-	//       </div>
-	//       <div class="comm-cat">
-	//         <p>常用分类</p>
-	//         <ul class="commUl">
-	//           <li v-for="l in list">
-	//             <img v-bind:src="l.pic"/>
-	//             <p>{{l.name}}</p>
-	//           </li>
-	//         </ul>
-	//       </div>
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
 	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
 	// </template>
 	// <script>
-	
-	
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -1000,7 +1075,9 @@
 	    var that = this;
 	    this.$http.get('/mock/classify.json').then(function (res) {
 	      _this.list = res.data.result[3].child;
+	      // console.log(this.list);
 	    });
+	    this.classChange(3);
 	  }
 	};
 	// </script>
@@ -1008,22 +1085,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"scrollbox\">      \n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(28)
+	__vue_script__ = __webpack_require__(30)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyParts.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(29)
+	__vue_template__ = __webpack_require__(31)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1042,21 +1119,24 @@
 	})()}
 
 /***/ },
-/* 28 */
-/***/ function(module, exports) {
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
 	//     <div class="hot-sale">
 	//       <p>热卖推荐</p>
 	//       <ul class="hotSale">
 	//         <li v-for="hot in hot_sale">
-	//           <img v-bind:src="hot.figure"/>
+	//           <img v-bind:src="hot.figure" />
 	//           <p>￥{{hot.cover_price}}</p>
 	//         </li>
 	//       </ul>
@@ -1065,19 +1145,20 @@
 	//       <p>常用分类</p>
 	//       <ul class="commUl">
 	//         <li v-for="l in list">
-	//           <img v-bind:src="l.pic"/>
+	//           <img v-bind:src="l.pic" />
 	//           <p>{{l.name}}</p>
 	//         </li>
 	//       </ul>
 	//     </div>
-	//
 	//   </div>
 	// </template>
 	// <script>
-	
-	
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -1131,7 +1212,9 @@
 	    var that = this;
 	    this.$http.get('/mock/classify.json').then(function (res) {
 	      _this.list = res.data.result[4].child;
+	      // console.log(this.list);
 	    });
+	    this.classChange(4);
 	  }
 	};
 	// </script>
@@ -1139,22 +1222,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n\n</div>\n";
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(31)
+	__vue_script__ = __webpack_require__(33)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyBag.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(32)
+	__vue_template__ = __webpack_require__(34)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1173,15 +1256,18 @@
 	})()}
 
 /***/ },
-/* 31 */
-/***/ function(module, exports) {
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
 	//     <div class="scrollbox">
 	//       <div class="hot-sale">
 	//         <p>热卖推荐</p>
@@ -1204,8 +1290,12 @@
 	//     </div>
 	// </template>
 	// <script>
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -1267,22 +1357,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(34)
+	__vue_script__ = __webpack_require__(36)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyAttire.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(35)
+	__vue_template__ = __webpack_require__(37)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1301,15 +1391,18 @@
 	})()}
 
 /***/ },
-/* 34 */
-/***/ function(module, exports) {
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
 	//     <div class="scrollbox">
 	//       <div class="hot-sale">
 	//         <p>热卖推荐</p>
@@ -1332,8 +1425,12 @@
 	//     </div>
 	// </template>
 	// <script>
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -1388,6 +1485,7 @@
 	    this.$http.get('/mock/classify.json').then(function (res) {
 	      _this.list = res.data.result[6].child;
 	    });
+	    this.classChange(6);
 	  }
 	};
 	// </script>
@@ -1395,22 +1493,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 35 */
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 36 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(37)
+	__vue_script__ = __webpack_require__(39)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyHome.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(38)
+	__vue_template__ = __webpack_require__(40)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1429,41 +1527,46 @@
 	})()}
 
 /***/ },
-/* 37 */
-/***/ function(module, exports) {
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
-	//     <div class="scrollbox">    
-	//       <div class="hot-sale">
-	//         <p>热卖推荐</p>
-	//         <ul class="hotSale">
-	//           <li v-for="hot in hot_sale">
-	//             <img v-bind:src="hot.figure"/>
-	//             <p>￥{{hot.cover_price}}</p>
-	//           </li>
-	//         </ul>
-	//       </div>
-	//       <div class="comm-cat">
-	//         <p>常用分类</p>
-	//         <ul class="commUl">
-	//           <li v-for="l in list">
-	//             <img v-bind:src="l.pic"/>
-	//             <p>{{l.name}}</p>
-	//           </li>
-	//         </ul>
-	//       </div>
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
 	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
 	// </template>
 	// <script>
-	
-	
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -1517,7 +1620,9 @@
 	    var that = this;
 	    this.$http.get('/mock/classify.json').then(function (res) {
 	      _this.list = res.data.result[7].child;
+	      // console.log(this.list);
 	    });
+	    this.classChange(7);
 	  }
 	};
 	// </script>
@@ -1525,22 +1630,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 38 */
+/* 40 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"scrollbox\">    \n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 39 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(40)
+	__vue_script__ = __webpack_require__(42)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyStationery.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(41)
+	__vue_template__ = __webpack_require__(43)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1559,41 +1664,46 @@
 	})()}
 
 /***/ },
-/* 40 */
-/***/ function(module, exports) {
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
-	//     <div class="scrollbox">
-	//       <div class="hot-sale">
-	//         <p>热卖推荐</p>
-	//         <ul class="hotSale">
-	//           <li v-for="hot in hot_sale">
-	//             <img v-bind:src="hot.figure"/>
-	//             <p>￥{{hot.cover_price}}</p>
-	//           </li>
-	//         </ul>
-	//       </div>
-	//       <div class="comm-cat">
-	//         <p>常用分类</p>
-	//         <ul class="commUl">
-	//           <li v-for="l in list">
-	//             <img v-bind:src="l.pic"/>
-	//             <p>{{l.name}}</p>
-	//           </li>
-	//         </ul>
-	//       </div>
-	//
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
 	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
 	// </template>
 	// <script>
-	
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -1647,7 +1757,9 @@
 	    var that = this;
 	    this.$http.get('/mock/classify.json').then(function (res) {
 	      _this.list = res.data.result[8].child;
+	      // console.log(this.list);
 	    });
+	    this.classChange(8);
 	  }
 	};
 	// </script>
@@ -1655,22 +1767,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 41 */
+/* 43 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n\n</div>\n";
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 42 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(43)
+	__vue_script__ = __webpack_require__(45)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyNumeral.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(44)
+	__vue_template__ = __webpack_require__(46)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1689,22 +1801,24 @@
 	})()}
 
 /***/ },
-/* 43 */
-/***/ function(module, exports) {
+/* 45 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
-	//
 	//     <div class="hot-sale">
 	//       <p>热卖推荐</p>
 	//       <ul class="hotSale">
 	//         <li v-for="hot in hot_sale">
-	//           <img v-bind:src="hot.figure"/>
+	//           <img v-bind:src="hot.figure" />
 	//           <p>￥{{hot.cover_price}}</p>
 	//         </li>
 	//       </ul>
@@ -1713,7 +1827,7 @@
 	//       <p>常用分类</p>
 	//       <ul class="commUl">
 	//         <li v-for="l in list">
-	//           <img v-bind:src="l.pic"/>
+	//           <img v-bind:src="l.pic" />
 	//           <p>{{l.name}}</p>
 	//         </li>
 	//       </ul>
@@ -1721,10 +1835,12 @@
 	//   </div>
 	// </template>
 	// <script>
-	
-	
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -1778,7 +1894,9 @@
 	    var that = this;
 	    this.$http.get('/mock/classify.json').then(function (res) {
 	      _this.list = res.data.result[9].child;
+	      // console.log(this.list);
 	    });
+	    this.classChange(9);
 	  }
 	};
 	// </script>
@@ -1786,22 +1904,22 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 44 */
+/* 46 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"scrollbox\">\n\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 45 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(46)
+	__vue_script__ = __webpack_require__(48)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyPlay.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(47)
+	__vue_template__ = __webpack_require__(49)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1820,21 +1938,24 @@
 	})()}
 
 /***/ },
-/* 46 */
-/***/ function(module, exports) {
+/* 48 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
+	
+	var _action = __webpack_require__(11);
+	
+	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
 	//     <div class="hot-sale">
 	//       <p>热卖推荐</p>
 	//       <ul class="hotSale">
 	//         <li v-for="hot in hot_sale">
-	//           <img v-bind:src="hot.figure"/>
+	//           <img v-bind:src="hot.figure" />
 	//           <p>￥{{hot.cover_price}}</p>
 	//         </li>
 	//       </ul>
@@ -1843,18 +1964,20 @@
 	//       <p>常用分类</p>
 	//       <ul class="commUl">
 	//         <li v-for="l in list">
-	//           <img v-bind:src="l.pic"/>
+	//           <img v-bind:src="l.pic" />
 	//           <p>{{l.name}}</p>
 	//         </li>
 	//       </ul>
 	//     </div>
-	//
 	//   </div>
 	// </template>
 	// <script>
-	
-	var mySwiper = null;
 	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
 	  data: function data() {
 	    return {
 	      list: [],
@@ -1908,7 +2031,9 @@
 	    var that = this;
 	    this.$http.get('/mock/classify.json').then(function (res) {
 	      _this.list = res.data.result[10].child;
+	      // console.log(this.list);
 	    });
+	    this.classChange(10);
 	  }
 	};
 	// </script>
@@ -1916,10 +2041,35 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n\n</div>\n";
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 50 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var state = {
+	  classifyIndex: 0
+	};
+	
+	var mutations = {
+	  CLASSIFYCHANGETAB: function CLASSIFYCHANGETAB(state, currentTabindex) {
+	    state.classifyIndex = currentTabindex;
+	    // console.log(currentTabindex);
+	  }
+	};
+	
+	exports.default = new Vuex.Store({
+	  state: state,
+	  mutations: mutations
+	});
 
 /***/ }
 /******/ ]);

@@ -23,7 +23,10 @@ commonUtil.dirScroll();
 
 let router = new VueRouter();
 
-let App = Vue.extend({});
+import store from "./vuex/store";
+let App = Vue.extend({
+  store:store
+});
 
 router.map({
   // '/': {

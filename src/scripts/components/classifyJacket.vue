@@ -1,31 +1,34 @@
 <template>
   <div class="scrollbox">
-
-  <div class="hot-sale">
-  <p>热卖推荐</p>
-  <ul class="hotSale">
-  <li v-for="hot in hot_sale">
-  <img v-bind:src="hot.figure"/>
-  <p>￥{{hot.cover_price}}</p>
-  </li>
-  </ul>
-  </div>
-  <div class="comm-cat">
-  <p>常用分类</p>
-  <ul class="commUl">
-  <li v-for="l in list">
-  <img v-bind:src="l.pic"/>
-  <p>{{l.name}}</p>
-  </li>
-  </ul>
-  </div>
+    <div class="hot-sale">
+      <p>热卖推荐</p>
+      <ul class="hotSale">
+        <li v-for="hot in hot_sale">
+          <img v-bind:src="hot.figure" />
+          <p>￥{{hot.cover_price}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="comm-cat">
+      <p>常用分类</p>
+      <ul class="commUl">
+        <li v-for="l in list">
+          <img v-bind:src="l.pic" />
+          <p>{{l.name}}</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
-
-
-  var mySwiper = null;
-  export default {
+import { classifyChanger } from "../vuex/action";
+var mySwiper = null;
+export default {
+  vuex:{
+    actions:{
+        classChange:classifyChanger
+    }
+  },
     data() {
         return {
           list: [],
@@ -78,7 +81,8 @@
           .then((res) => {
             this.list = res.data.result[1].child;
             // console.log(this.list);
-          })
+          });
+          this.classChange(1);
       }
   }
 </script>
