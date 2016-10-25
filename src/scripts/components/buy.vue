@@ -53,9 +53,9 @@
 </template>
 
 <script type="text/javascript">
-var Vue = require('../libs/vue.js');
-var VueResource = require('../libs/vue-resource.js');
-Vue.use(VueResource);
+import { getUserName } from '../vuex/getters';
+import { setUserName } from '../vuex/actions';;
+var timer="";
 
 export default{
    data(){
@@ -66,7 +66,16 @@ export default{
          buynum:0
       }
    },
+   vuex:{
+      actions:{
+         setName:setUserName
+      },
+      getters:{
+         getName:getUserName
+      }
+   },
    ready:function () {
+      var that=this;
       this.$http.get('/mock/buy.json').then((res)=>{
          this.buylist=res.data.goodslist;
          //计算总价格和购买件数
@@ -75,11 +84,18 @@ export default{
             this.total=this.total+this.buylist[i].total;
             this.buynum=this.buylist.length;
          }
-         setTimeout(function () {
-            new IScroll('#buy-scroll',{
-               click:true
-            });
-         },500);
+
+         let imgs=that.buylist.length*5+2;
+         //判断图片是否加载完成
+         timer=setInterval(function () {
+            if (imgs==document.getElementsByTagName('img').length) {
+               new IScroll('#buy-scroll',{
+                  click:true
+               });
+               console.log("加载完成");
+               clearInterval(timer);
+            }
+         },200);
       });
    },
    methods:{

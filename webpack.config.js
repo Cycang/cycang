@@ -23,6 +23,17 @@ module.exports = {
     port: 8080,
     color:true,
     inline: true
+    //mock的配置
+   //  proxy:{
+   //    '/rest/*':{
+   //       target:'http://localhost:8090',
+   //       secure:false,
+   //       pathRewrite:{
+   //          吧/rest开头的文件替换成‘’
+   //          '^/rest':''
+   //       }
+   //    }
+   // }
   },
 
   // 配置模块

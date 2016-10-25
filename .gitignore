@@ -1,6 +1,4 @@
 node_modules/
-bundle.css
-bundle.css.map
-bundle.js
-bundle.js.map
-images/
+
+prd/^bundles.*
+
