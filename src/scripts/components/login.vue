@@ -20,12 +20,12 @@
               <input type="text" v-model="username" class="user-name" value="" placeholder="账号">
               <input type="password" v-model="password" class="user-pwd" value="" placeholder="密码">
         </div>
-        <div class="login-entry" id="login" >
+        <div class="login-entry" id="login" v-link="tiaozhuan">
           登录
         </div>
         <div class="login-zhuce">
-          <div class="zhuce">
-            <a v-link="{path:'/zhuce'}">注册账号</a>
+          <div class="zhuce" v-link="{path:'/zhuce'}">
+            <a>注册账号</a>
           </div>
           <div class="remember">
             <a href="">忘记密码</a>
@@ -59,7 +59,8 @@
       return{
         password: '',
         username: '',
-        list: []
+        list: [],
+        tiaozhuan:''
       }
     },
     ready(){
@@ -79,7 +80,7 @@
           }
           if(istrue){
             console.log(0);
-            $("#login").attr("v-link","{path:'/my'}");
+            that.tiaozhuan="{path:'/my'}";
           }else{
             alert("用户名或密码不正确");
           }

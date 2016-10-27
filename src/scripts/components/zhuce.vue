@@ -36,7 +36,7 @@
             已有账号？点我登录
           </span>
         </div>
-        <div class="zhuce">
+        <div class="zhuce" id="zhuce">
           <span>
             注册
           </span>
@@ -50,7 +50,7 @@
       random();
       $("#yanzhengma").on("click",function(){
         random();
-      })
+      });
       function random(){
 
         var arr=[];
@@ -60,6 +60,11 @@
         }
         $("#yanzhengma i").html(arr);
       }
+      $("#zhuce").on("click",function(){
+
+      });
+
+
     }
   }
 </script>
