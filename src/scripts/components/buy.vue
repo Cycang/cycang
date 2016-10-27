@@ -9,7 +9,7 @@
       <section id="buy-scroll">
          <div>
             <ul>
-               <li v-for="item in buylist">
+               <li v-for="item in buylist" v-if="item.show">
                   <div class="part1">
                      <img v-bind:src="item.choose? '/images/sel-order.png':'/images/unsel.png'" v-on:click="choose($index)"/>
                      <h2>{{item.store}}</h2>
@@ -85,6 +85,7 @@
 import { getUserName } from '../vuex/getters';
 import { setUserName } from '../vuex/actions';;
 var timer="";
+var myScroll="";
 
 export default{
    data(){
@@ -122,7 +123,7 @@ export default{
          //判断图片是否加载完成
          timer=setInterval(function () {
             if (imgs==document.getElementsByTagName('img').length) {
-               new IScroll('#buy-scroll',{
+               myScroll=new IScroll('#buy-scroll',{
                   click:true
                });
                console.log("加载完成");
@@ -232,7 +233,14 @@ export default{
          this.chooseall=true;
       },
       delete(){
-
+         for (let i = 0; i < this.buylist.length; i++) {
+            if (!this.buylist[i].choose) {
+               this.buylist[i].show=false;
+               Vue.nextTick(function () {
+                  myScroll.refresh();
+               })
+            }
+         }
       },
       collection(){
          this.iscollect=true;
