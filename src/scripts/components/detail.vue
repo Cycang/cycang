@@ -2,26 +2,26 @@
    <div class="detail-container">
       <header>
          <img src="/images/back1.png" >
-         <h2>{{goodsInfor.result.product_info.name}}</h2>
+         <h2 v-for="item in goodsInfor">{{item.result.product_info.name}}</h2>
          <img src="/images/home.png" >
       </header>
       <section id="detail-scroll">
          <div class="scrol-container">
-            <div class="part1">
+            <div class="part1" v-for='item in goodsInfor'>
                <img src="/images/1476170715116.jpg" />
-               <p>{{goodsInfor.result.product_info.name}}</p>
-               <b>{{goodsInfor.result.product_info.price_gap_string}}</b>
+               <p>{{item.result.product_info.name}}</p>
+               <b>{{item.result.product_info.price_gap_string}}</b>
                <p>
-                  由 <i> {{goodsInfor.result.product_info.supplier_name}}</i> 发货
+                  由 <i> {{item.result.product_info.supplier_name}}</i> 发货
                </p>
             </div>
             <div class="part2">
                <h2>款式</h2>
                <ul>
-                  <li v-for="item in goodsInlor.result.stock_info"
+                  <li v-for="item in goodsInlor"
                   v-bind:class="cur==$index? 'active':''"
                   v-on:click="chooseSize($index)">
-                     {{item.attribute}}
+                     {{item.result.stock_info.attribute}}
                   </li>
                </ul>
                <div>
@@ -65,47 +65,104 @@
       <footer>
          <ul>
             <li>
-               <img src="/images/service_icon.png"  />
+               <a href="https://static.meiqia.com/dist/standalone.html?eid=17853&metadata=%7B%22%5Cu5546%5Cu54c1%5Cu94fe%5Cu63a5%22%3A%22http%3A%5C%2F%5C%2Fcycang.com%5C%2Findex.php%3Fa%3Dp%26id%3D2855%22%7D">
+               <img src="/images/service_icon.png" v-link={path:'./service'} />
                <b>联系客服</b>
+               </a>
             </li>
             <li>
-               <img src="/images/fav_not.png"  />
+               <img :src="isstore? '/images/fav_is.png' :'/images/fav_not.png'" v-on:click="store" />
                <b>收藏</b>
             </li>
             <li>
-               <img src="/images/cate-cart.png"  />
-               <b>购物车</b>
+               <img src="/images/cate-cart.png" v-link={path:'./buy'} />
+               <b>购物车(<i>{{cartnum}}</i>)</b>
             </li>
          </ul>
-         <button type="button">加入购物车</button>
+         <button type="button" v-on:click="addcart" >加入购物车</button>
       </footer>
    </div>
 </template>
 <script type="text/javascript">
-   var Vue = require('../libs/vue.js');
-   var VueResource = require('../libs/vue-resource.js');
+  import Vue from "../libs/vue.js";
+  import VueRouter from "../libs/vue-router.js";
+   import {getUserName} from '../vuex/getters';
    var myScroll=null;
-   Vue.use(VueResource);
+   var timer="";
 
    export default{
       data(){
          return{
-            goodsInfor:{},
+            name:'11',
+            goodsInfor:[],
             cur:0,
             number:1,
             more:false,
-            moreInfor:{}
+            moreInfor:{},
+            isstore:false,
+            cartnum:0
+         }
+      },
+      vuex:{
+         getters:{
+            getName:getUserName
          }
       },
       ready:function () {
-         this.$http.get('/mock/detail.json').then((res)=>{
+         var that=this;
+         this.$http.get('/mock/detail2.json').then((res)=>{
             this.goodsInfor=res.data;
-            setTimeout(function () {
-               myScroll=new IScroll('#detail-scroll',{
-                  click:true
-               });
-            },500);
+            Vue.nextTick(function () {
+               let imgs=document.getElementsByTagName('img');
+               let iscomplete=0;
+               timer=setInterval(function () {
+                  for (let i = 0; i < imgs.length; i++) {
+                     if (imgs[i].complete) {
+                        iscomplete++;
+                        if (iscomplete==imgs.length) {
+                           clearInterval(timer);
+                           myScroll=new IScroll('#detail-scroll',{
+                              probeType:3,
+                              click:true,
+                              mouseWheel: true
+                           });
+                           myScroll.on('scroll',function () {
+                              var y=this.y,
+                                  maxY=this.maxScrollY-y;
+                              // console.log(y+" "+maxY);
+                              if (maxY>=60) {
+                                 that.more=true;
+                                 that.$http.get('/mock/detail-more2.json').then((res)=>{
+                                    that.moreInfor=res.data;
+                                    Vue.nextTick(function () {
+                                       let imgs=document.getElementsByTagName('img');
+                                       let iscomplete=0;
+                                       timer=setInterval(function () {
+                                          for (var i = 0; i < imgs.length; i++) {
+                                             if (imgs[i].complete) {
+                                                iscomplete++;
+                                                if (iscomplete==imgs.length) {
+                                                   clearInterval(timer);
+                                                   myScroll.refresh();
+                                                }
+                                             }
+                                          }
+                                       },100);
+                                    });
+                                 });
+                              }
+                           });
+                        }
+                     }
+                  }
+               },100);
+            });
          });
+         this.name=this.getName;
+         if (this.name&&localStorage.getItem(name)) {
+            let goodsCart=JSON.parse(localStorage.getItem(name));
+            this.cartnum=goodsCart.goods.length;
+         }
       },
       methods:{
          chooseSize(index){
@@ -126,11 +183,60 @@
             this.more=true;
             this.$http.get('/mock/detail-more.json').then((res)=>{
                this.moreInfor=res.data;
-               console.log(res.data);
-               setTimeout(function () {
-                  myScroll.refresh();
-               },500);
+               Vue.nextTick(function () {
+                  let imgs=document.getElementsByTagName('img');
+                  let iscomplete=0;
+                  timer=setInterval(function () {
+                     for (var i = 0; i < imgs.length; i++) {
+                        if (imgs[i].complete) {
+                           iscomplete++;
+                           if (iscomplete==imgs.length) {
+                              clearInterval(timer);
+                              myScroll.refresh();
+                           }
+                        }
+                     }
+                  },100);
+               });
             });
+
+      },
+         store(){
+            this.isstore=!this.isstore;
+         },
+         //添加购物车
+         addcart(){
+            this.cartnum=this.cartnum+1;
+            //判断用户是否登录是否存在
+            if(this.name){
+               //存在此用户并且，之前添加过商品
+               if (localStorage.getItem(name)) {
+                  let flag=true;
+                     let goodsCart=JSON.parse(localStorage.getItem(name));
+                     for (var i = 0; i < goodsCart.goods.length; i++) {
+                        if (goodsCart.goods[i].id==this.goodsInfor[0].result.product_info.product_id) {
+                           goodsCart.goods[i].num+=this.number;
+                           flag=false;
+                           return;
+                        }
+                     }
+                     if (flag) {
+                        goodsCart.goods.push({id:this.goodsInfor[0].result.product_info.product_id,num:this.number});
+                     }
+                  goodsCart=JSON.stringify(goodsCart);
+                  localStorage.setItem(name,goodsCart);
+               }else {//存在此用户但是以前没有添加过商品
+                  let goodsCart={
+                     user:'',
+                     goods:[{id:-1,num:-1}]
+                  }
+                  goodsCart.user=this.name;
+                  goodsCart.goods.push({id:this.goodsInfor[0].result.product_info.product_id,num:this.number});
+                  goodsCart=JSON.stringify(goodsCart);
+                  localStorage.setItem(name,goodsCart);
+               }
+            }else {//用户没有登录
+            }
          }
       }
    }

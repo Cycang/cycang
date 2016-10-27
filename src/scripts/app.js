@@ -2,18 +2,16 @@ import "../styles/usage/page/app.scss";
 
 // views
 import index from "./components/index.vue";
-<<<<<<< HEAD
 import my from "./components/my.vue";
-import main from "./components/main.vue";
+// import main from "./components/main.vue";
 import dingdan from "./components/dingdan.vue";
 import person from "./components/person.vue";
 import login from "./components/login.vue";
 import zhuce from "./components/zhuce.vue";
-=======
+// =======
 import detail from "./components/detail.vue";
 import buy from "./components/buy.vue";
 
->>>>>>> master
 // router
 import Vue from "./libs/vue.js";
 import VueRouter from "./libs/vue-router.js";
@@ -32,18 +30,16 @@ router.map({
       '/':{
          component:buy
       },
-<<<<<<< HEAD
+// <<<<<<< HEAD
       '/my': {
         component: my,
-      }
-=======
+      },
+// =======
       '/buy': {
         component: detail
        }
     }
->>>>>>> master
-   }
- },
+   },
    '/login':{
      component:login,
    },

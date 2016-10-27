@@ -1,9 +1,1 @@
-node_modules/
-<<<<<<< HEAD
-=======
-bundle.css
-bundle.css.map
-bundle.js
-bundle.js.map
-images/
->>>>>>> master
+node_modules

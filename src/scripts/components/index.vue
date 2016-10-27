@@ -2,7 +2,6 @@
    <router-view></router-view>
 </template>
 <script>
-<<<<<<< HEAD
   export default {
     data() {
       return {
@@ -23,6 +22,6 @@
       }
     }
   }
-=======
->>>>>>> master
+// =======
+// >>>>>>> master
 </script>

@@ -1,0 +1,51 @@
+[{
+	"code": 200,
+	"msg": "\u8bf7\u6c42\u6210\u529f",
+	"result": {
+		"product_info": {
+			"product_id": "9593",
+			"channel_id": "6",
+			"brand_id": "80",
+			"p_catalog_id": "17",
+			"supplier_type": "1",
+			"supplier_code": "0",
+			"name": "\u3010\u53e4\u98ce\u539f\u521b\u3011 \u81ea\u52a8\u76f4\u67c4\u4f1e \u6674\u96e8\u4f1e \u4e91\u9e64\u6e38 \u73b0\u8d27\u5305\u90ae ",
+			"cover_price": "88.00",
+			"brief": "\u7ed8\u5e08\uff1a\u90ed\u5c0f\u5929   \u65e0\u8bba\u5ba4\u5185\u5ba4\u5916\u90fd\u8d85\u7ea7\u4ed9~",
+			"figure": "http:\/\/f.p.cycangcdn.com\/1475045805488.jpg",
+			"assoc_products": "[{\"id\":\"555\",\"attr\":\"\u9752\u7af9\u8bcd\"},{\"id\":\"554\",\"attr\":\"\u96e8\u83b2\"},{\"id\":\"9593\",\"attr\":\"\u4e91\u9e64\u6e38\"}]",
+			"sort_order": "0",
+			"sale_type": "0",
+			"sell_time_start": "1474992000",
+			"sell_time_end": "1475596800",
+			"origin_price": "88.00",
+			"supplier_name": "\u6b21\u5143\u4ed3",
+			"meiqia_ent_id": "0",
+			"tag_data": [],
+			"meiqia_ent_url": "https:\/\/static.meiqia.com\/dist\/standalone.html?eid=17853&metadata=%7B%22%5Cu5546%5Cu54c1%5Cu94fe%5Cu63a5%22%3A%22http%3A%5C%2F%5C%2Fcycang.com%5C%2Findex.php%3Fa%3Dp%26id%3D9593%22%7D",
+			"is_fav": 0,
+			"detail_url": "http:\/\/app.cycang.com\/index.php?c=product&a=detail&id=9593",
+			"price_gap_string": "\uffe588.00",
+			"total_price": "88.00"
+		},
+		"stock_info": [{
+			"sku_id": "30424",
+			"product_id": "9593",
+			"attribute": "\u4e91\u9e64\u6e38",
+			"type": "0",
+			"is_show_sell_nums": "0",
+			"pre_pay_end_time": "1475044637",
+			"final_pay_start_time": "1475044637",
+			"final_pay_end_time": "1475044637",
+			"delivery_tips": "",
+			"limit_nums": "5",
+			"min_nums": "1",
+			"price": "88.00",
+			"sell_nums": "81",
+			"final_payment": "0.00",
+			"can_sale": 1,
+			"total_price": "88.00"
+		}],
+		"gallery_info": false
+	}
+}]

@@ -20,12 +20,12 @@ module.exports = {
   // devserver配置
   devServer: {
     contentBase: __dirname + '/prd',
-<<<<<<< HEAD
-    port: 80,
-=======
+// <<<<<<< HEAD
+    // port: 80,
+// =======
     port: 8080,
     color:true,
->>>>>>> master
+// >>>>>>> master
     inline: true
   },
 
@@ -56,8 +56,8 @@ module.exports = {
     ]
   },
 
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
   //vue
   vue:{
      loaders:{
@@ -65,7 +65,7 @@ module.exports = {
         css:ET.extract('vue-style-loader','css','sass')
      }
  },
->>>>>>> master
+// >>>>>>> master
   //plugins定义
   plugins: [
     // new webpack.optimize.UglifyJsPlugin(),
