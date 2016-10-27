@@ -1,0 +1,132 @@
+.zhuce-container{
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+  @include flexbox();
+  @include flex-direction(column);
+  header{
+    width: 100%;
+    height: .45rem;
+    text-align: center;
+    position: relative;
+    background: #fff;
+
+    .header-back{
+      position: absolute;
+      width: .45rem;
+      height: .45rem;
+      float: left;
+      a{
+        width: .45rem;
+        height: .45rem;
+        display: block;
+        background: url(/images/back1.png)no-repeat center;
+        background-size: 60%;
+      }
+    }
+    span{
+      line-height: .45rem;
+      font-size: 18px;
+      color: #373a3c;
+    }
+  }
+
+  section{
+    width: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    input{
+      padding: .12rem;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      border:none;
+      border-top: 1px solid #e1e1e1;
+    }
+    .yan-phone{
+      width: 100%;
+      height: .48rem;
+    }
+    .yanzheng{
+      width: 100%;
+      height: .48rem;
+      @include flexbox();
+
+      input{
+        width: 70%;
+      }
+      .yanzhengma{
+        background: #fff;
+        width: 30%;
+        height: .48rem;
+        border-top: 1px solid #e1e1e1;
+
+        i{
+          width: 100%;
+          height: .38rem;
+          margin: 5px auto;
+          border-left: 2px solid  #e1e1e1;
+          display: block;
+          text-align: center;
+          line-height: .38rem;
+        }
+      }
+    }
+    .duanxin{
+      width: 100%;
+      height: .48rem;
+      @include flexbox();
+
+      input{
+        width: 70%;
+      }
+      .yan-duanxin{
+        background: #fff;
+        width: 30%;
+        height: .48rem;
+        border-top: 1px solid #e1e1e1;
+
+        a{
+          width: 100%;
+          height: .38rem;
+          margin: 5px auto;
+          border-left: 2px solid  #e1e1e1;
+          display: block;
+          text-align: center;
+          line-height: .38rem;
+          color: #ed3f3f;
+          font-size: 12px;
+        }
+      }
+    }
+    .password{
+      margin-top: 8px;
+    }
+
+    .yaoqingma{
+      margin-top: 8px;
+    }
+    .click-login{
+      width:3rem;
+      margin: 12px auto;
+      span{
+        float: right;
+        color: #9a9a9a;
+
+      }
+    }
+    .zhuce{
+      width: 3rem;
+      margin: 20px auto;
+      padding: 8px;
+      color: #fff;
+      background: #ed3f40;
+      text-align: center;;
+      font-size: 14px;
+      border-radius: 3px;
+
+    }
+
+  }
+
+}

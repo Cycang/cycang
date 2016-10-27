@@ -1,0 +1,238 @@
+// #my-scroll{
+// height: 524px;
+//   width: 100%;
+//   overflow: auto;
+// }
+.my-container{
+  // @include flex(1);
+  height: 100%;
+  overflow: scroll;
+  width: 100%;
+  @include flexbox();
+  @include flex-direction(column);
+  header{
+    height: 1.33rem;
+    width: 100%;
+    overflow: hidden;
+    // background: url
+    .header-tpo{
+      height: 100%;
+      background: url(/images/user_bg.png);
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(center);
+      @include align-items(center);
+      .touxiang{
+        width: .56rem;
+        height: .56rem;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+        .header-name{
+          margin-top: .12rem;
+          p{
+            font-size: .12rem;
+            color: #fff;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+  section{
+  @include flex(1);
+  @include flex-direction(column);
+  @include flexbox();
+  width: 100%;
+  background-color: #eee;
+  .dingdan{
+    width: 100%;
+    margin: .08rem 0;
+    padding-bottom: .12rem;
+    border-top: solid 1px #d8d8d8;
+    border-bottom: solid 1px #d8d8d8;
+    background-color: #fff;
+    .dingdan-top{
+      height: .48rem;
+      padding: 0 .1rem;
+      @include flexbox();
+      @include justify-content(space-between);
+      border-bottom: solid 1px #e8e8e8;
+      span{
+        display: block;
+        font-size: .16rem;
+        color: #333;
+        line-height: .48rem;
+      }
+      a{
+        display: block;
+        @include flexbox();
+        @include justify-content(space-between);
+        @include align-items(center);
+        line-height: .48rem;
+        font-size: .14rem;
+        color: #999;
+
+        i{
+          margin-left: .1rem;
+          display: block;
+          width: 0.08rem;
+          height: .12rem;
+          background: url(/images/next.png);
+          background-size: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+        .fukuan{
+      width: 100%;
+      @include flexbox();
+      @include justify-content(space-between);
+      li{
+        width: 20%;
+        @include flexbox();
+        @include flex-direction(column);
+        @include justify-content(center);
+        text-align: center;
+        i{
+
+
+          @include flexbox();
+          @include flex-direction(column);
+          @include justify-content(center);
+          @include align-items(center);
+          img{
+            width: .22rem;
+            margin-top: .16rem;
+            height: .22rem;
+          }
+          p{
+            margin-top: .05rem;
+            font-size: .14rem;
+            color: #999;
+          }
+        }
+      }
+
+    }
+  }
+
+  .my{
+    width: 100%;
+    background: #fff;
+    margin-top: .08rem 0;
+    ul{
+      width: 100%;
+      @include flexbox();
+      @include flex-direction(column);
+      li{
+        width: 100%;
+        border-bottom: 1px solid #d8d8d8;
+        a{
+          // display: -webkit-box;
+          @include flexbox();
+          span{
+            width: .22rem;
+            height: .22rem;
+            margin: .13rem .12rem;
+            display: block;
+
+          }
+          p{
+            line-height: .48rem;
+            color: #333;
+          }
+        }
+      }
+      li:nth-child(1) span{
+        background: url(/images/user_fav2.png);
+        background-size: .22rem .22rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      li:nth-child(2) span{
+        background: url(/images/user_cou2.png);
+        background-size: .22rem .22rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      li:nth-child(3) span{
+        background: url(/images/user_points2.png);
+        background-size: .22rem .22rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      li:nth-child(4) span{
+        background: url(/images/user_prz2.png);
+        background-size: .22rem .22rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      li:nth-child(5) span{
+        background: url(/images/user_addr2.png);
+        background-size: .22rem .22rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      li:nth-child(6) span{
+        background: url(/images/user_ticket2.png);
+        background-size: .22rem .22rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+    }
+  }
+
+  .kefu{
+    width: 100%;
+    background: #fff;
+    margin: .08rem 0;
+    ul{
+      width: 100%;
+      @include flexbox();
+      @include flex-direction(column);
+      li{
+        width: 100%;
+        border-bottom: 1px solid #d8d8d8;
+        a{
+          // display: -webkit-box;
+          @include flexbox();
+          span{
+            width: .22rem;
+            height: .22rem;
+            margin: .13rem .12rem;
+            display: block;
+            background: url(/images/icon_feedback.png);
+            background-size: .22rem .22rem;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+          p{
+            line-height: .48rem;
+            color: #333;
+          }
+        }
+      }
+      li:nth-child(1) span{
+        background: url(/images/icon_feedback.png);
+        background-size: .22rem .22rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      li:nth-child(2) span{
+        background: url(/images/user_service2.png);
+        background-size: .22rem .22rem;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  }
+}

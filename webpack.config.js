@@ -20,7 +20,7 @@ module.exports = {
   // devserver配置
   devServer: {
     contentBase: __dirname + '/prd',
-    port: 8080,
+    port: 90,
     inline: true
   },
 
@@ -28,7 +28,6 @@ module.exports = {
   module: {
     loaders: [
       {
-         //加载.js的loader（es6）
         test: /\.js$/,
         loader: 'babel'
       },
@@ -37,29 +36,21 @@ module.exports = {
         loader: 'style!css'
       },
       {
-         //加载.scss文件
         test: /\.scss$/,
         loader: ET.extract('style', 'css!sass')
      },
-      {
-         //加载.string文件的loader
-        test: /\.string$/,
-        loader: 'string'
-     },
+   //    },
+   //    {
+   //      test: /\.string$/,
+   //      loader: 'string'
+   //   },
        {
-         //加载.vue文件的loader
         test:/\.vue$/,
         loader:'vue'
      }
     ]
   },
 
-  //vue
-  vue:{
-     loaders:{
-        js:'babel'
-     }
- },
   //plugins定义
   plugins: [
     // new webpack.optimize.UglifyJsPlugin(),

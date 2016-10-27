@@ -1,0 +1,170 @@
+.login-container{
+  width: 100%;
+  height: 100%;
+  background: url(/images/login_bg.jpg);
+  background-size: cover;
+  @include flexbox();
+  @include flex-direction(column);
+  header{
+    width: 100%;
+    height: .45rem;
+    @include flexbox();
+    @include justify-content(space-between);
+    background: #fff;
+    .header-left{
+      width: .45rem;
+      height: .45rem;
+      a{
+        height: .45rem;
+        width: .45rem;
+        display: block;
+        background: url(/images/back1.png)no-repeat center center;
+        background-size: .3rem;
+      }
+    }
+    .header-center{
+      line-height: .45rem;
+      text-align: center;
+      font-size: 18px;
+      color: #373a3c;
+      @include flex(1);
+    }
+    .header-right{
+      width: .45rem;
+      height: .45rem;
+      a{
+        height: .45rem;
+        width: .45rem;
+        display: block;
+        background: url(/images/home.png)no-repeat center center;
+        background-size: .3rem;
+      }
+    }
+  }
+
+  section{
+    margin-top:.21rem;
+    width: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    .login{
+      width: 100%;
+      @include flexbox();
+      @include flex-direction(column);
+
+      .login-img{
+        width: 100%;
+          @include flexbox();
+          @include justify-content(center);
+        margin-bottom: .2rem;
+        img{
+          width: 60%;
+          height: 100%;
+        }
+
+      }
+
+      .login-user{
+        width: 100%;
+        @include flexbox();
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+        input{
+          display:block;
+          width: 2.98rem;
+          height: .40rem;
+          margin: 0 auto;
+          padding: .12rem;
+          border: 1px solid #e1e1e1;
+        }
+      }
+
+      .login-entry{
+        width: 3rem;
+        margin: .2rem auto;
+        color: #fff;
+        background: #ed3f40;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 3px;
+        padding:.08rem 0;
+      }
+
+      .login-zhuce{
+        width: 3rem;
+        color: #9a9a9a;
+        margin: .12rem auto;
+        overflow: hidden;
+        a{
+          font-size: 12px;
+          color: #333;
+
+        }
+        .zhuce{
+          float: left;
+          a{
+            font-size: 12px;
+            color:red;
+            text-decoration: underline;
+          }
+        }
+        .kefu{
+          float: right;
+
+        }
+        .remember{
+          float: right;
+          margin-left: .14rem;
+        }
+      }
+    }
+
+    .other-login{
+      width: 100%;
+      @include flexbox();
+      @include flex-direction(column);
+      @include align-items(center);
+      .other-title{
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #9a9a9a;
+      }
+      .other{
+      width: 2.6rem;
+      margin: .1rem auto;
+      @include flexbox();
+      li{
+        height: .4rem;
+        width: 50%;
+        background: #fff;
+        a{
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        &:nth-child(1){
+          a{
+          
+            background: url(/images/qq_icon.png)no-repeat;
+            background-size: .27rem .25rem;
+            background-position: 50% 50%;
+          }
+        }
+        &:nth-child(2){
+          a{
+
+            background: url(/images/weibo_icon.png)no-repeat;
+            background-size: .27rem .25rem;
+            background-position: 50% 50%;
+          }
+        }
+      }
+      }
+    }
+
+  }
+
+
+}

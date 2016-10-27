@@ -1,0 +1,30 @@
+{
+
+"data":  [
+    {
+      "id":0,
+      "name":"待付款",
+      "img":"/images/need_pay2.png"
+    },
+    {
+      "id":1,
+      "name":"待发货",
+      "img":"/images/need_deliver2.png"
+    },
+    {
+      "id":2,
+      "name":"待收货",
+      "img":"/images/need_get2.png"
+    },
+    {
+      "id":3,
+      "name":"已完成",
+      "img":"/images/has_complete.png"
+    },
+    {
+      "id":4,
+      "name":"退款/售后",
+      "img":"/images/need_refund2.png"
+    }
+  ]
+}

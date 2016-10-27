@@ -2,13 +2,16 @@ import "../styles/usage/page/app.scss";
 
 // views
 import index from "./components/index.vue";
+import my from "./components/my.vue";
 import main from "./components/main.vue";
-import search from "./components/search.vue";
-import detail from "./components/detail.vue";
-
+import dingdan from "./components/dingdan.vue";
+import person from "./components/person.vue";
+import login from "./components/login.vue";
+import zhuce from "./components/zhuce.vue";
 // router
 import Vue from "./libs/vue.js";
 import VueRouter from "./libs/vue-router.js";
+
 Vue.use(VueRouter);
 
 let router = new VueRouter();
@@ -23,15 +26,25 @@ router.map({
       '/': {
         component: main
       },
-      '/search': {
-        component: search
+      '/my': {
+        component: my,
       }
-    }
-   },
-   '/detail/:id':{
-      name:'goodsid',
-      component:detail
    }
+ },
+   '/login':{
+     component:login,
+   },
+   '/zhuce':{
+     component:zhuce,
+   },
+   '/person':{
+     component:person
+   },
+ '/dingdan/:id':{
+   name:'dingdan',
+   component:dingdan
+ }
+
 });
 
 router.start(App, 'body');

@@ -1,3 +1,6 @@
+body{
+  font-family: Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
 body > div {
   height: 100%;
   @include flexbox();
@@ -7,7 +10,7 @@ body > div {
 .index-container {
   @include flex(1);
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 footer {
