@@ -1,24 +1,8 @@
 <template>
-  <div>
-    <div class="index-container">
-        <router-view></router-view>
-    </div>
-    <footer id="footer">
-        <ul>
-            <li
-              v-bind:class="cur == $index ? 'active' : ''"
-              v-on:click="changPage($index)"
-              v-for="tab in tablist"
-              v-link="{path: tab.path}">
-                <i class="iconfont">{{{tab.icon}}}</i>
-                <b>{{tab.name}}</b>
-            </li>
-        </ul>
-    </footer>
-  </div>
+   <router-view></router-view>
 </template>
-
 <script>
+<<<<<<< HEAD
   export default {
     data() {
       return {
@@ -39,4 +23,6 @@
       }
     }
   }
+=======
+>>>>>>> master
 </script>

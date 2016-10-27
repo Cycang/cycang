@@ -1,0 +1,59 @@
+{
+   "goodslist":[{
+         "id":1,
+         "store":"次元仓",
+         "deliverway":"发货",
+         "isfree":0,
+         "free":8.00,
+         "img":"/images/1468463011481.jpg",
+         "name":"【宅漫周边店】柴犬doge周边 可爱萌 牛角扣学院风呢子大衣 动漫外套",
+         "size":"S码",
+         "choose":true,
+         "price":168.00,
+         "number":1,
+         "total":168.00
+      },
+      {
+            "id":1,
+            "store":"次元仓",
+            "deliverway":"发货",
+            "isfree":0,
+            "free":8.00,
+            "img":"/images/1468463011481.jpg",
+            "name":"【宅漫周边店】柴犬doge周边 可爱萌 牛角扣学院风呢子大衣 动漫外套",
+            "size":"S码",
+            "choose":true,
+            "price":168.00,
+            "number":1,
+            "total":168.00
+         },
+         {
+               "id":1,
+               "store":"次元仓",
+               "deliverway":"发货",
+               "isfree":0,
+               "free":8.00,
+               "img":"/images/1468463011481.jpg",
+               "name":"【宅漫周边店】柴犬doge周边 可爱萌 牛角扣学院风呢子大衣 动漫外套",
+               "size":"S码",
+               "choose":true,
+               "price":168.00,
+               "number":1,
+               "total":168.00
+            },
+            {
+                  "id":1,
+                  "store":"次元仓",
+                  "deliverway":"发货",
+                  "isfree":0,
+                  "free":8.00,
+                  "img":"/images/1468463011481.jpg",
+                  "name":"【宅漫周边店】柴犬doge周边 可爱萌 牛角扣学院风呢子大衣 动漫外套",
+                  "size":"S码",
+                  "choose":true,
+                  "price":168.00,
+                  "number":1,
+                  "total":168.00
+               }
+   ]
+}
