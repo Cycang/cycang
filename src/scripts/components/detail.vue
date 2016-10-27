@@ -84,6 +84,10 @@
    </div>
 </template>
 <script type="text/javascript">
+   import Vue from "../libs/vue.js";
+   var VueResource=require('../libs/vue-resource');
+   Vue.use(VueResource);
+
    import {getUserName} from '../vuex/getters';
    var myScroll=null;
    var timer="";
@@ -108,7 +112,7 @@
       },
       ready:function () {
          var that=this;
-         this.$http.get('/mock/detail2.json').then((res)=>{
+         this.$http.get('./mock/detail1.json').then((res)=>{
             this.goodsInfor=res.data;
             Vue.nextTick(function () {
                let imgs=document.getElementsByTagName('img');
@@ -130,7 +134,7 @@
                               // console.log(y+" "+maxY);
                               if (maxY>=60) {
                                  that.more=true;
-                                 that.$http.get('/mock/detail-more2.json').then((res)=>{
+                                 that.$http.get('./mock/detail-more1.json').then((res)=>{
                                     that.moreInfor=res.data;
                                     Vue.nextTick(function () {
                                        let imgs=document.getElementsByTagName('img');
@@ -179,7 +183,7 @@
          },
          loadMore(){
             this.more=true;
-            this.$http.get('/mock/detail-more.json').then((res)=>{
+            this.$http.get('./mock/detail-more1.json').then((res)=>{
                this.moreInfor=res.data;
                Vue.nextTick(function () {
                   let imgs=document.getElementsByTagName('img');

@@ -82,6 +82,10 @@
 </template>
 
 <script type="text/javascript">
+import Vue from "../libs/vue.js";
+var VueResource=require('../libs/vue-resource');
+Vue.use(VueResource);
+
 import { getUserName } from '../vuex/getters';
 import { setUserName } from '../vuex/actions';;
 var timer="";
