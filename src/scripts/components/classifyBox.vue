@@ -3,7 +3,7 @@
   ">
     <header class="classifyHeader">
       <ul>
-        <li v-bind:class="cur == $index ? 'active' : ''"
+        <li v-bind:class="classifyCur == $index ? 'active' : ''"
         v-on:click="changPage($index)"
         v-for="tab in tablist"
         v-link="{path:tab.path}"
@@ -21,7 +21,7 @@
 export default {
   data() {
     return {
-      cur: 0,
+      classifyCur: 0,
       classifyIndex: 0,
       tablist: [
         {path: '/',name:'分类'},
@@ -32,7 +32,7 @@ export default {
 
   methods: {
     changPage(i) {
-      this.cur = i;
+      this.classifyCur = i;
     }
   }
 }

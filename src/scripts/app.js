@@ -17,6 +17,7 @@ import classifyHome from "./components/classifyHome.vue";
 import classifyStationery from "./components/classifyStationery.vue";
 import classifyNumeral from "./components/classifyNumeral.vue";
 import classifyPlay from "./components/classifyPlay.vue";
+import live from "./components/live.vue";
 
 import commonUtil from "./utils/commonUtil.js";
 commonUtil.dirScroll();
@@ -79,8 +80,11 @@ router.map({
           '/label':{
             component:label
           }
-        },
-      }
+        }
+      },
+    '/live':{
+      component:live
+    }
   //   }
   // }
 });
