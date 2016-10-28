@@ -30,13 +30,13 @@ let App = Vue.extend({
 });
 
 router.map({
-  // '/': {
-  //   component: index,
+  '/': {
+    component: index
   //   subRoutes: {
   //     '/': {
   //       component: main
-  //     },
-      '/': {
+      },
+      '/classify': {
         component: classifyBox,
         subRoutes:{
           '/':{
