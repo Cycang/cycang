@@ -11,17 +11,15 @@ import zhuce from "./components/zhuce.vue";
 // =======
 import detail from "./components/detail.vue";
 import buy from "./components/buy.vue";
-<<<<<<< HEAD
 
 // router
 import Vue from "./libs/vue.js";
 import VueRouter from "./libs/vue-router.js";
 
 Vue.use(VueRouter);
-=======
 import service from './components/service.vue';
 import store from './vuex/store';
->>>>>>> e5ccc15fb26bcf1acdaa26df9cd5fecd4270f8f7
+
 
 let router = new VueRouter();
 
@@ -44,7 +42,7 @@ router.map({
       },
 // <<<<<<< HEAD
       '/my': {
-        component: my,
+        component: my
       },
 // =======
       '/buy': {
@@ -53,10 +51,10 @@ router.map({
     }
    },
    '/login':{
-     component:login,
+     component:login
    },
    '/zhuce':{
-     component:zhuce,
+     component:zhuce
    },
    '/person':{
      component:person
@@ -65,7 +63,6 @@ router.map({
    name:'dingdan',
    component:dingdan
  }
-
 });
 
 router.start(App, 'body');

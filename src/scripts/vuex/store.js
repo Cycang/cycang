@@ -1,3 +1,6 @@
+import Vue from '../libs/vue.js';
+import Vuex from '../libs/vuex.min.js';
+Vue.use(Vuex);
 const state={
    userName:''
 };

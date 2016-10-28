@@ -655,7 +655,6 @@ body {
   height: 100%; }
 
 body {
-<<<<<<< HEAD
   font-family: Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif; }
 
 body > div {
@@ -1573,8 +1572,6 @@ footer {
       border-radius: 3px; }
 
 body {
-=======
->>>>>>> e5ccc15fb26bcf1acdaa26df9cd5fecd4270f8f7
   background: white;
   font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   body .detail-container {
@@ -1844,8 +1841,6 @@ body {
           justify-content: center;
           box-sizing: border-box;
           height: 100%; }
-<<<<<<< HEAD
-=======
           body .detail-container footer ul li a {
             display: -webkit-box;
             display: -webkit-flex;
@@ -1857,18 +1852,14 @@ body {
             -webkit-box-align: center;
             -webkit-align-items: center;
             align-items: center; }
->>>>>>> e5ccc15fb26bcf1acdaa26df9cd5fecd4270f8f7
           body .detail-container footer ul li img {
             width: 21px;
             height: 20px; }
           body .detail-container footer ul li b {
             color: #333;
             font-size: 12px; }
-<<<<<<< HEAD
-=======
             body .detail-container footer ul li b i {
               color: #ec3f3f; }
->>>>>>> e5ccc15fb26bcf1acdaa26df9cd5fecd4270f8f7
       body .detail-container footer button {
         -webkit-box-flex: 2;
         -webkit-flex: 2;
@@ -1890,8 +1881,6 @@ body {
   height: 100%;
   width: 100%;
   font-family: Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif; }
-<<<<<<< HEAD
-=======
   .buy-container .yo-dialog {
     position: absolute;
     left: 50%;
@@ -1904,7 +1893,6 @@ body {
       color: black; }
     .buy-container .yo-dialog .ft button {
       font-size: 14px; }
->>>>>>> e5ccc15fb26bcf1acdaa26df9cd5fecd4270f8f7
   .buy-container header {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2088,8 +2076,6 @@ body {
       flex: 1.5;
       width: .1px;
       background-color: #ec3f3f; }
-<<<<<<< HEAD
-=======
     .buy-container footer .deleteorcollect {
       text-align: right; }
       .buy-container footer .deleteorcollect button {
@@ -2323,6 +2309,5 @@ body {
 /**
  * yo-mask扩展
  */
->>>>>>> e5ccc15fb26bcf1acdaa26df9cd5fecd4270f8f7
 
 /*# sourceMappingURL=bundle.css.map*/

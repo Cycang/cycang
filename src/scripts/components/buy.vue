@@ -82,12 +82,9 @@
 </template>
 
 <script type="text/javascript">
-<<<<<<< HEAD
 
 import Vue from "../libs/vue.js";
 import VueRouter from "../libs/vue-router.js";
-=======
->>>>>>> e5ccc15fb26bcf1acdaa26df9cd5fecd4270f8f7
 import { getUserName } from '../vuex/getters';
 import { setUserName } from '../vuex/actions';;
 var timer="";
