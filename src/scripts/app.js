@@ -11,7 +11,6 @@ import zhuce from "./components/zhuce.vue";
 // =======
 import detail from "./components/detail.vue";
 import buy from "./components/buy.vue";
-
 // router
 import Vue from "./libs/vue.js";
 import VueRouter from "./libs/vue-router.js";
