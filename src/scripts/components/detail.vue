@@ -84,8 +84,11 @@
    </div>
 </template>
 <script type="text/javascript">
+
   import Vue from "../libs/vue.js";
   import VueRouter from "../libs/vue-router.js";
+
+
    import {getUserName} from '../vuex/getters';
    var myScroll=null;
    var timer="";
@@ -124,6 +127,7 @@
                            myScroll=new IScroll('#detail-scroll',{
                               probeType:3,
                               click:true,
+                              
                               mouseWheel: true
                            });
                            myScroll.on('scroll',function () {

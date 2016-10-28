@@ -18,9 +18,15 @@ import VueRouter from "./libs/vue-router.js";
 
 Vue.use(VueRouter);
 
+import service from './components/service.vue';
+import store from './vuex/store';
+
+
 let router = new VueRouter();
 
-let App = Vue.extend({});
+let App = Vue.extend({
+   store:store
+});
 
 router.map({
   '/': {
@@ -28,23 +34,28 @@ router.map({
     //配置子路由 ，“/”是自动进入的路由页面
     subRoutes: {
       '/':{
-         component:buy
+         component:detail,
+         subRoutes:{
+            '/service':{
+               component:service
+            }
+         }
       },
 // <<<<<<< HEAD
       '/my': {
-        component: my,
+        component: my
       },
 // =======
       '/buy': {
-        component: detail
+        component: buy
        }
     }
    },
    '/login':{
-     component:login,
+     component:login
    },
    '/zhuce':{
-     component:zhuce,
+     component:zhuce
    },
    '/person':{
      component:person
