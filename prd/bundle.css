@@ -2309,5 +2309,223 @@ body {
 /**
  * yo-mask扩展
  */
+body > div {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
+
+#classify {
+  width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  width: .1px;
+  display: flex; }
+
+.classifyHeader {
+  width: 100%;
+  height: 51px;
+  border-bottom: 0.5px solid #d8d8d8; }
+  .classifyHeader ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white; }
+    .classifyHeader ul li {
+      width: 63px;
+      height: 38px;
+      border: 0.5px solid #ed3f3f;
+      text-align: center;
+      line-height: 38px; }
+      .classifyHeader ul li:nth-child(1) {
+        border-radius: 40% 0 0 40%; }
+      .classifyHeader ul li:nth-child(2) {
+        border-radius: 0 40% 40% 0; }
+      .classifyHeader ul li.active {
+        background: #ed3f3f;
+        color: white; }
+
+.classifySectionBox {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  width: .1px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+  .classifySectionBox .classifySection {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background: white; }
+    .classifySectionBox .classifySection .shopUl {
+      -webkit-box-flex: 2;
+      -webkit-flex: 2;
+      flex: 2;
+      width: .1px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: #eee; }
+      .classifySectionBox .classifySection .shopUl li {
+        height: 9.1%;
+        width: 100%;
+        padding-top: 4%;
+        text-align: center;
+        line-height: 48px;
+        border: 0.5px solid #d8d8d8; }
+        .classifySectionBox .classifySection .shopUl li.active {
+          background: white;
+          color: #ed3f3f;
+          border: none; }
+    .classifySectionBox .classifySection div {
+      -webkit-box-flex: 5;
+      -webkit-flex: 5;
+      flex: 5;
+      width: .1px;
+      padding: 5px; }
+      .classifySectionBox .classifySection div .scrollbox {
+        width: 100%; }
+        .classifySectionBox .classifySection div .scrollbox .hot-sale {
+          width: 100%;
+          height: 30%;
+          display: flex;
+          flex-direction: column; }
+          .classifySectionBox .classifySection div .scrollbox .hot-sale p {
+            display: block;
+            width: 100%;
+            height: 50px;
+            line-height: 50px; }
+          .classifySectionBox .classifySection div .scrollbox .hot-sale .hotSale {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row; }
+            .classifySectionBox .classifySection div .scrollbox .hot-sale .hotSale li {
+              width: 33%;
+              height: 100%;
+              display: flex;
+              flex-direction: column; }
+              .classifySectionBox .classifySection div .scrollbox .hot-sale .hotSale li img {
+                width: 100%;
+                height: 80%; }
+              .classifySectionBox .classifySection div .scrollbox .hot-sale .hotSale li p {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: #666;
+                font-size: 16px; }
+        .classifySectionBox .classifySection div .scrollbox .comm-cat {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column; }
+          .classifySectionBox .classifySection div .scrollbox .comm-cat p {
+            display: block;
+            width: 100%;
+            height: 50px;
+            line-height: 50px; }
+          .classifySectionBox .classifySection div .scrollbox .comm-cat .commUl {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap; }
+            .classifySectionBox .classifySection div .scrollbox .comm-cat .commUl li {
+              width: 33%;
+              height: 25%; }
+              .classifySectionBox .classifySection div .scrollbox .comm-cat .commUl li img {
+                width: 100%;
+                height: 80%; }
+              .classifySectionBox .classifySection div .scrollbox .comm-cat .commUl li p {
+                width: 100%;
+                height: 100%;
+                display: block;
+                font-size: 12px;
+                text-align: center;
+                color: #555; }
+
+#label-scroll {
+  width: 100%;
+  height: 100%;
+  background: white; }
+  #label-scroll ul {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    #label-scroll ul li {
+      width: 28%;
+      height: 80px;
+      display: block;
+      border-radius: 50%;
+      margin-top: 20px;
+      text-align: center;
+      line-height: 80px;
+      font-size: 12px;
+      background: url("/images/tag-border.png") no-repeat center;
+      background-size: contain; }
+      #label-scroll ul li.class1 {
+        color: #f2a421; }
+      #label-scroll ul li.class2 {
+        color: #47a4e2; }
+      #label-scroll ul li.class3 {
+        color: #ee7790; }
+
+.liveBox {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: columns;
+  flex-direction: columns; }
+
+.liveBoxHeader {
+  height: 44px;
+  background: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 20px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; }
+  .liveBoxHeader span {
+    display: block;
+    width: 10%;
+    height: 100%;
+    background: red; }
+  .liveBoxHeader ul {
+    width: 50%;
+    height: 100%;
+    background: blue;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex; }
+    .liveBoxHeader ul li {
+      width: 33%;
+      text-align: center;
+      line-height: 44px; }
+
+.liveBoxNav {
+  width: 100%;
+  height: 20%; }
+  .liveBoxNav img {
+    width: 100%;
+    height: 100%; }
+
+.liveBoxSection {
+  padding: 10px;
+  height: auto; }
 
 /*# sourceMappingURL=bundle.css.map*/

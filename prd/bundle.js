@@ -88,15 +88,78 @@
 	
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 	
-	var _service = __webpack_require__(30);
+	var _classifyBox = __webpack_require__(30);
+	
+	var _classifyBox2 = _interopRequireDefault(_classifyBox);
+	
+	var _classify = __webpack_require__(33);
+	
+	var _classify2 = _interopRequireDefault(_classify);
+	
+	var _label = __webpack_require__(37);
+	
+	var _label2 = _interopRequireDefault(_label);
+	
+	var _classifySkirt = __webpack_require__(40);
+	
+	var _classifySkirt2 = _interopRequireDefault(_classifySkirt);
+	
+	var _classifyJacket = __webpack_require__(43);
+	
+	var _classifyJacket2 = _interopRequireDefault(_classifyJacket);
+	
+	var _classifyPants = __webpack_require__(47);
+	
+	var _classifyPants2 = _interopRequireDefault(_classifyPants);
+	
+	var _classifyCoat = __webpack_require__(50);
+	
+	var _classifyCoat2 = _interopRequireDefault(_classifyCoat);
+	
+	var _classifyParts = __webpack_require__(53);
+	
+	var _classifyParts2 = _interopRequireDefault(_classifyParts);
+	
+	var _classifyBag = __webpack_require__(56);
+	
+	var _classifyBag2 = _interopRequireDefault(_classifyBag);
+	
+	var _classifyAttire = __webpack_require__(59);
+	
+	var _classifyAttire2 = _interopRequireDefault(_classifyAttire);
+	
+	var _classifyHome = __webpack_require__(62);
+	
+	var _classifyHome2 = _interopRequireDefault(_classifyHome);
+	
+	var _classifyStationery = __webpack_require__(65);
+	
+	var _classifyStationery2 = _interopRequireDefault(_classifyStationery);
+	
+	var _classifyNumeral = __webpack_require__(68);
+	
+	var _classifyNumeral2 = _interopRequireDefault(_classifyNumeral);
+	
+	var _classifyPlay = __webpack_require__(71);
+	
+	var _classifyPlay2 = _interopRequireDefault(_classifyPlay);
+	
+	var _live = __webpack_require__(74);
+	
+	var _live2 = _interopRequireDefault(_live);
+	
+	var _service = __webpack_require__(77);
 	
 	var _service2 = _interopRequireDefault(_service);
 	
-	var _store = __webpack_require__(32);
+	var _store = __webpack_require__(79);
 	
 	var _store2 = _interopRequireDefault(_store);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	_vue2.default.use(_vueRouter2.default);
+	//zxp
 	
 	// router
 	
@@ -106,7 +169,6 @@
 	
 	
 	// views
-	_vue2.default.use(_vueRouter2.default);
 	
 	
 	var router = new _vueRouter2.default();
@@ -150,6 +212,55 @@
 	  '/dingdan/:id': {
 	    name: 'dingdan',
 	    component: _dingdan2.default
+	  },
+	  '/classifyBox': {
+	    component: _classifyBox2.default,
+	    subRoutes: {
+	      '/': {
+	        component: _classify2.default,
+	        subRoutes: {
+	          '/': {
+	            component: _classifySkirt2.default
+	          },
+	          "/classifyJacket": {
+	            component: _classifyJacket2.default
+	          },
+	          "/classifyPants": {
+	            component: _classifyPants2.default
+	          },
+	          "/classifyCoat": {
+	            component: _classifyCoat2.default
+	          },
+	          "/classifyParts": {
+	            component: _classifyParts2.default
+	          },
+	          "/classifyBag": {
+	            component: _classifyBag2.default
+	          },
+	          "/classifyAttire": {
+	            component: _classifyAttire2.default
+	          },
+	          "/classifyHome": {
+	            component: _classifyHome2.default
+	          },
+	          "/classifyStationery": {
+	            component: _classifyStationery2.default
+	          },
+	          "/classifyNumeral": {
+	            component: _classifyNumeral2.default
+	          },
+	          "/classifyPlay": {
+	            component: _classifyPlay2.default
+	          }
+	        }
+	      },
+	      '/label': {
+	        component: _label2.default
+	      }
+	    }
+	  },
+	  '/live': {
+	    component: _live2.default
 	  }
 	});
 	
@@ -8122,6 +8233,10 @@
 	var getUserName = exports.getUserName = function getUserName(state) {
 	  return state.userName;
 	};
+	var getTabindex = exports.getTabindex = function getTabindex(state) {
+	  return state.classifyIndex;
+	  //  console.log(state.classifyIndex);
+	};
 
 /***/ },
 /* 25 */
@@ -8447,13 +8562,19 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	   value: true
+	  value: true
 	});
 	var isLogined = exports.isLogined = function isLogined(_ref, userName) {
-	   var dispath = _ref.dispath;
-	   var state = _ref.state;
+	  var dispath = _ref.dispath;
+	  var state = _ref.state;
 	
-	   dispath('ISLOHIGED', userName);
+	  dispath('ISLOHIGED', userName);
+	};
+	var classifyChanger = exports.classifyChanger = function classifyChanger(_ref2, classifyIndex) {
+	  var dispatch = _ref2.dispatch;
+	  var state = _ref2.state;
+	
+	  dispatch('CLASSIFYCHANGETAB', classifyIndex);
 	};
 
 /***/ },
@@ -8467,7 +8588,1915 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(31)
+	__vue_script__ = __webpack_require__(31)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyBox.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(32)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyBox.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 31 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//   <div id="classify
+	//   ">
+	//     <header class="classifyHeader">
+	//       <ul>
+	//         <li v-bind:class="classifyCur == $index ? 'active' : ''"
+	//         v-on:click="changPage($index)"
+	//         v-for="tab in tablist"
+	//         v-link="{path:tab.path}"
+	//         >{{tab.name}}</li>
+	//       </ul>
+	//     </header>
+	//     <section class="classifySectionBox">
+	//       <router-view>
+	//
+	//       </router-view>
+	//     </section>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  data: function data() {
+	    return {
+	      classifyCur: 0,
+	      classifyIndex: 0,
+	      tablist: [{ path: '/classifyBox', name: '分类' }, { path: '/classifyBox/label', name: '标签' }]
+	    };
+	  },
+	
+	
+	  methods: {
+	    changPage: function changPage(i) {
+	      this.classifyCur = i;
+	    }
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 32 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div id=\"classify\n\">\n  <header class=\"classifyHeader\">\n    <ul>\n      <li v-bind:class=\"classifyCur == $index ? 'active' : ''\"\n      v-on:click=\"changPage($index)\"\n      v-for=\"tab in tablist\"\n      v-link=\"{path:tab.path}\"\n      >{{tab.name}}</li>\n    </ul>\n  </header>\n  <section class=\"classifySectionBox\">\n    <router-view>\n\n    </router-view>\n  </section>\n</div>\n";
+
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(34)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classify.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(36)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classify.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _vue = __webpack_require__(7);
+	
+	var _vue2 = _interopRequireDefault(_vue);
+	
+	var _commonUtil = __webpack_require__(35);
+	
+	var _commonUtil2 = _interopRequireDefault(_commonUtil);
+	
+	var _actions = __webpack_require__(28);
+	
+	var _getters = __webpack_require__(24);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//   <div class="classifySection">
+	//     <ul class="shopUl">
+	//       <li v-for="shop in shoplist" v-bind:class="classindex == $index ? 'active' : ''"
+	//       v-on:click="changShop($index)" v-link="{path:shop.path}">{{shop.name}}</li>
+	//     </ul>
+	//     <div id="classify-scroll">
+	//         <router-view></router-view>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    getters: {
+	      classindex: _getters.getTabindex
+	    },
+	    actions: {
+	      classChange: _actions.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      shoplist: [{ name: '小裙子', path: '/classifyBox/' }, { name: '上衣', path: '/classifyBox/classifyJacket' }, { name: '下装', path: '/classifyBox/classifyPants' }, { name: '外套', path: '/classifyBox/classifyCoat' }, { name: '配件', path: '/classifyBox/classifyParts' }, { name: '包包', path: '/classifyBox/classifyBag' }, { name: '装扮', path: '/classifyBox/classifyAttire' }, { name: '居家宅品', path: '/classifyBox/classifyHome' }, { name: '办公文具', path: '/classifyBox/classifyStationery' }, { name: '数码周边', path: '/classifyBox/classifyNumeral' }, { name: '游戏专区', path: '/classifyBox/classifyPlay' }]
+	    };
+	  },
+	
+	  ready: function ready() {
+	    _vue2.default.nextTick(function () {
+	      _commonUtil2.default.isAlloaded('#classify-scroll', function () {
+	        new IScroll('#classify-scroll', {
+	          click: true
+	        });
+	      });
+	    });
+	  },
+	
+	  methods: {
+	    changShop: function changShop(i) {
+	      // this.bur = i;
+	    }
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 35 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var commonUtil = {
+	  render: function render(str) {
+	    var container = document.querySelector('body');
+	    container.innerHTML = str + container.innerHTML;
+	  },
+	  isAlloaded: function isAlloaded(scope, cb) {
+	    var t_img; //定时器
+	    var isLoad = true; //控制变量
+	    //判断图片的加载情况，加载完成后回调
+	    return isImgLoad(cb);
+	    //判断图片加载的函数
+	    function isImgLoad(callback) {
+	      //查找所有的图片 迭代处理
+	      $(scope).find('img').each(function () {
+	        //找到为0就将isload设false 并退出each
+	        if (this.height === 0) {
+	          isLoad = false;
+	          return false;
+	        }
+	      });
+	      // 为true 没有发现为0的 加载完成
+	      if (isLoad) {
+	        clearTimeout(t_img); //清除定时器
+	        // 回调
+	        callback(scope);
+	        //为false 因为找到了没有加载完成的图 将调用定时器地鬼
+	      } else {
+	        isLoad = true;
+	        t_img = setTimeout(function () {
+	          isImgLoad(callback); //递归扫描
+	        }, 500); //
+	      }
+	    }
+	  },
+	  dirScroll: function dirScroll() {
+	    var that = this;
+	    // 自定义指令
+	    Vue.directive('scroll', function (value) {
+	      if (value) {
+	        that.isAllLoaded('#classify-scroll', function () {
+	          new IScroll(value);
+	        });
+	      }
+	    });
+	  }
+	};
+	
+	exports.default = commonUtil;
+
+/***/ },
+/* 36 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"classifySection\">\n  <ul class=\"shopUl\">\n    <li v-for=\"shop in shoplist\" v-bind:class=\"classindex == $index ? 'active' : ''\"\n    v-on:click=\"changShop($index)\" v-link=\"{path:shop.path}\">{{shop.name}}</li>\n  </ul>\n  <div id=\"classify-scroll\">\n      <router-view></router-view>\n  </div>\n</div>\n";
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(38)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\label.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(39)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./label.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 38 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//   <div id="label-scroll">
+	//     <ul>
+	//       <li v-for="l in list" class="{{l.group}}">
+	//         <p>{{l.tittle}}</p>
+	//       </li>
+	//     </ul>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  data: function data() {
+	    return {
+	      list: [{ "tittle": "喵星人", "group": "class1" }, { "tittle": "次元仓", "group": "class2" }, { "tittle": "星河动漫", "group": "class3" }, { "tittle": "A3原创洋装店", "group": "class2" }, { "tittle": "世界线的彼岸", "group": "class3" }, { "tittle": "一方尘寰", "group": "class1" }, { "tittle": "彩虹堂正品动漫", "group": "class3" }, { "tittle": "amovo魔吻", "group": "class1" }, { "tittle": "SYS艺术说", "group": "class2" }, { "tittle": "石头人工作室", "group": "class1" }, { "tittle": "Funko", "group": "class2" }, { "tittle": "十里丹青", "group": "class3" }, { "tittle": "创一文化", "group": "class2" }, { "tittle": "亚蒙兔家", "group": "class3" }, { "tittle": "宇宙电波", "group": "class1" }, { "tittle": "禹屋原创", "group": "class3" }, { "tittle": "符豚甲胄", "group": "class1" }, { "tittle": "能量天使", "group": "class2" }, { "tittle": "上海简菲", "group": "class1" }, { "tittle": "chairball原创设", "group": "class2" }, { "tittle": "砚池工作室", "group": "class3" }, { "tittle": "云落秋池", "group": "class2" }, { "tittle": "十一宫", "group": "class3" }, { "tittle": "长草颜文字", "group": "class1" }, { "tittle": "网易游戏", "group": "class3" }, { "tittle": "ISOS", "group": "class1" }, { "tittle": "绝对萌域", "group": "class2" }, { "tittle": "雪猫一族", "group": "class1" }, { "tittle": "天闻角川", "group": "class2" }, { "tittle": "静悦坊", "group": "class3" }]
+	    };
+	  },
+	
+	  ready: function ready() {
+	    setTimeout(function () {
+	      new IScroll('#label-scroll');
+	    }, 500);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 39 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div id=\"label-scroll\">\n  <ul>\n    <li v-for=\"l in list\" class=\"{{l.group}}\">\n      <p>{{l.tittle}}</p>\n    </li>\n  </ul>\n</div>\n";
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(41)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifySkirt.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(42)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifySkirt.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _actions = __webpack_require__(28);
+	
+	var mySwiper = null;
+	// console.log(classifyChanger);
+	// <template>
+	//   <div class="scrollbox">
+	//
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure"/>
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic"/>
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _actions.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      currentTabindex: 0,
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[0].child;
+	      // console.log(this.list);
+	    });
+	    this.classChange(0);
+	    // console.log(classifyIndex);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 42 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(44)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyJacket.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(46)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyJacket.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[1].child;
+	      // console.log(this.list);
+	    });
+	    this.classChange(1);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 45 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var classifyChanger = exports.classifyChanger = function classifyChanger(_ref, classifyIndex) {
+	  var dispatch = _ref.dispatch;
+	  var state = _ref.state;
+	
+	  dispatch('CLASSIFYCHANGETAB', classifyIndex);
+	};
+	//子路有引用入口
+
+/***/ },
+/* 46 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 47 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(48)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyPants.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(49)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyPants.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 48 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[2].child;
+	      // console.log(this.list);
+	    });
+	    this.classChange(2);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 49 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 50 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(51)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyCoat.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(52)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyCoat.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 51 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[3].child;
+	      // console.log(this.list);
+	    });
+	    this.classChange(3);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 52 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 53 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(54)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyParts.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(55)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyParts.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 54 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[4].child;
+	      // console.log(this.list);
+	    });
+	    this.classChange(4);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 55 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 56 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(57)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyBag.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(58)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyBag.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 57 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//     <div class="scrollbox">
+	//       <div class="hot-sale">
+	//         <p>热卖推荐</p>
+	//         <ul class="hotSale">
+	//           <li v-for="hot in hot_sale">
+	//             <img v-bind:src="hot.figure"/>
+	//             <p>￥{{hot.cover_price}}</p>
+	//           </li>
+	//         </ul>
+	//       </div>
+	//       <div class="comm-cat">
+	//         <p>常用分类</p>
+	//         <ul class="commUl">
+	//           <li v-for="l in list">
+	//             <img v-bind:src="l.pic"/>
+	//             <p>{{l.name}}</p>
+	//           </li>
+	//         </ul>
+	//       </div>
+	//     </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[5].child;
+	    });
+	    this.classChange(5);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 58 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 59 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(60)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyAttire.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(61)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyAttire.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 60 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//     <div class="scrollbox">
+	//       <div class="hot-sale">
+	//         <p>热卖推荐</p>
+	//         <ul class="hotSale">
+	//           <li v-for="hot in hot_sale">
+	//             <img v-bind:src="hot.figure"/>
+	//             <p>￥{{hot.cover_price}}</p>
+	//           </li>
+	//         </ul>
+	//       </div>
+	//       <div class="comm-cat">
+	//         <p>常用分类</p>
+	//         <ul class="commUl">
+	//           <li v-for="l in list">
+	//             <img v-bind:src="l.pic"/>
+	//             <p>{{l.name}}</p>
+	//           </li>
+	//         </ul>
+	//       </div>
+	//     </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[6].child;
+	    });
+	    this.classChange(6);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 61 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 62 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(63)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyHome.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(64)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyHome.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[7].child;
+	      // console.log(this.list);
+	    });
+	    this.classChange(7);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 64 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(66)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyStationery.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(67)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyStationery.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[8].child;
+	      // console.log(this.list);
+	    });
+	    this.classChange(8);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 67 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(69)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyNumeral.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(70)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyNumeral.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[9].child;
+	      // console.log(this.list);
+	    });
+	    this.classChange(9);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 70 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 71 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(72)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\classifyPlay.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(73)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./classifyPlay.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _action = __webpack_require__(45);
+	
+	var mySwiper = null; // <template>
+	//   <div class="scrollbox">
+	//     <div class="hot-sale">
+	//       <p>热卖推荐</p>
+	//       <ul class="hotSale">
+	//         <li v-for="hot in hot_sale">
+	//           <img v-bind:src="hot.figure" />
+	//           <p>￥{{hot.cover_price}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//     <div class="comm-cat">
+	//       <p>常用分类</p>
+	//       <ul class="commUl">
+	//         <li v-for="l in list">
+	//           <img v-bind:src="l.pic" />
+	//           <p>{{l.name}}</p>
+	//         </li>
+	//       </ul>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  vuex: {
+	    actions: {
+	      classChange: _action.classifyChanger
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      list: [],
+	      hot_sale: [{
+	        "product_id": "2704",
+	        "channel_id": "6",
+	        "brand_id": "230",
+	        "p_catalog_id": "3",
+	        "supplier_type": "1",
+	        "supplier_code": "0",
+	        "name": "中华风lolita -山海经 凤凰图 JSK",
+	        "cover_price": "300.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1447239453626.jpg",
+	        "sell_time_start": "1447171200",
+	        "sell_time_end": "1447776000"
+	      }, {
+	        "product_id": "3571",
+	        "channel_id": "8",
+	        "brand_id": "259",
+	        "p_catalog_id": "12",
+	        "supplier_type": "2",
+	        "supplier_code": "1801005",
+	        "name": "【INFANTA.婴梵塔】学院风尖领外套/大衣",
+	        "cover_price": "287.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1450433177397.jpg",
+	        "sell_time_start": "1450368000",
+	        "sell_time_end": "1450972800"
+	      }, {
+	        "product_id": "5181",
+	        "channel_id": "6",
+	        "brand_id": "394",
+	        "p_catalog_id": "10",
+	        "supplier_type": "2",
+	        "supplier_code": "1101037",
+	        "name": "【画影】汉元素 古风日常—— 仲夏 ",
+	        "cover_price": "250.00",
+	        "brief": "",
+	        "figure": "http://f.p.cycangcdn.com/1457504361484.jpg",
+	        "sell_time_start": "1457452800",
+	        "sell_time_end": "1458057600"
+	      }]
+	    };
+	  },
+	
+	
+	  ready: function ready() {
+	    var _this = this;
+	
+	    var that = this;
+	    this.$http.get('/mock/classify.json').then(function (res) {
+	      _this.list = res.data.result[10].child;
+	      // console.log(this.list);
+	    });
+	    this.classChange(10);
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 73 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
+
+/***/ },
+/* 74 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(75)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\live.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(76)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./live.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 75 */
+/***/ function(module, exports) {
+
+	// <template>
+	//   <div class="livBox">
+	//     <header class="liveBoxHeader">
+	//       <span></span>
+	//       <ul>
+	//         <li>直播</li>
+	//         <li>新帖</li>
+	//         <li>热帖</li>
+	//       </ul>
+	//       <span></span>
+	//     </header>
+	//     <nav class="liveBoxNav">
+	//       <img src="/images/1.png" alt="">
+	//     </nav>
+	//     <section class="liveBoxSection">
+	//
+	//     </section>
+	//   </div>
+	// </template>
+	// <script>
+
+	// </script>
+
+	/* generated by vue-loader */
+	"use strict";
+
+/***/ },
+/* 76 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"livBox\">\n  <header class=\"liveBoxHeader\">\n    <span></span>\n    <ul>\n      <li>直播</li>\n      <li>新帖</li>\n      <li>热帖</li>\n    </ul>\n    <span></span>\n  </header>\n  <nav class=\"liveBoxNav\">\n    <img src=\"/images/1.png\" alt=\"\">\n  </nav>\n  <section class=\"liveBoxSection\">\n\n  </section>\n</div>\n";
+
+/***/ },
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_template__ = __webpack_require__(78)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -8486,13 +10515,13 @@
 	})()}
 
 /***/ },
-/* 31 */
+/* 78 */
 /***/ function(module, exports) {
 
 	module.exports = "\nservice\n";
 
 /***/ },
-/* 32 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8505,20 +10534,24 @@
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _vuexMin = __webpack_require__(33);
+	var _vuexMin = __webpack_require__(80);
 	
 	var _vuexMin2 = _interopRequireDefault(_vuexMin);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_vue2.default.ues(_vuexMin2.default);
+	_vue2.default.use(_vuexMin2.default);
 	var state = {
-	   userName: ''
+	   userName: '',
+	   classifyIndex: ''
 	};
 	
 	var mutations = {
 	   ISLOHIGED: function ISLOHIGED(state, userName) {
 	      state.userName = userName;
+	   },
+	   CLASSIFYCHANGETAB: function CLASSIFYCHANGETAB(state, currentTabindex) {
+	      state.classifyIndex = currentTabindex;
 	   }
 	};
 	
@@ -8528,7 +10561,7 @@
 	});
 
 /***/ },
-/* 33 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;"use strict";
