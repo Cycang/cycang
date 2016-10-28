@@ -11,16 +11,23 @@ import zhuce from "./components/zhuce.vue";
 // =======
 import detail from "./components/detail.vue";
 import buy from "./components/buy.vue";
+<<<<<<< HEAD
 
 // router
 import Vue from "./libs/vue.js";
 import VueRouter from "./libs/vue-router.js";
 
 Vue.use(VueRouter);
+=======
+import service from './components/service.vue';
+import store from './vuex/store';
+>>>>>>> e5ccc15fb26bcf1acdaa26df9cd5fecd4270f8f7
 
 let router = new VueRouter();
 
-let App = Vue.extend({});
+let App = Vue.extend({
+   store:store
+});
 
 router.map({
   '/': {
@@ -28,7 +35,12 @@ router.map({
     //配置子路由 ，“/”是自动进入的路由页面
     subRoutes: {
       '/':{
-         component:buy
+         component:detail,
+         subRoutes:{
+            '/service':{
+               component:service
+            }
+         }
       },
 // <<<<<<< HEAD
       '/my': {
@@ -36,7 +48,7 @@ router.map({
       },
 // =======
       '/buy': {
-        component: detail
+        component: buy
        }
     }
    },

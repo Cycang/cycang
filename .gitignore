@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 node_modules
+=======
+node_modules/
+
+prd/^bundles.*
+
+>>>>>>> e5ccc15fb26bcf1acdaa26df9cd5fecd4270f8f7
