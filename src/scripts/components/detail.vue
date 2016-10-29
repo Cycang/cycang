@@ -89,7 +89,6 @@
    import {getUserName} from '../vuex/getters';
    var myScroll=null;
    var timer="";
-
    export default{
       data(){
          return{
@@ -199,7 +198,6 @@
                   },100);
                });
             });
-
       },
          store(){
             this.isstore=!this.isstore;
