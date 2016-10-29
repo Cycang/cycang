@@ -1,7 +1,12 @@
 import "../styles/usage/page/app.scss";
 
+import commonUtil from "./utils/commonUtil.js";
+
 // views
+import guide from "./components/guide.vue";
 import index from "./components/index.vue";
+import main from "./components/main.vue";
+import list from "./components/list.vue";
 import my from "./components/my.vue";
 // import main from "./components/main.vue";
 import dingdan from "./components/dingdan.vue";
@@ -38,94 +43,103 @@ import store from './vuex/store';
 let router = new VueRouter();
 
 let App = Vue.extend({
-   store:store
+   store: store
 });
 
 router.map({
   '/': {
-    component: index,
+    component: guide,
+  },
     //配置子路由 ，“/”是自动进入的路由页面
-    subRoutes: {
-      '/':{
-         component:detail,
-         subRoutes:{
-            '/service':{
-               component:service
-            }
-         }
+    '/index':{
+       component:index,
+       subRoutes:{
+         '/': {
+           component: main
+         },
+          '/service':{
+            component:service
+        },
+        '/buy': {
+          component: buy
+        },
+        '/my': {
+          component: my
+        },
+        '/classifyBox': {
+             component: classifyBox,
+             subRoutes:{
+               '/':{
+                 component:classify,
+                 subRoutes:{
+                   '/':{
+                     component:classifySkirt
+                   },
+                   "/classifyJacket":{
+                     component:classifyJacket
+                   },
+                   "/classifyPants":{
+                     component:classifyPants
+                   },
+                   "/classifyCoat":{
+                     component:classifyCoat
+                   },
+                   "/classifyParts":{
+                     component:classifyParts
+                   },
+                   "/classifyBag":{
+                     component:classifyBag
+                   },
+                   "/classifyAttire":{
+                     component:classifyAttire
+                   },
+                   "/classifyHome":{
+                     component:classifyHome
+                   },
+                   "/classifyStationery":{
+                     component:classifyStationery
+                   },
+                   "/classifyNumeral":{
+                     component:classifyNumeral
+                   },
+                   "/classifyPlay":{
+                     component:classifyPlay
+                   }
+                 }
+               }
+      }
       },
+      '/list': {
+        component: list
+      },
+
+
 // <<<<<<< HEAD
-      '/my': {
-        component: my
-      },
+
 // =======
-      '/buy': {
-        component: buy
-       }
-    }
-   },
+
+
+
    '/login':{
      component:login
    },
    '/zhuce':{
      component:zhuce
    },
+
+          '/label':{
+            component:label
+          }
+        }
+      },
+
    '/person':{
      component:person
    },
  '/dingdan/:id':{
    name:'dingdan',
    component:dingdan
- },
- '/classifyBox': {
-        component: classifyBox,
-        subRoutes:{
-          '/':{
-            component:classify,
-            subRoutes:{
-              '/':{
-                component:classifySkirt
-              },
-              "/classifyJacket":{
-                component:classifyJacket
-              },
-              "/classifyPants":{
-                component:classifyPants
-              },
-              "/classifyCoat":{
-                component:classifyCoat
-              },
-              "/classifyParts":{
-                component:classifyParts
-              },
-              "/classifyBag":{
-                component:classifyBag
-              },
-              "/classifyAttire":{
-                component:classifyAttire
-              },
-              "/classifyHome":{
-                component:classifyHome
-              },
-              "/classifyStationery":{
-                component:classifyStationery
-              },
-              "/classifyNumeral":{
-                component:classifyNumeral
-              },
-              "/classifyPlay":{
-                component:classifyPlay
-              }
-            }
-          },
-          '/label':{
-            component:label
-          }
-        }
-      },
-    '/live':{
-      component:live
-    }
+ }
 });
 
 router.start(App, 'body');

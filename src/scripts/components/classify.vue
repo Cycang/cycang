@@ -12,7 +12,7 @@
 <script>
 import Vue from "../libs/vue.js";
 import commonUtil from "../utils/commonUtil";
-import { classifyChanger } from "../vuex/action";
+import { classifyChanger } from "../vuex/actions";
 import { getTabindex } from "../vuex/getters";
 export default {
   vuex :{
@@ -41,6 +41,7 @@ export default {
     }
   },
   ready: function() {
+    this.classChange(1);
     Vue.nextTick(function(){
       commonUtil.isAlloaded('#classify-scroll',function(){
         new IScroll('#classify-scroll',{

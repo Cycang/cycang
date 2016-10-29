@@ -115,13 +115,25 @@
   var VueResource = require('../libs/vue-resource.js');
   Vue.use(VueResource);
 
+  import {changeIndex} from '../vuex/actions';
+  import {getIndex} from '../vuex/getters';
+
   export default{
+    vuex: {
+      getters: {
+        curIndex: getIndex
+      },
+      actions: {
+        change: changeIndex
+      }
+    },
     data(){
       return{
         list:[]
       }
     },
     ready: function(){
+      this.change(4);
       var that =this;
       this.$http.get('/mock/my-lsit.json')
       .then((res)=>{

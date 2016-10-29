@@ -1,6 +1,3 @@
-export const isLogined=({dispath,state},userName)=>{
-   dispath('ISLOHIGED',userName)
-};
-export const classifyChanger = function({dispatch, state}, classifyIndex) {
-  dispatch('CLASSIFYCHANGETAB', classifyIndex);
+export const tabChange = function({dispatch,state}, tabIndex) {
+  dispatch('CHANGETAB', tabIndex);
 };

@@ -1,3 +1,4 @@
+import Vue from "../libs/vue.js";
 let commonUtil = {
   render(str) {
     let container = document.querySelector('body');
@@ -43,6 +44,7 @@ let commonUtil = {
         }
     });
   }
+
 };
 
 export default commonUtil;

@@ -48,111 +48,123 @@
 	
 	__webpack_require__(1);
 	
-	var _index = __webpack_require__(2);
+	var _commonUtil = __webpack_require__(2);
+	
+	var _commonUtil2 = _interopRequireDefault(_commonUtil);
+	
+	var _index = __webpack_require__(4);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	var _my = __webpack_require__(5);
+	var _main = __webpack_require__(7);
+	
+	var _main2 = _interopRequireDefault(_main);
+	
+	var _list = __webpack_require__(10);
+	
+	var _list2 = _interopRequireDefault(_list);
+	
+	var _my = __webpack_require__(13);
 	
 	var _my2 = _interopRequireDefault(_my);
 	
-	var _dingdan = __webpack_require__(10);
+	var _dingdan = __webpack_require__(17);
 	
 	var _dingdan2 = _interopRequireDefault(_dingdan);
 	
-	var _person = __webpack_require__(13);
+	var _person = __webpack_require__(20);
 	
 	var _person2 = _interopRequireDefault(_person);
 	
-	var _login = __webpack_require__(15);
+	var _login = __webpack_require__(22);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	var _zhuce = __webpack_require__(18);
+	var _zhuce = __webpack_require__(25);
 	
 	var _zhuce2 = _interopRequireDefault(_zhuce);
 	
-	var _detail = __webpack_require__(21);
+	var _detail = __webpack_require__(28);
 	
 	var _detail2 = _interopRequireDefault(_detail);
 	
-	var _buy = __webpack_require__(26);
+	var _buy = __webpack_require__(33);
 	
 	var _buy2 = _interopRequireDefault(_buy);
 	
-	var _vue = __webpack_require__(7);
+	var _vue = __webpack_require__(3);
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _vueRouter = __webpack_require__(23);
+	var _vueRouter = __webpack_require__(30);
 	
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 	
-	var _classifyBox = __webpack_require__(30);
+	var _classifyBox = __webpack_require__(37);
 	
 	var _classifyBox2 = _interopRequireDefault(_classifyBox);
 	
-	var _classify = __webpack_require__(33);
+	var _classify = __webpack_require__(40);
 	
 	var _classify2 = _interopRequireDefault(_classify);
 	
-	var _label = __webpack_require__(37);
+	var _label = __webpack_require__(44);
 	
 	var _label2 = _interopRequireDefault(_label);
 	
-	var _classifySkirt = __webpack_require__(40);
+	var _classifySkirt = __webpack_require__(47);
 	
 	var _classifySkirt2 = _interopRequireDefault(_classifySkirt);
 	
-	var _classifyJacket = __webpack_require__(43);
+	var _classifyJacket = __webpack_require__(50);
 	
 	var _classifyJacket2 = _interopRequireDefault(_classifyJacket);
 	
-	var _classifyPants = __webpack_require__(47);
+	var _classifyPants = __webpack_require__(53);
 	
 	var _classifyPants2 = _interopRequireDefault(_classifyPants);
 	
-	var _classifyCoat = __webpack_require__(50);
+	var _classifyCoat = __webpack_require__(56);
 	
 	var _classifyCoat2 = _interopRequireDefault(_classifyCoat);
 	
-	var _classifyParts = __webpack_require__(53);
+	var _classifyParts = __webpack_require__(59);
 	
 	var _classifyParts2 = _interopRequireDefault(_classifyParts);
 	
-	var _classifyBag = __webpack_require__(56);
+	var _classifyBag = __webpack_require__(62);
 	
 	var _classifyBag2 = _interopRequireDefault(_classifyBag);
 	
-	var _classifyAttire = __webpack_require__(59);
+	var _classifyAttire = __webpack_require__(65);
 	
 	var _classifyAttire2 = _interopRequireDefault(_classifyAttire);
 	
-	var _classifyHome = __webpack_require__(62);
+	var _classifyHome = __webpack_require__(68);
 	
 	var _classifyHome2 = _interopRequireDefault(_classifyHome);
 	
-	var _classifyStationery = __webpack_require__(65);
+	var _classifyStationery = __webpack_require__(71);
 	
 	var _classifyStationery2 = _interopRequireDefault(_classifyStationery);
 	
-	var _classifyNumeral = __webpack_require__(68);
+	var _classifyNumeral = __webpack_require__(74);
 	
 	var _classifyNumeral2 = _interopRequireDefault(_classifyNumeral);
 	
-	var _classifyPlay = __webpack_require__(71);
+	var _classifyPlay = __webpack_require__(77);
 	
 	var _classifyPlay2 = _interopRequireDefault(_classifyPlay);
 	
-	var _live = __webpack_require__(74);
+	var _live = __webpack_require__(80);
 	
 	var _live2 = _interopRequireDefault(_live);
 	
-	var _service = __webpack_require__(77);
+	var _service = __webpack_require__(83);
 	
 	var _service2 = _interopRequireDefault(_service);
 	
-	var _store = __webpack_require__(79);
+	var _store = __webpack_require__(85);
 	
 	var _store2 = _interopRequireDefault(_store);
 	
@@ -182,14 +194,15 @@
 	    component: _index2.default,
 	    //配置子路由 ，“/”是自动进入的路由页面
 	    subRoutes: {
-	      '/': {
-	        component: _detail2.default,
+	      '/index': {
+	        component: _main2.default,
 	        subRoutes: {
 	          '/service': {
 	            component: _service2.default
 	          }
 	        }
 	      },
+	
 	      // <<<<<<< HEAD
 	      '/my': {
 	        component: _my2.default
@@ -199,6 +212,9 @@
 	        component: _buy2.default
 	      }
 	    }
+	  },
+	  '/list': {
+	    component: _list2.default
 	  },
 	  '/login': {
 	    component: _login2.default
@@ -276,245 +292,69 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(3)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src\\scripts\\components\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(4)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "./index.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
-	//    <router-view></router-view>
-	// </template>
-	// <script>
-	exports.default = {
-	  data: function data() {
-	    return {
-	      cur: 0,
-	      tablist: [{ path: '/', icon: '&#xe6bb;', name: '首页' }, { path: '/search', icon: '&#xe65c;', name: '发现' }, { path: '/photo', icon: '&#xe664;', name: '' }, { path: '/login', icon: '&#xe735;', name: '我的' }, { path: '/exit', icon: '&#xe603;', name: '退出' }]
-	    };
+	
+	var _vue = __webpack_require__(3);
+	
+	var _vue2 = _interopRequireDefault(_vue);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var commonUtil = {
+	  render: function render(str) {
+	    var container = document.querySelector('body');
+	    container.innerHTML = str + container.innerHTML;
 	  },
-	
-	
-	  methods: {
-	    changPage: function changPage(i) {
-	      this.cur = i;
+	  isAlloaded: function isAlloaded(scope, cb) {
+	    var t_img; //定时器
+	    var isLoad = true; //控制变量
+	    //判断图片的加载情况，加载完成后回调
+	    return isImgLoad(cb);
+	    //判断图片加载的函数
+	    function isImgLoad(callback) {
+	      //查找所有的图片 迭代处理
+	      $(scope).find('img').each(function () {
+	        //找到为0就将isload设false 并退出each
+	        if (this.height === 0) {
+	          isLoad = false;
+	          return false;
+	        }
+	      });
+	      // 为true 没有发现为0的 加载完成
+	      if (isLoad) {
+	        clearTimeout(t_img); //清除定时器
+	        // 回调
+	        callback(scope);
+	        //为false 因为找到了没有加载完成的图 将调用定时器地鬼
+	      } else {
+	        isLoad = true;
+	        t_img = setTimeout(function () {
+	          isImgLoad(callback); //递归扫描
+	        }, 500); //
+	      }
 	    }
-	  }
-	};
-	// =======
-	// >>>>>>> master
-	// </script>
-
-	/* generated by vue-loader */
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<router-view></router-view>\n";
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(6)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src\\scripts\\components\\my.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(9)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "./my.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	// <template>
-	//   <!-- <div id="my-scroll"> -->
-	//     <div class="my-container" >
-	//     <!--头部  -->
-	//     <header>
-	//       <div class="header-tpo">
-	//         <div class="touxiang" v-link="{path:'/person'}"><img src="/images/user_icon.png"  alt=""/></div>
-	//         <div class="header-name"><p>未命名的小仓</p></div>
-	//       </div>
-	//     </header>
-	//     <!--内容  -->
-	//     <section>
-	//       <!--我的订单  -->
-	//       <div class="dingdan">
-	//
-	//         <div class="dingdan-top"  v-link="{name:'dingdan',params:{id: 0}}">
-	//           <span>我的订单</span>
-	//           <a href="#">查看全部订单<i></i></a>
-	//         </div>
-	//
-	//         <ul class="fukuan">
-	//           <li v-for="li in list" v-link="{name:'dingdan',params:{id: li.id}}">
-	//             <i>
-	//               <img v-bind:src="li.img" alt="" />
-	//               <p>{{li.name}}</p>
-	//             </i>
-	//           </li>
-	//
-	//         </ul>
-	//       </div>
-	//
-	//       <!--收货地址等  -->
-	//       <div class="my">
-	//         <ul>
-	//           <li>
-	//             <a href="#">
-	//               <span></span>
-	//               <p>
-	//                 我的收藏
-	//               </p>
-	//             </a>
-	//           </li>
-	//           <li>
-	//             <a href="#">
-	//               <span></span>
-	//               <p>
-	//                 我的收藏
-	//               </p>
-	//             </a>
-	//           </li>
-	//           <li>
-	//             <a href="#">
-	//               <span></span>
-	//               <p>
-	//                 我的收藏
-	//               </p>
-	//             </a>
-	//           </li>
-	//           <li>
-	//             <a href="#">
-	//               <span></span>
-	//               <p>
-	//                 我的收藏
-	//               </p>
-	//             </a>
-	//           </li>
-	//           <li>
-	//             <a href="#">
-	//               <span></span>
-	//               <p>
-	//                 我的收藏
-	//               </p>
-	//             </a>
-	//           </li>
-	//           <li>
-	//             <a href="#">
-	//               <span></span>
-	//               <p>
-	//                 我的收藏
-	//               </p>
-	//             </a>
-	//           </li>
-	//         </ul>
-	//       </div>
-	//
-	//       <!--邀请  -->
-	//       <div class="kefu">
-	//         <ul>
-	//           <li>
-	//             <a href="#">
-	//               <span></span>
-	//               <p>
-	//                 我的收藏
-	//               </p>
-	//             </a>
-	//           </li>
-	//           <li>
-	//             <a href="#">
-	//               <span></span>
-	//               <p>
-	//                 我的收藏
-	//               </p>
-	//             </a>
-	//           </li>
-	//         </ul>
-	//       </div>
-	//       <!-- 退出登录 -->
-	//       <div class="exit"></div>
-	//     </section>
-	//   <!-- </div> -->
-	//   </div>
-	// </template>
-	// <script>
-	var Vue = __webpack_require__(7);
-	var VueResource = __webpack_require__(8);
-	Vue.use(VueResource);
-	
-	exports.default = {
-	  data: function data() {
-	    return {
-	      list: []
-	    };
 	  },
-	
-	  ready: function ready() {
+	  dirScroll: function dirScroll() {
 	    var that = this;
-	    this.$http.get('/mock/my-lsit.json').then(function (res) {
-	      that.list = res.data.data;
-	      console.log(res.data.data);
+	    // 自定义指令
+	    _vue2.default.directive('scroll', function (value) {
+	      if (value) {
+	        that.isAllLoaded('#classify-scroll', function () {
+	          new IScroll(value);
+	        });
+	      }
 	    });
 	  }
 	};
-	// </script>
-
-	/* generated by vue-loader */
+	
+	exports.default = commonUtil;
 
 /***/ },
-/* 7 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};/*!
@@ -3270,7 +3110,636 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(5)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\index.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(6)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-a15c1122/index.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//   <div>
+	//     <div class="index-container">
+	//         <router-view></router-view>
+	//     </div>
+	//     <footer id="footer" class="index-footer">
+	//         <ul>
+	//             <li
+	//                v-bind:class="cur == $index ? 'active' : ''"
+	//               v-on:click="changPage($index)"
+	//               v-for="tab in tablist"
+	//               v-link="{path: tab.path}">
+	//                 <i></i>
+	//                 <b>{{tab.name}}</b>
+	//             </li>
+	//         </ul>
+	//     </footer>
+	//   </div>
+	// </template>
+	//
+	// <script>
+	exports.default = {
+	  data: function data() {
+	    return {
+	      cur: 0,
+	      tablist: [{ path: '/index', name: '首页' }, { path: '/index/search', name: '分类' }, { path: '/index/photo', name: '吱吱' }, { path: '/index/my', name: '购物车' }, { path: '/', name: '个人中心' }]
+	    };
+	  },
+	
+	
+	  methods: {
+	    changPage: function changPage(i) {
+	      this.cur = i;
+	    }
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div>\n  <div class=\"index-container\">\n      <router-view></router-view>\n  </div>\n  <footer id=\"footer\" class=\"index-footer\">\n      <ul>\n          <li\n             v-bind:class=\"cur == $index ? 'active' : ''\"\n            v-on:click=\"changPage($index)\"\n            v-for=\"tab in tablist\"\n            v-link=\"{path: tab.path}\">\n              <i></i>\n              <b>{{tab.name}}</b>\n          </li>\n      </ul>\n  </footer>\n</div>\n";
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(8)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\main.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(9)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-17282a2c/main.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
 /* 8 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//   <div class="main-container">
+	//     <header  class="main-header">
+	//       <div class="main-search">
+	//         <span></span>
+	//         <input type="text" placeholder="请输入关键字" name="name" value="">
+	//       </div>
+	//     </header>
+	//     <section>
+	//       <div class="main-scroll">
+	//         <div class="c_banner-wrap">
+	//           <div class="swiper-container" id="banner-swiper">
+	//           <div class="swiper-wrapper">
+	//             <div class="swiper-slide" v-for="banner in bannerInfo"><img v-bind:src="banner.image" alt="" /></div>
+	//           </div>
+	//           <div class="swiper-pagination"></div>
+	//         </div>
+	//         </div>
+	//
+	//         <div class="cyc_nav">
+	//           <dl class="nav-dl"v-link="{path: '/list'}" v-for="ch in channelInfo">
+	//             <dt><img v-bind:src="ch.image" alt="" /></dt>
+	//             <dd>{{ch.channel_name}}</dd>
+	//           </dl>
+	//         </div>
+	//         <div class="c_act_wrap">
+	//           <div class="swiper-container" id="act-swiper">
+	//             <div class="swiper-wrapper">
+	//               <div class="swiper-slide" v-for="a in actInfo"><img v-bind:src="a.icon_url" alt="" /></div>
+	//             </div>
+	//           </div>
+	//         </div>
+	//         <div class="seckill-floor">
+	//           <div class="title-wrap">
+	//             <span class="title">
+	//               <span class="title-name"> 闪购-距结束</span>
+	//               <span class="cyc_seckill_time">
+	//                 <i class="hour">13:</i>
+	//                 <i class="minute">20:</i>
+	//                 <i class="seconds">24</i>
+	//               </span>
+	//             </span>
+	//             <span class="cyc_more">查看更多</span>
+	//           </div>
+	//           <div class="seckill-slide">
+	//             <div class="seckill-slide-box">
+	//               <div class="seckill-slide-scroll">
+	//                 <dl class="seckill-slide-dl" v-for="s in seckillInfo">
+	//                   <dt><img v-bind:src="s.figure" alt="" /></dt>
+	//                   <dd>
+	//                     <b class="seckill-cover_price">￥{{s.cover_price}}</b>
+	//                     <i class="seckill-origin_price">￥{{s.origin_price}}</i>
+	//                   </dd>
+	//                 </dl>
+	//               </div>
+	//             </div>
+	//           </div>
+	//         </div>
+	//         <div class="hot-sale-floor">
+	//           <div class="title-wrap">
+	//             <span class="title">
+	//               新品推荐
+	//             </span>
+	//             <span class="cyc_more">查看更多</span>
+	//           </div>
+	//           <div class="hot-sale-box">
+	//             <dl class="hot-sale-dl" v-for="h in hotInfo">
+	//               <dt><img v-bind:src="h.figure" alt="" /></dt>
+	//               <dd>
+	//                 <span>{{h.name}}</span>
+	//                 <b>￥{{h.cover_price}}</b>
+	//               </dd>
+	//             </dl>
+	//           </div>
+	//         </div>
+	//         <div class="cyc_hot_title-wrap">
+	//           <span class="title">
+	//             这里都是卖得棒棒哒
+	//           </span>
+	//           <span class="cyc_more"></span>
+	//         </div>
+	//         <div class="hot-good-floor">
+	//           <dl v-for="r in recommendInfo">
+	//             <dt><img v-bind:src="r.figure" alt="" /></dt>
+	//             <dd>
+	//               <span>{{r.name}}</span>
+	//               <b>￥{{r.cover_price}}</b>
+	//             </dd>
+	//           </dl>
+	//         </div>
+	//       </div>
+	//     </section>
+	//   </div>
+	// </template>
+	//
+	// <script type="text/javascript">
+	
+	var banSwiper = null,
+	    actSwiper = null;
+	exports.default = {
+	  data: function data() {
+	    return {
+	      bannerInfo: [],
+	      channelInfo: [],
+	      actInfo: [],
+	      seckillInfo: [],
+	      hotInfo: [],
+	      recommendInfo: []
+	    };
+	  },
+	  ready: function ready() {
+	    var that = this;
+	    this.$http.get('/mock/main.json').then(function (res) {
+	      that.bannerInfo = res.data.result.banner_info;
+	      that.channelInfo = res.data.result.channel_info;
+	      that.actInfo = res.data.result.act_info;
+	      that.seckillInfo = res.data.result.seckill_info.list;
+	      that.hotInfo = res.data.result.hot_info;
+	      that.recommendInfo = res.data.result.recommend_info;
+	      banSwiper = new Swiper('#banner-swiper', {
+	        loop: true,
+	        autoplay: 3000,
+	        pagination: '.swiper-pagination'
+	      });
+	
+	      actSwiper = new Swiper('#act-swiper', {
+	        loop: true,
+	        autoplay: 2000,
+	        pagination: '.swiper-pagination'
+	      });
+	    });
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"main-container\">\n  <header  class=\"main-header\">\n    <div class=\"main-search\">\n      <span></span>\n      <input type=\"text\" placeholder=\"请输入关键字\" name=\"name\" value=\"\">\n    </div>\n  </header>\n  <section>\n    <div class=\"main-scroll\">\n      <div class=\"c_banner-wrap\">\n        <div class=\"swiper-container\" id=\"banner-swiper\">\n        <div class=\"swiper-wrapper\">\n          <div class=\"swiper-slide\" v-for=\"banner in bannerInfo\"><img v-bind:src=\"banner.image\" alt=\"\" /></div>\n        </div>\n        <div class=\"swiper-pagination\"></div>\n      </div>\n      </div>\n\n      <div class=\"cyc_nav\">\n        <dl class=\"nav-dl\"v-link=\"{path: '/list'}\" v-for=\"ch in channelInfo\">\n          <dt><img v-bind:src=\"ch.image\" alt=\"\" /></dt>\n          <dd>{{ch.channel_name}}</dd>\n        </dl>\n      </div>\n      <div class=\"c_act_wrap\">\n        <div class=\"swiper-container\" id=\"act-swiper\">\n          <div class=\"swiper-wrapper\">\n            <div class=\"swiper-slide\" v-for=\"a in actInfo\"><img v-bind:src=\"a.icon_url\" alt=\"\" /></div>\n          </div>\n        </div>\n      </div>\n      <div class=\"seckill-floor\">\n        <div class=\"title-wrap\">\n          <span class=\"title\">\n            <span class=\"title-name\"> 闪购-距结束</span>\n            <span class=\"cyc_seckill_time\">\n              <i class=\"hour\">13:</i>\n              <i class=\"minute\">20:</i>\n              <i class=\"seconds\">24</i>\n            </span>\n          </span>\n          <span class=\"cyc_more\">查看更多</span>\n        </div>\n        <div class=\"seckill-slide\">\n          <div class=\"seckill-slide-box\">\n            <div class=\"seckill-slide-scroll\">\n              <dl class=\"seckill-slide-dl\" v-for=\"s in seckillInfo\">\n                <dt><img v-bind:src=\"s.figure\" alt=\"\" /></dt>\n                <dd>\n                  <b class=\"seckill-cover_price\">￥{{s.cover_price}}</b>\n                  <i class=\"seckill-origin_price\">￥{{s.origin_price}}</i>\n                </dd>\n              </dl>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"hot-sale-floor\">\n        <div class=\"title-wrap\">\n          <span class=\"title\">\n            新品推荐\n          </span>\n          <span class=\"cyc_more\">查看更多</span>\n        </div>\n        <div class=\"hot-sale-box\">\n          <dl class=\"hot-sale-dl\" v-for=\"h in hotInfo\">\n            <dt><img v-bind:src=\"h.figure\" alt=\"\" /></dt>\n            <dd>\n              <span>{{h.name}}</span>\n              <b>￥{{h.cover_price}}</b>\n            </dd>\n          </dl>\n        </div>\n      </div>\n      <div class=\"cyc_hot_title-wrap\">\n        <span class=\"title\">\n          这里都是卖得棒棒哒\n        </span>\n        <span class=\"cyc_more\"></span>\n      </div>\n      <div class=\"hot-good-floor\">\n        <dl v-for=\"r in recommendInfo\">\n          <dt><img v-bind:src=\"r.figure\" alt=\"\" /></dt>\n          <dd>\n            <span>{{r.name}}</span>\n            <b>￥{{r.cover_price}}</b>\n          </dd>\n        </dl>\n      </div>\n    </div>\n  </section>\n</div>\n";
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(11)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\list.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(12)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-67ddda91/list.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//   <div class="list-container">
+	//     <div class="list-top">
+	//       <header class="list-header">
+	//         <i class="list-back" v-link="{path: '/index'}"></i>
+	//         <div class="list-search">
+	//           <span></span>
+	//           <input type="text" placeholder="请输入关键字" name="name" value="">
+	//         </div>
+	//         <i class="list-home" v-link="{path: '/index'}"></i>
+	//       </header>
+	//       <div class="list-nav">
+	//         <span @click="changeList" class="{{cur==0?'active':''}}" data-index = "0">综合排序</span>
+	//         <span @click="sortPrice" class="{{cur==1?'active':''}}" data-index = "1">价格<i></i></span>
+	//         <select v-model="selected" @change="selectPrice" class="{{cur==2?'active':''}}" data-index = "2" class="nav-select">
+	//           <option selected>筛选</option>
+	//           <option v-for="o in options">{{o}}</option>
+	//         </select>
+	//       </div>
+	//     </div>
+	//     <div class="list-scroll">
+	//       <div class="scroll-box">
+	//         <dl v-for="l in list">
+	//           <dt><img v-bind:src="l.figure" alt="" /></dt>
+	//           <dd>
+	//             <span>{{l.name}}</span>
+	//             <b>￥{{l.cover_price}}</b>
+	//           </dd>
+	//         </dl>
+	//       </div>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script type="text/javascript">
+	
+	exports.default = {
+	  data: function data() {
+	    return {
+	      cur: 0,
+	      list: [],
+	      copyList: [],
+	      counter: 0,
+	      options: ["0-15", "15-30", "30-50", "50-70", "70-100", "100以上"],
+	      selected: '',
+	      hanPri: [],
+	      tenPri: []
+	    };
+	  },
+	  ready: function ready() {
+	    var that = this;
+	    this.$http.get('/mock/list.json').then(function (res) {
+	      that.list = res.data.result.page_data;
+	    });
+	
+	    $.each(this.list, function (i, value) {
+	      that.copyList.push(value);
+	    });
+	  },
+	
+	
+	  methods: {
+	    changeList: function changeList(e) {
+	      this.cur = e.target.dataset.index;
+	    },
+	    sortPrice: function sortPrice(e) {
+	      var that = this;
+	      this.cur = e.target.dataset.index;
+	      $.each(this.copyList, function (i, value) {
+	        that.list.push(value);
+	      });
+	
+	      if (this.counter % 2 == 0) {
+	        this.list.sort(function (a, b) {
+	          return a.cover_price - b.cover_price;
+	        });
+	        this.counter++;
+	      } else {
+	        this.list.sort(function (a, b) {
+	          return b.cover_price - a.cover_price;
+	        });
+	        this.counter++;
+	      }
+	    },
+	    selectPrice: function selectPrice(e) {
+	      var that = this;
+	      this.cur = e.target.dataset.index;
+	      $.each(this.copyList, function (i, value) {
+	        that.list.push(value);
+	      });
+	      var priStr = this.selected;
+	      var lnum, fnum;
+	      if (priStr == "100以上") {
+	        fnum = priStr.substr(0, 3);
+	        $.each(this.list, function (i, value) {
+	          if (value >= 100) {
+	            that.hanPri.push(value);
+	          }
+	        });
+	        $.each(this.hanPri, function (i, value) {
+	          that.list.push(value);
+	        });
+	      } else {
+	        fnum = priStr.substr(0, 2);
+	        var index = priStr.indexOf('-');
+	        lnum = priStr.substring(index + 1, priStr.length);
+	        $.each(this.list, function (i, value) {
+	          if (value >= 100) {
+	            that.tenPri.push(value);
+	          }
+	        });
+	        $.each(this.tenPri, function (i, value) {
+	          that.list.push(value);
+	        });
+	      }
+	    }
+	  }
+	
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"list-container\">\n  <div class=\"list-top\">\n    <header class=\"list-header\">\n      <i class=\"list-back\" v-link=\"{path: '/index'}\"></i>\n      <div class=\"list-search\">\n        <span></span>\n        <input type=\"text\" placeholder=\"请输入关键字\" name=\"name\" value=\"\">\n      </div>\n      <i class=\"list-home\" v-link=\"{path: '/index'}\"></i>\n    </header>\n    <div class=\"list-nav\">\n      <span @click=\"changeList\" class=\"{{cur==0?'active':''}}\" data-index = \"0\">综合排序</span>\n      <span @click=\"sortPrice\" class=\"{{cur==1?'active':''}}\" data-index = \"1\">价格<i></i></span>\n      <select v-model=\"selected\" @change=\"selectPrice\" class=\"{{cur==2?'active':''}}\" data-index = \"2\" class=\"nav-select\">\n        <option selected>筛选</option>\n        <option v-for=\"o in options\">{{o}}</option>\n      </select>\n    </div>\n  </div>\n  <div class=\"list-scroll\">\n    <div class=\"scroll-box\">\n      <dl v-for=\"l in list\">\n        <dt><img v-bind:src=\"l.figure\" alt=\"\" /></dt>\n        <dd>\n          <span>{{l.name}}</span>\n          <b>￥{{l.cover_price}}</b>\n        </dd>\n      </dl>\n    </div>\n  </div>\n</div>\n";
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(14)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\scripts\\components\\my.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(16)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-28ac4942/my.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//   <!-- <div id="my-scroll"> -->
+	//     <div class="my-container" >
+	//     <!--头部  -->
+	//     <header>
+	//       <div class="header-tpo">
+	//         <div class="touxiang" v-link="{path:'/person'}"><img src="/images/user_icon.png"  alt=""/></div>
+	//         <div class="header-name"><p>未命名的小仓</p></div>
+	//       </div>
+	//     </header>
+	//     <!--内容  -->
+	//     <section>
+	//       <!--我的订单  -->
+	//       <div class="dingdan">
+	//
+	//         <div class="dingdan-top"  v-link="{name:'dingdan',params:{id: 0}}">
+	//           <span>我的订单</span>
+	//           <a href="#">查看全部订单<i></i></a>
+	//         </div>
+	//
+	//         <ul class="fukuan">
+	//           <li v-for="li in list" v-link="{name:'dingdan',params:{id: li.id}}">
+	//             <i>
+	//               <img v-bind:src="li.img" alt="" />
+	//               <p>{{li.name}}</p>
+	//             </i>
+	//           </li>
+	//
+	//         </ul>
+	//       </div>
+	//
+	//       <!--收货地址等  -->
+	//       <div class="my">
+	//         <ul>
+	//           <li>
+	//             <a href="#">
+	//               <span></span>
+	//               <p>
+	//                 我的收藏
+	//               </p>
+	//             </a>
+	//           </li>
+	//           <li>
+	//             <a href="#">
+	//               <span></span>
+	//               <p>
+	//                 我的收藏
+	//               </p>
+	//             </a>
+	//           </li>
+	//           <li>
+	//             <a href="#">
+	//               <span></span>
+	//               <p>
+	//                 我的收藏
+	//               </p>
+	//             </a>
+	//           </li>
+	//           <li>
+	//             <a href="#">
+	//               <span></span>
+	//               <p>
+	//                 我的收藏
+	//               </p>
+	//             </a>
+	//           </li>
+	//           <li>
+	//             <a href="#">
+	//               <span></span>
+	//               <p>
+	//                 我的收藏
+	//               </p>
+	//             </a>
+	//           </li>
+	//           <li>
+	//             <a href="#">
+	//               <span></span>
+	//               <p>
+	//                 我的收藏
+	//               </p>
+	//             </a>
+	//           </li>
+	//         </ul>
+	//       </div>
+	//
+	//       <!--邀请  -->
+	//       <div class="kefu">
+	//         <ul>
+	//           <li>
+	//             <a href="#">
+	//               <span></span>
+	//               <p>
+	//                 我的收藏
+	//               </p>
+	//             </a>
+	//           </li>
+	//           <li>
+	//             <a href="#">
+	//               <span></span>
+	//               <p>
+	//                 我的收藏
+	//               </p>
+	//             </a>
+	//           </li>
+	//         </ul>
+	//       </div>
+	//       <!-- 退出登录 -->
+	//       <div class="exit"></div>
+	//     </section>
+	//   <!-- </div> -->
+	//   </div>
+	// </template>
+	// <script>
+	var Vue = __webpack_require__(3);
+	var VueResource = __webpack_require__(15);
+	Vue.use(VueResource);
+	
+	exports.default = {
+	  data: function data() {
+	    return {
+	      list: []
+	    };
+	  },
+	
+	  ready: function ready() {
+	    var that = this;
+	    this.$http.get('/mock/my-lsit.json').then(function (res) {
+	      that.list = res.data.data;
+	      console.log(res.data.data);
+	    });
+	  }
+	};
+	// </script>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -4795,32 +5264,39 @@
 	});
 
 /***/ },
-/* 9 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<!-- <div id=\"my-scroll\"> -->\n  <div class=\"my-container\" >\n  <!--头部  -->\n  <header>\n    <div class=\"header-tpo\">\n      <div class=\"touxiang\" v-link=\"{path:'/person'}\"><img src=\"/images/user_icon.png\"  alt=\"\"/></div>\n      <div class=\"header-name\"><p>未命名的小仓</p></div>\n    </div>\n  </header>\n  <!--内容  -->\n  <section>\n    <!--我的订单  -->\n    <div class=\"dingdan\">\n\n      <div class=\"dingdan-top\"  v-link=\"{name:'dingdan',params:{id: 0}}\">\n        <span>我的订单</span>\n        <a href=\"#\">查看全部订单<i></i></a>\n      </div>\n\n      <ul class=\"fukuan\">\n        <li v-for=\"li in list\" v-link=\"{name:'dingdan',params:{id: li.id}}\">\n          <i>\n            <img v-bind:src=\"li.img\" alt=\"\" />\n            <p>{{li.name}}</p>\n          </i>\n        </li>\n\n      </ul>\n    </div>\n\n    <!--收货地址等  -->\n    <div class=\"my\">\n      <ul>\n        <li>\n          <a href=\"#\">\n            <span></span>\n            <p>\n              我的收藏\n            </p>\n          </a>\n        </li>\n        <li>\n          <a href=\"#\">\n            <span></span>\n            <p>\n              我的收藏\n            </p>\n          </a>\n        </li>\n        <li>\n          <a href=\"#\">\n            <span></span>\n            <p>\n              我的收藏\n            </p>\n          </a>\n        </li>\n        <li>\n          <a href=\"#\">\n            <span></span>\n            <p>\n              我的收藏\n            </p>\n          </a>\n        </li>\n        <li>\n          <a href=\"#\">\n            <span></span>\n            <p>\n              我的收藏\n            </p>\n          </a>\n        </li>\n        <li>\n          <a href=\"#\">\n            <span></span>\n            <p>\n              我的收藏\n            </p>\n          </a>\n        </li>\n      </ul>\n    </div>\n\n    <!--邀请  -->\n    <div class=\"kefu\">\n      <ul>\n        <li>\n          <a href=\"#\">\n            <span></span>\n            <p>\n              我的收藏\n            </p>\n          </a>\n        </li>\n        <li>\n          <a href=\"#\">\n            <span></span>\n            <p>\n              我的收藏\n            </p>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <!-- 退出登录 -->\n    <div class=\"exit\"></div>\n  </section>\n<!-- </div> -->\n</div>\n";
 
 /***/ },
-/* 10 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(11)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(18)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\dingdan.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(12)
+	__vue_template__ = __webpack_require__(19)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./dingdan.vue"
+	  var id = "_v-43b3a6b0/dingdan.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4829,7 +5305,7 @@
 	})()}
 
 /***/ },
-/* 11 */
+/* 18 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -4925,27 +5401,34 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 12 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"dingdan-container\">\n  <!-- 订单列表top -->\n    <div class=\"dingdan-top\">\n      <div class=\"back\" v-link=\"{path:'/my'}\"><img src=\"/images/back1.png\" alt=\"\" /></div>\n      <div class=\"ding\">订单列表</div>\n      <div class=\"search\"><img src=\"/images/search2.png\" alt=\"\" /></div>\n    </div>\n    <!-- 订单列表nav -->\n    <nav>\n      <ul id=\"swiper-nav\">\n        <li v-for=\"nav in indexNav\" v-on:click=\"switchSwiper($index)\"  :class=\"curIndex==$index ? 'active' : ''\" >{{nav}}</li>\n      </ul>\n    </nav>\n    <section>\n      <div class=\"swiper-container\" id=\"index-swiper\">\n        <div class=\"swiper-wrapper\">\n          <div class=\"swiper-slide\">\n            <div id=\"navswiper\">\n              <img src=\"/images/list_empty.png\" alt=\"\" />\n              <p>您还没有相关订单</p>\n              <p>随便逛逛</p>\n            </div>\n          </div>\n          <div class=\"swiper-slide\">\n            <div id=\"navswiper\">\n              <img src=\"/images/list_empty.png\" alt=\"\" />\n              <p>您还没有相关订单</p>\n              <p>随便逛逛</p>\n            </div>\n          </div>\n          <div class=\"swiper-slide\">\n            <div id=\"navswiper\">\n              <img src=\"/images/list_empty.png\" alt=\"\" />\n              <p>您还没有相关订单</p>\n              <p>随便逛逛</p>\n            </div>\n          </div>\n          <div class=\"swiper-slide\">\n            <div id=\"navswiper\">\n              <img src=\"/images/list_empty.png\" alt=\"\" />\n              <p>您还没有相关订单</p>\n              <p>随便逛逛</p>\n            </div>\n          </div>\n          <div class=\"swiper-slide\">\n            <div id=\"navswiper\">\n              <img src=\"/images/list_empty.png\" alt=\"\" />\n              <p>您还没有相关订单</p>\n              <p>随便逛逛</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n</div>\n";
 
 /***/ },
-/* 13 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(14)
+	var __vue_styles__ = {}
+	__vue_template__ = __webpack_require__(21)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./person.vue"
+	  var id = "_v-39786708/person.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4954,32 +5437,39 @@
 	})()}
 
 /***/ },
-/* 14 */
+/* 21 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"perosn-container\">\n  <header>\n    <div class=\"header-top\">\n\n    </div>\n  </header>\n</div>\n";
 
 /***/ },
-/* 15 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(16)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(23)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\login.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(17)
+	__vue_template__ = __webpack_require__(24)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./login.vue"
+	  var id = "_v-78f99a86/login.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4988,7 +5478,7 @@
 	})()}
 
 /***/ },
-/* 16 */
+/* 23 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -5090,32 +5580,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 17 */
+/* 24 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"login-container\">\n  <header>\n    <div class=\"header-left\">\n      <a></a>\n    </div>\n    <div class=\"header-center\">\n      登录\n    </div>\n    <div class=\"header-right\">\n      <a></a>\n    </div>\n  </header>\n  <section>\n    <div class=\"login\">\n      <div class=\"login-img\">\n        <img src=\"/images/login_img.png\" />\n      </div>\n      <div class=\"login-user\">\n            <input type=\"text\" v-model=\"username\" class=\"user-name\" value=\"\" placeholder=\"账号\">\n            <input type=\"password\" v-model=\"password\" class=\"user-pwd\" value=\"\" placeholder=\"密码\">\n      </div>\n      <div class=\"login-entry\" id=\"login\" v-link=\"tiaozhuan\">\n        登录\n      </div>\n      <div class=\"login-zhuce\">\n        <div class=\"zhuce\" v-link=\"{path:'/zhuce'}\">\n          <a>注册账号</a>\n        </div>\n        <div class=\"remember\">\n          <a href=\"\">忘记密码</a>\n        </div>\n        <div class=\"kefu\">\n          <a href=\"\">联系客服</a>\n        </div>\n      </div>\n\n    </div>\n\n    <div class=\"other-login\">\n      <div class=\"other-title\">\n        其他登录方式\n      </div>\n      <ul class=\"other\">\n        <li>\n          <a href=\"#\"></a>\n        </li>\n        <li>\n          <a href=\"#\"></a>\n        </li>\n      </ul>\n    </div>\n  </section>\n</div>\n";
 
 /***/ },
-/* 18 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(19)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(26)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\zhuce.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(20)
+	__vue_template__ = __webpack_require__(27)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./zhuce.vue"
+	  var id = "_v-d12a6e74/zhuce.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5124,7 +5621,7 @@
 	})()}
 
 /***/ },
-/* 19 */
+/* 26 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -5202,32 +5699,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 20 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"zhuce-container\">\n  <header>\n    <div class=\"header-back\">\n    <a href=\"javascript:history.back();\"></a>\n    </div>\n    <span>注册账号</span>\n  </header>\n  <section>\n      <div class=\"yan-phone\">\n        <input type=\"text\" name=\"name\" value=\"\"placeholder=\"手机号\">\n      </div>\n      <div class=\"yanzheng\">\n        <input type=\"text\" name=\"name\" value=\"\"placeholder=\"验证码\">\n        <div class=\"yanzhengma\" id=\"yanzhengma\">\n          <i></i>\n        </div>\n      </div>\n      <div class=\"duanxin\">\n        <input type=\"text\" name=\"name\" value=\"\"placeholder=\"短信验证码\">\n        <div class=\"yan-duanxin\">\n        <a>获取验证码</a>\n        </div>\n      </div>\n      <div class=\"password\">\n        <input type=\"passord\" name=\"name\" value=\"\"placeholder=\"密码\">\n      </div>\n      <div class=\"passworder\">\n        <input type=\"password\" name=\"name\" value=\"\"placeholder=\"确认密码\">\n      </div>\n      <div class=\"yaoqingma\">\n        <input type=\"text\" name=\"name\" value=\"\"placeholder=\"基友邀请码(选填)\">\n      </div>\n      <div class=\"click-login\">\n        <span v-link=\"{path:'/login'}\">\n          已有账号？点我登录\n        </span>\n      </div>\n      <div class=\"zhuce\" id=\"zhuce\">\n        <span>\n          注册\n        </span>\n      </div>\n  </section>\n</div>\n";
 
 /***/ },
-/* 21 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(22)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(29)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\detail.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(25)
+	__vue_template__ = __webpack_require__(32)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./detail.vue"
+	  var id = "_v-597ff3f8/detail.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -5236,7 +5740,7 @@
 	})()}
 
 /***/ },
-/* 22 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5245,15 +5749,15 @@
 	   value: true
 	});
 	
-	var _vue = __webpack_require__(7);
+	var _vue = __webpack_require__(3);
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _vueRouter = __webpack_require__(23);
+	var _vueRouter = __webpack_require__(30);
 	
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 	
-	var _getters = __webpack_require__(24);
+	var _getters = __webpack_require__(31);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -5507,7 +6011,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 23 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -8222,7 +8726,7 @@
 	});
 
 /***/ },
-/* 24 */
+/* 31 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -8239,32 +8743,39 @@
 	};
 
 /***/ },
-/* 25 */
+/* 32 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"detail-container\">\n   <header>\n      <img src=\"/images/back1.png\" >\n      <h2 v-for=\"item in goodsInfor\">{{item.result.product_info.name}}</h2>\n      <img src=\"/images/home.png\" >\n   </header>\n   <section id=\"detail-scroll\">\n      <div class=\"scrol-container\">\n         <div class=\"part1\" v-for='item in goodsInfor'>\n            <img src=\"/images/1476170715116.jpg\" />\n            <p>{{item.result.product_info.name}}</p>\n            <b>{{item.result.product_info.price_gap_string}}</b>\n            <p>\n               由 <i> {{item.result.product_info.supplier_name}}</i> 发货\n            </p>\n         </div>\n         <div class=\"part2\">\n            <h2>款式</h2>\n            <ul>\n               <li v-for=\"item in goodsInlor\"\n               v-bind:class=\"cur==$index? 'active':''\"\n               v-on:click=\"chooseSize($index)\">\n                  {{item.result.stock_info.attribute}}\n               </li>\n            </ul>\n            <div>\n               <div>\n                  <span>数量</span>\n                  <img src=\"/images/cart-decrease.png\" v-on:click=\"cartDecrease\"/>\n                  <b>{{number}}</b>\n                  <img src=\"/images/cart-increase.png\" v-on:click=\"cartIncrease\" />\n               </div>\n               <p>\n                  提示：普通商品享有质量问题7天退货，签收后3个工作日之内可换货，其他特殊商品（如手办）的售后以页面说明为准。\n               </p>\n            </div>\n         </div>\n         <div class=\"part3\">\n            <template v-if=\"!more\">\n               <h2>图文详情</h2>\n               <p v-on:click=\"loadMore\">继续上拉,查看更多内容哦~</p>\n            </template>\n            <div v-else>\n               <p>{{moreInfor.title}}</p>\n               <ul>\n                  <li v-for=\"item in moreInfor.imglist\">\n                     <img v-bind:src=\"item\" />\n                  </li>\n               </ul>\n               <div class=\"recommend\">\n                  <p>购买该商品的顾客还买了:</p>\n                  <ul>\n                     <li v-for=\"item in moreInfor.recommend\">\n                        <img v-bind:src=\"item.imgurl\"/>\n                        <p>{{item.text}}</p>\n                        <i>{{item.price}}</i>\n                     </li>\n                  </ul>\n               </div>\n            </div>\n         </div>\n      </div>\n   </section>\n   <footer>\n      <ul>\n         <li>\n            <a href=\"https://static.meiqia.com/dist/standalone.html?eid=17853&metadata=%7B%22%5Cu5546%5Cu54c1%5Cu94fe%5Cu63a5%22%3A%22http%3A%5C%2F%5C%2Fcycang.com%5C%2Findex.php%3Fa%3Dp%26id%3D2855%22%7D\">\n            <img src=\"/images/service_icon.png\" v-link={path:'./service'} />\n            <b>联系客服</b>\n            </a>\n         </li>\n         <li>\n            <img :src=\"isstore? '/images/fav_is.png' :'/images/fav_not.png'\" v-on:click=\"store\" />\n            <b>收藏</b>\n         </li>\n         <li>\n            <img src=\"/images/cate-cart.png\" v-link={path:'./buy'} />\n            <b>购物车(<i>{{cartnum}}</i>)</b>\n         </li>\n      </ul>\n      <button type=\"button\" v-on:click=\"addcart\" >加入购物车</button>\n   </footer>\n</div>\n";
 
 /***/ },
-/* 26 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(27)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(34)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\buy.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(29)
+	__vue_template__ = __webpack_require__(36)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./buy.vue"
+	  var id = "_v-40d9d063/buy.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8273,7 +8784,7 @@
 	})()}
 
 /***/ },
-/* 27 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8282,17 +8793,17 @@
 	   value: true
 	});
 	
-	var _vue = __webpack_require__(7);
+	var _vue = __webpack_require__(3);
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _vueRouter = __webpack_require__(23);
+	var _vueRouter = __webpack_require__(30);
 	
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 	
-	var _getters = __webpack_require__(24);
+	var _getters = __webpack_require__(31);
 	
-	var _actions = __webpack_require__(28);
+	var _actions = __webpack_require__(35);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -8556,7 +9067,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 28 */
+/* 35 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8565,45 +9076,52 @@
 	  value: true
 	});
 	var isLogined = exports.isLogined = function isLogined(_ref, userName) {
-	  var dispath = _ref.dispath;
-	  var state = _ref.state;
+	  var dispath = _ref.dispath,
+	      state = _ref.state;
 	
 	  dispath('ISLOHIGED', userName);
 	};
 	var classifyChanger = exports.classifyChanger = function classifyChanger(_ref2, classifyIndex) {
-	  var dispatch = _ref2.dispatch;
-	  var state = _ref2.state;
+	  var dispatch = _ref2.dispatch,
+	      state = _ref2.state;
 	
 	  dispatch('CLASSIFYCHANGETAB', classifyIndex);
 	};
 
 /***/ },
-/* 29 */
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"buy-container\">\n   <header>\n      <img src=\"/images/back1.png\" />\n      <h2>购物车</h2>\n      <p v-on:click=\"edit\" v-if=\"isedit\">完成</p>\n      <p v-on:click=\"edit\" v-else>编辑</p>\n   </header>\n   <section id=\"buy-scroll\">\n      <div>\n         <ul>\n            <li v-for=\"item in buylist\" v-if=\"item.show\">\n               <div class=\"part1\">\n                  <img v-bind:src=\"item.choose? '/images/sel-order.png':'/images/unsel.png'\" v-on:click=\"choose($index)\"/>\n                  <h2>{{item.store}}</h2>\n                  <p>{{item.deliverway}}</p>\n                  <i>本单免邮</i>\n               </div>\n               <div class=\"part2\">\n                  <img v-bind:src=\"item.choose? '/images/sel-order.png':'/images/unsel.png'\" v-on:click=\"choose($index)\" />\n                  <img v-bind:src=\"item.img\" />\n                  <div>\n                     <div>\n                        <p>{{item.name}}</p>\n                        <span>款式:</span>\n                        <span>{{item.size}}</span>\n                     </div>\n                     <div>\n                        <i>￥{{item.price}}</i>\n                        <img src=\"/images/cart-decrease.png\" v-on:click=\"decrease($index)\"/>\n                        <b>{{item.number}}</b>\n                        <img src=\"/images/cart-increase.png\" v-on:click=\"increase($index)\"/>\n                     </div>\n                  </div>\n               </div>\n               <div class=\"part3\">\n                  <span>小计:</span>\n                  <i>￥{{item.total}}</i>\n               </div>\n            </li>\n         </ul>\n      </div>\n   </section>\n   <footer>\n      <img v-bind:src=\"chooseall? '/images/sel-order.png':'/images/unsel.png'\" v-on:click=\"chooseAll\" />\n      <b>全选</b>\n      <div v-if=\"!isedit\">\n         <span>合计:</span>\n         <i>￥{{total}}</i>\n      </div>\n      <template v-if=\"isedit\">\n         <div class=\"deleteorcollect\">\n            <button type=\"button\" v-on:click=\"delete\">删除</button>\n            <button type=\"button\" v-on:click=\"collection\">收藏</button>\n         </div>\n      </template>\n      <button v-else v-on:click=\"account\">去结算({{buynum}})</button>\n   </footer>\n   <!-- dialong的代码 -->\n   <!-- 登录 的dialog -->\n   <div v-if=\"islog\" class=\"yo-dialog yo-dialog-test\">\n       <div class=\"bd\">\n           <p>只有登录才能支付哦~</p>\n       </div>\n       <div class=\"ft\">\n           <button class=\"yo-btn yo-btn-dialog yo-btn-l\" v-on:click=\"cancle\">取消</button>\n           <button class=\"yo-btn yo-btn-dialog yo-btn-l\" v-link=\"{path:'/'}\">登录</button>\n       </div>\n   </div>\n   <!-- 收藏的dialog -->\n   <div v-if=\"iscollect\" class=\"yo-dialog yo-dialog-test\">\n       <div class=\"bd\">\n           <p>收藏成功~</p>\n       </div>\n       <div class=\"ft\">\n           <button class=\"yo-btn yo-btn-dialog yo-btn-l\" v-on:click=\"confirmcollect\">确定</button>\n       </div>\n   </div>\n   <!-- 遮罩 -->\n   <div v-if=\"ismark\" class=\"yo-mask\"></div>\n</div>\n";
 
 /***/ },
-/* 30 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(31)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(38)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyBox.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(32)
+	__vue_template__ = __webpack_require__(39)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyBox.vue"
+	  var id = "_v-4b333104/classifyBox.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8612,7 +9130,7 @@
 	})()}
 
 /***/ },
-/* 31 */
+/* 38 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8661,32 +9179,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 32 */
+/* 39 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"classify\n\">\n  <header class=\"classifyHeader\">\n    <ul>\n      <li v-bind:class=\"classifyCur == $index ? 'active' : ''\"\n      v-on:click=\"changPage($index)\"\n      v-for=\"tab in tablist\"\n      v-link=\"{path:tab.path}\"\n      >{{tab.name}}</li>\n    </ul>\n  </header>\n  <section class=\"classifySectionBox\">\n    <router-view>\n\n    </router-view>\n  </section>\n</div>\n";
 
 /***/ },
-/* 33 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(34)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(41)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classify.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(36)
+	__vue_template__ = __webpack_require__(43)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classify.vue"
+	  var id = "_v-28f4fbf7/classify.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8695,7 +9220,7 @@
 	})()}
 
 /***/ },
-/* 34 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8704,17 +9229,17 @@
 	  value: true
 	});
 	
-	var _vue = __webpack_require__(7);
+	var _vue = __webpack_require__(3);
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _commonUtil = __webpack_require__(35);
+	var _commonUtil = __webpack_require__(2);
 	
 	var _commonUtil2 = _interopRequireDefault(_commonUtil);
 	
-	var _actions = __webpack_require__(28);
+	var _action = __webpack_require__(42);
 	
-	var _getters = __webpack_require__(24);
+	var _getters = __webpack_require__(31);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -8736,7 +9261,7 @@
 	      classindex: _getters.getTabindex
 	    },
 	    actions: {
-	      classChange: _actions.classifyChanger
+	      classChange: _action.classifyChanger
 	    }
 	  },
 	  data: function data() {
@@ -8766,7 +9291,7 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 35 */
+/* 42 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -8774,82 +9299,48 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var commonUtil = {
-	  render: function render(str) {
-	    var container = document.querySelector('body');
-	    container.innerHTML = str + container.innerHTML;
-	  },
-	  isAlloaded: function isAlloaded(scope, cb) {
-	    var t_img; //定时器
-	    var isLoad = true; //控制变量
-	    //判断图片的加载情况，加载完成后回调
-	    return isImgLoad(cb);
-	    //判断图片加载的函数
-	    function isImgLoad(callback) {
-	      //查找所有的图片 迭代处理
-	      $(scope).find('img').each(function () {
-	        //找到为0就将isload设false 并退出each
-	        if (this.height === 0) {
-	          isLoad = false;
-	          return false;
-	        }
-	      });
-	      // 为true 没有发现为0的 加载完成
-	      if (isLoad) {
-	        clearTimeout(t_img); //清除定时器
-	        // 回调
-	        callback(scope);
-	        //为false 因为找到了没有加载完成的图 将调用定时器地鬼
-	      } else {
-	        isLoad = true;
-	        t_img = setTimeout(function () {
-	          isImgLoad(callback); //递归扫描
-	        }, 500); //
-	      }
-	    }
-	  },
-	  dirScroll: function dirScroll() {
-	    var that = this;
-	    // 自定义指令
-	    Vue.directive('scroll', function (value) {
-	      if (value) {
-	        that.isAllLoaded('#classify-scroll', function () {
-	          new IScroll(value);
-	        });
-	      }
-	    });
-	  }
-	};
+	var classifyChanger = exports.classifyChanger = function classifyChanger(_ref, classifyIndex) {
+	  var dispatch = _ref.dispatch,
+	      state = _ref.state;
 	
-	exports.default = commonUtil;
+	  dispatch('CLASSIFYCHANGETAB', classifyIndex);
+	};
+	//子路有引用入口
 
 /***/ },
-/* 36 */
+/* 43 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"classifySection\">\n  <ul class=\"shopUl\">\n    <li v-for=\"shop in shoplist\" v-bind:class=\"classindex == $index ? 'active' : ''\"\n    v-on:click=\"changShop($index)\" v-link=\"{path:shop.path}\">{{shop.name}}</li>\n  </ul>\n  <div id=\"classify-scroll\">\n      <router-view></router-view>\n  </div>\n</div>\n";
 
 /***/ },
-/* 37 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(38)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(45)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\label.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(39)
+	__vue_template__ = __webpack_require__(46)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./label.vue"
+	  var id = "_v-898b26de/label.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8858,7 +9349,7 @@
 	})()}
 
 /***/ },
-/* 38 */
+/* 45 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -8894,32 +9385,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 39 */
+/* 46 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"label-scroll\">\n  <ul>\n    <li v-for=\"l in list\" class=\"{{l.group}}\">\n      <p>{{l.tittle}}</p>\n    </li>\n  </ul>\n</div>\n";
 
 /***/ },
-/* 40 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(41)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(48)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifySkirt.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(42)
+	__vue_template__ = __webpack_require__(49)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifySkirt.vue"
+	  var id = "_v-42fcd3e8/classifySkirt.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8928,7 +9426,7 @@
 	})()}
 
 /***/ },
-/* 41 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8937,7 +9435,7 @@
 	  value: true
 	});
 	
-	var _actions = __webpack_require__(28);
+	var _actions = __webpack_require__(35);
 	
 	var mySwiper = null;
 	// console.log(classifyChanger);
@@ -9037,32 +9535,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 42 */
+/* 49 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 43 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(44)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(51)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyJacket.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(46)
+	__vue_template__ = __webpack_require__(52)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyJacket.vue"
+	  var id = "_v-ce0392b6/classifyJacket.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9071,7 +9576,7 @@
 	})()}
 
 /***/ },
-/* 44 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9080,7 +9585,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
@@ -9174,49 +9679,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 45 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var classifyChanger = exports.classifyChanger = function classifyChanger(_ref, classifyIndex) {
-	  var dispatch = _ref.dispatch;
-	  var state = _ref.state;
-	
-	  dispatch('CLASSIFYCHANGETAB', classifyIndex);
-	};
-	//子路有引用入口
-
-/***/ },
-/* 46 */
+/* 52 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 47 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(48)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(54)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyPants.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(49)
+	__vue_template__ = __webpack_require__(55)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyPants.vue"
+	  var id = "_v-1ec34a55/classifyPants.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9225,7 +9720,7 @@
 	})()}
 
 /***/ },
-/* 48 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9234,7 +9729,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
@@ -9328,32 +9823,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 49 */
+/* 55 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 50 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(51)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(57)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyCoat.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(52)
+	__vue_template__ = __webpack_require__(58)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyCoat.vue"
+	  var id = "_v-5f8e5eb6/classifyCoat.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9362,7 +9864,7 @@
 	})()}
 
 /***/ },
-/* 51 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9371,7 +9873,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
@@ -9465,32 +9967,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 52 */
+/* 58 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 53 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(54)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(60)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyParts.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(55)
+	__vue_template__ = __webpack_require__(61)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyParts.vue"
+	  var id = "_v-1b47914e/classifyParts.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9499,7 +10008,7 @@
 	})()}
 
 /***/ },
-/* 54 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9508,7 +10017,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
@@ -9602,32 +10111,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 55 */
+/* 61 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 56 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(57)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(63)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyBag.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(58)
+	__vue_template__ = __webpack_require__(64)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyBag.vue"
+	  var id = "_v-325fc8c1/classifyBag.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9636,7 +10152,7 @@
 	})()}
 
 /***/ },
-/* 57 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9645,7 +10161,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//     <div class="scrollbox">
@@ -9738,32 +10254,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 58 */
+/* 64 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 59 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(60)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(66)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyAttire.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(61)
+	__vue_template__ = __webpack_require__(67)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyAttire.vue"
+	  var id = "_v-d5fec51c/classifyAttire.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9772,7 +10295,7 @@
 	})()}
 
 /***/ },
-/* 60 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9781,7 +10304,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//     <div class="scrollbox">
@@ -9874,32 +10397,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 61 */
+/* 67 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\"/>\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\"/>\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 62 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(63)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(69)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyHome.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(64)
+	__vue_template__ = __webpack_require__(70)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyHome.vue"
+	  var id = "_v-7a9b05f6/classifyHome.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -9908,7 +10438,7 @@
 	})()}
 
 /***/ },
-/* 63 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9917,7 +10447,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
@@ -10011,32 +10541,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 64 */
+/* 70 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 65 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(66)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(72)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyStationery.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(67)
+	__vue_template__ = __webpack_require__(73)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyStationery.vue"
+	  var id = "_v-1a17cd0f/classifyStationery.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10045,7 +10582,7 @@
 	})()}
 
 /***/ },
-/* 66 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10054,7 +10591,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
@@ -10148,32 +10685,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 67 */
+/* 73 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 68 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(69)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(75)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyNumeral.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(70)
+	__vue_template__ = __webpack_require__(76)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyNumeral.vue"
+	  var id = "_v-43e91952/classifyNumeral.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10182,7 +10726,7 @@
 	})()}
 
 /***/ },
-/* 69 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10191,7 +10735,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
@@ -10285,32 +10829,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 70 */
+/* 76 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 71 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(72)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(78)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\classifyPlay.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(73)
+	__vue_template__ = __webpack_require__(79)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./classifyPlay.vue"
+	  var id = "_v-079169cb/classifyPlay.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10319,7 +10870,7 @@
 	})()}
 
 /***/ },
-/* 72 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10328,7 +10879,7 @@
 	  value: true
 	});
 	
-	var _action = __webpack_require__(45);
+	var _action = __webpack_require__(42);
 	
 	var mySwiper = null; // <template>
 	//   <div class="scrollbox">
@@ -10422,32 +10973,39 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 73 */
+/* 79 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"scrollbox\">\n  <div class=\"hot-sale\">\n    <p>热卖推荐</p>\n    <ul class=\"hotSale\">\n      <li v-for=\"hot in hot_sale\">\n        <img v-bind:src=\"hot.figure\" />\n        <p>￥{{hot.cover_price}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"comm-cat\">\n    <p>常用分类</p>\n    <ul class=\"commUl\">\n      <li v-for=\"l in list\">\n        <img v-bind:src=\"l.pic\" />\n        <p>{{l.name}}</p>\n      </li>\n    </ul>\n  </div>\n</div>\n";
 
 /***/ },
-/* 74 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(75)
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(81)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\scripts\\components\\live.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(76)
+	__vue_template__ = __webpack_require__(82)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./live.vue"
+	  var id = "_v-6c2903df/live.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10456,7 +11014,7 @@
 	})()}
 
 /***/ },
-/* 75 */
+/* 81 */
 /***/ function(module, exports) {
 
 	// <template>
@@ -10486,27 +11044,34 @@
 	"use strict";
 
 /***/ },
-/* 76 */
+/* 82 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"livBox\">\n  <header class=\"liveBoxHeader\">\n    <span></span>\n    <ul>\n      <li>直播</li>\n      <li>新帖</li>\n      <li>热帖</li>\n    </ul>\n    <span></span>\n  </header>\n  <nav class=\"liveBoxNav\">\n    <img src=\"/images/1.png\" alt=\"\">\n  </nav>\n  <section class=\"liveBoxSection\">\n\n  </section>\n</div>\n";
 
 /***/ },
-/* 77 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(78)
+	var __vue_styles__ = {}
+	__vue_template__ = __webpack_require__(84)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
 	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	__vue_options__.template = __vue_template__
 	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./service.vue"
+	  var id = "_v-c2bc82dc/service.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -10515,13 +11080,13 @@
 	})()}
 
 /***/ },
-/* 78 */
+/* 84 */
 /***/ function(module, exports) {
 
 	module.exports = "\nservice\n";
 
 /***/ },
-/* 79 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10530,11 +11095,11 @@
 	   value: true
 	});
 	
-	var _vue = __webpack_require__(7);
+	var _vue = __webpack_require__(3);
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _vuexMin = __webpack_require__(80);
+	var _vuexMin = __webpack_require__(86);
 	
 	var _vuexMin2 = _interopRequireDefault(_vuexMin);
 	
@@ -10561,7 +11126,7 @@
 	});
 
 /***/ },
-/* 80 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;"use strict";

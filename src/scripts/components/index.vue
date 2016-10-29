@@ -1,27 +1,55 @@
 <template>
-   <router-view></router-view>
+  <div>
+    <div class="index-container">
+        <router-view transition="goto"></router-view>
+    </div>
+    <footer id="footer" class="index-footer">
+        <ul>
+            <li
+               v-bind:class="cur == $index ? 'active' : ''"
+              v-on:click="changPage($index)"
+              v-for="tab in tablist"
+              v-link="{path: tab.path}">
+                <i></i>
+                <b>{{tab.name}}</b>
+            </li>
+        </ul>
+    </footer>
+  </div>
 </template>
+
 <script>
+  import { tabChange } from '../vuex/actions';
+  import { getTabIndex } from '../vuex/getters';
+
   export default {
+    vuex: {
+      actions: {
+        change: tabChange
+      },
+      getters: {
+        tabIndex: getTabIndex
+      }
+    },
     data() {
       return {
         cur: 0,
         tablist: [
-          {path: '/', icon: '&#xe6bb;', name: '首页'},
-          {path: '/search', icon: '&#xe65c;', name: '发现'},
-          {path: '/photo', icon: '&#xe664;', name: ''},
-          {path: '/login', icon: '&#xe735;', name: '我的'},
-          {path: '/exit', icon: '&#xe603;', name: '退出'}
+          {path: '/index', name: '首页'},
+          {path: '/index/classifyBox', name: '分类'},
+          {path: '/index/photo', name: '吱吱'},
+          {path: '/index/buy', name: '购物车'},
+          {path: '/index/my', name: '个人中心'}
         ]
       }
     },
 
+
     methods: {
       changPage(i) {
         this.cur = i;
+        this.change(i);
       }
     }
   }
-// =======
-// >>>>>>> master
 </script>

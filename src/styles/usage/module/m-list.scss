@@ -1,0 +1,155 @@
+.list-container {
+  width: 100%;
+  height: 100%;
+  @include flexbox();
+  @include flex-direction(column);
+  background: #eee;
+  .list-top {
+    width: 100%;
+    height: 0.88rem;
+    @include flexbox();
+    @include flex-direction(column);
+    .list-header {
+      background: #fff;
+      width: 100%;
+      height: 0.45rem;
+      border-bottom: 2px solid rgb(225,225,225);
+      @include flexbox();
+      .list-back {
+        display: block;
+        width: 0.45rem;
+        height: 100%;
+        background: url("/images/back1.png") no-repeat center;
+        background-size: 65%;
+      }
+      .list-search {
+        @include flex(1);
+        height: 100%;
+        padding: 0.09rem 0.12rem;
+        @include border-radius(.04rem);
+        @include flexbox();
+        span {
+          display: inline-block;
+          width: 0.22rem;
+          height: 100%;
+          background: rgb(238,238,238) url('/images/home_search_icon.png') no-repeat center;
+          background-size: 75%;
+        }
+        input {
+          @include flex(1);
+          height: 100%;
+          border: 0;
+          background: rgb(238,238,238);
+          padding-left: 0.06rem;
+          @include border(1px rgb(223,223,223) solid);
+        }
+      }
+      .list-home {
+        display: block;
+        width: 0.5rem;
+        height: 100%;
+        background: url("/images/home.png") no-repeat center;
+        background-size: 65%;
+      }
+    }
+    .list-nav {
+      width: 100% !important;
+      background: #fff;
+      @include flex(1);
+      @include flexbox();
+      select,
+      span {
+        @include flex(1);
+        height: 100%;
+        text-align: center;
+        line-height: 0.46rem;
+        color: #030303;
+        border: 0;
+        &:nth-child(2) i {
+          float: right;
+          margin-right: 0.3rem;
+          width: 0.1rem;
+          height: 100%;
+          background: url("/images/new_price_sort_normal.png") no-repeat center;
+          background-size: 0.1rem;
+        }
+        &.active:nth-child(2) i {
+          background: url("/images/new_price_sort_asc.png") no-repeat center;
+          background-size: 0.1rem;
+        }
+        &.active {
+          color: red;
+        }
+      }
+    }
+  }
+  .list-scroll {
+    @include flex(1);
+    width: 100%;
+    overflow: auto;
+    margin-top: 0.1rem;
+    .scroll-box {
+      width: 100%;
+      padding: 0 0.07rem;
+      div{
+        overflow: hidden;
+      }
+      dl {
+        background: #fff;
+        float: left;
+        width: 1.73266rem;
+        height: 2.63rem;
+        margin: 0 0.03rem 0.1rem;
+        @include border-radius(.02rem);
+        @include flexbox();
+        @include flex-direction(column);
+        dt {
+          width: 1.7327rem;
+          height: 1.73rem;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        dd {
+          @include flex(1);
+          width: 100%;
+          @include flexbox();
+          @include flex-direction(column);
+          span {
+            width: 100%;
+            padding-left: 0.05rem;
+            height: 0.6rem;
+            line-height: 0.2rem;
+            overflow: hidden;
+            color: #000;
+            font-size: 0.14rem;
+          }
+          b {
+            display: block;
+            text-align: left;
+            padding-left: 0.05rem;
+            width: 100%;
+            height: 0.19rem;
+            color: red;
+          }
+        }
+      }
+      .foot {
+        text-align: center;
+        height: 0.35rem;
+        line-height: 0.35rem;
+      }
+      .foot img {
+        display: inline-block;
+        width: 0.16rem;
+        transition: transform 150ms;
+        -webkit-transition: transform 150ms;
+      }
+      .down {
+        transform: rotate(180deg) !important;
+        -webkit-transform: rotate(180deg) !important;
+      }
+    }
+  }
+}

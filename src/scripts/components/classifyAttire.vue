@@ -21,7 +21,7 @@
     </div>
 </template>
 <script>
-import { classifyChanger } from "../vuex/action";
+import { classifyChanger } from "../vuex/actions";
 var mySwiper = null;
 export default {
   vuex:{
