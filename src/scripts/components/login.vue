@@ -20,7 +20,7 @@
               <input type="text" v-model="username" class="user-name" value="" placeholder="账号">
               <input type="password" v-model="password" class="user-pwd" value="" placeholder="密码">
         </div>
-        <div class="login-entry" id="login" v-link="tiaozhuan">
+        <div class="login-entry" id="login" v-on:click="denglu">
           登录
         </div>
         <div class="login-zhuce">
@@ -54,38 +54,34 @@
   </div>
 </template>
 <script>
+var Vue = require('../libs/vue.js');
+var VueResource = require('../libs/vue-resource.js');
+var VueRouter=require('../libs/vue-router');
+Vue.use(VueRouter);
+Vue.use(VueResource);
   export default{
     data(){
       return{
-        password: '',
-        username: '',
-        list: [],
-        tiaozhuan:''
+        username:'',
+        password:''
+
       }
     },
-    ready(){
-      var istrue=false;
-      var that =this;
-      $("#login").on("click",function(){
-        that.$http.get('/mock/user-list.json')
-        .then((res) => {
-          that.list=res.data.data;
-          console.log(that.list[0].phone);
-          console.log(that.list[0].pwd);
-          console.log(that.username);
-          for(let i=0;i<that.list.length;i++){
-            if(that.username==that.list[i].phone&&that.password==that.list[i].pwd){
-              istrue=true;
+      methods:{
+
+        denglu:function(){
+
+          for(var i=0;i<localStorage.length;i++){
+            var getKey=localStorage.key(i);
+            if(this.password==JSON.parse(localStorage.getItem(getKey)).pwd&&this.username==getKey){
+              this.$router.go({name:'/index/my',params:{zhanghao:this.username}});
+            }
+            else{
+              console.log(0);
             }
           }
-          if(istrue){
-            console.log(0);
-            that.tiaozhuan="{path:'/my'}";
-          }else{
-            alert("用户名或密码不正确");
-          }
-        })
-      });
+
+      }
     }
   }
 </script>

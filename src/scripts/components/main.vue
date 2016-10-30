@@ -10,10 +10,10 @@
       <div class="main-scroll">
         <div class="c_banner-wrap">
           <div class="swiper-container" id="banner-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="banner in bannerInfo"><img v-bind:src="banner.image" alt="" /></div>
-          </div>
-          <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="banner in bannerInfo"><img v-bind:src="banner.image" alt="" /></div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
         </div>
 
@@ -45,7 +45,7 @@
           <div class="seckill-slide">
             <div class="seckill-slide-box">
               <div class="seckill-slide-scroll">
-                <dl class="seckill-slide-dl" v-for="s in seckillInfo">
+                <dl class="seckill-slide-dl" v-for="s in seckillInfo"  v-link="{path:'/detail'}">
                   <dt><img v-bind:src="s.figure" alt="" /></dt>
                   <dd>
                     <b class="seckill-cover_price">￥{{s.cover_price}}</b>
@@ -64,7 +64,7 @@
             <span class="cyc_more">查看更多</span>
           </div>
           <div class="hot-sale-box">
-            <dl class="hot-sale-dl" v-for="h in hotInfo">
+            <dl class="hot-sale-dl" v-for="h in hotInfo" v-link="{path:'/detail'}">
               <dt><img v-bind:src="h.figure" alt="" /></dt>
               <dd>
                 <span>{{h.name}}</span>
@@ -80,7 +80,7 @@
           <span class="cyc_more"></span>
         </div>
         <div class="hot-good-floor">
-          <dl v-for="r in recommendInfo">
+          <dl v-for="r in recommendInfo" v-link="{path:'/detail'}">
             <dt><img v-bind:src="r.figure" alt="" /></dt>
             <dd>
               <span>{{r.name}}</span>

@@ -13,6 +13,7 @@ import dingdan from "./components/dingdan.vue";
 import person from "./components/person.vue";
 import login from "./components/login.vue";
 import zhuce from "./components/zhuce.vue";
+import bianji from "./components/bianji.vue";
 // =======
 import detail from "./components/detail.vue";
 import buy from "./components/buy.vue";
@@ -43,103 +44,99 @@ import store from './vuex/store';
 let router = new VueRouter();
 
 let App = Vue.extend({
-   store: store
+  store: store
 });
 
 router.map({
   '/': {
     component: guide,
   },
-    //配置子路由 ，“/”是自动进入的路由页面
-    '/index':{
-       component:index,
-       subRoutes:{
-         '/': {
-           component: main
-         },
-          '/service':{
-            component:service
-        },
-        '/buy': {
-          component: buy
-        },
-        '/my': {
-          component: my
-        },
-        '/classifyBox': {
-             component: classifyBox,
-             subRoutes:{
-               '/':{
-                 component:classify,
-                 subRoutes:{
-                   '/':{
-                     component:classifySkirt
-                   },
-                   "/classifyJacket":{
-                     component:classifyJacket
-                   },
-                   "/classifyPants":{
-                     component:classifyPants
-                   },
-                   "/classifyCoat":{
-                     component:classifyCoat
-                   },
-                   "/classifyParts":{
-                     component:classifyParts
-                   },
-                   "/classifyBag":{
-                     component:classifyBag
-                   },
-                   "/classifyAttire":{
-                     component:classifyAttire
-                   },
-                   "/classifyHome":{
-                     component:classifyHome
-                   },
-                   "/classifyStationery":{
-                     component:classifyStationery
-                   },
-                   "/classifyNumeral":{
-                     component:classifyNumeral
-                   },
-                   "/classifyPlay":{
-                     component:classifyPlay
-                   }
-                 }
-               }
-      }
+  //配置子路由 ，“/”是自动进入的路由页面
+  '/index': {
+    component: index,
+    subRoutes: {
+      '/': {
+        component: main
       },
-      '/list': {
-        component: list
+      '/buy': {
+        component: buy
       },
 
-
-// <<<<<<< HEAD
-
-// =======
-
-
-
-   '/login':{
-     component:login
-   },
-   '/zhuce':{
-     component:zhuce
-   },
-
-          '/label':{
-            component:label
+      '/classifyBox': {
+        component: classifyBox,
+        subRoutes: {
+          '/': {
+            component: classify,
+            subRoutes: {
+              '/': {
+                component: classifySkirt
+              },
+              "/classifyJacket": {
+                component: classifyJacket
+              },
+              "/classifyPants": {
+                component: classifyPants
+              },
+              "/classifyCoat": {
+                component: classifyCoat
+              },
+              "/classifyParts": {
+                component: classifyParts
+              },
+              "/classifyBag": {
+                component: classifyBag
+              },
+              "/classifyAttire": {
+                component: classifyAttire
+              },
+              "/classifyHome": {
+                component: classifyHome
+              },
+              "/classifyStationery": {
+                component: classifyStationery
+              },
+              "/classifyNumeral": {
+                component: classifyNumeral
+              },
+              "/classifyPlay": {
+                component: classifyPlay
+              }
+            }
           }
         }
       },
-
-   '/person':{
-     component:person
-   },
- '/dingdan/:id':{
-   name:'dingdan',
-   component:dingdan
- }
+      '/label': {
+        component: label
+      }
+    }
+  },
+  '/my': {
+    component: my
+  },
+  '/list': {
+    component: list
+  },
+  '/detail': {
+    component: detail
+  },
+  '/person/:zhanghao': {
+    component: person
+  },
+  '/login/:zhanghao': {
+    name: 'login',
+    component: login
+  },
+  '/zhuce': {
+    component: zhuce
+  },
+  '/bianji/:zhanghao': {
+    name: 'bianji',
+    component: bianji
+  },
+  '/dingdan/:id': {
+    name: 'dingdan',
+    component: dingdan
+  }
 });
 
 router.start(App, 'body');

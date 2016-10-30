@@ -39,7 +39,7 @@
           {path: '/index/classifyBox', name: '分类'},
           {path: '/index/photo', name: '吱吱'},
           {path: '/index/buy', name: '购物车'},
-          {path: '/index/my', name: '个人中心'}
+          {path: '/login', name: '个人中心'}
         ]
       }
     },

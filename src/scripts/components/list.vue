@@ -21,7 +21,7 @@
     <div class="list-scroll" id="list-scroll">
       <div class="scroll-box">
         <div>
-          <dl v-for="l in list">
+          <dl v-for="l in list" v-link="{path: '/detail'}">
             <dt><img v-bind:src="l.figure" alt="" /></dt>
             <dd>
               <span>{{l.name}}</span>
@@ -112,6 +112,7 @@
             $.each(this.list, function(i, value) {
               that.copyList.push(value);
             });
+            console.log(this.copyList);
           });
 
       },
@@ -121,18 +122,20 @@
           this.cur = e.target.dataset.index;
           var that = this;
           this.list = [];
-          this.cur = e.target.dataset.index;
-          $.each(this.copyList, function(i, value) {
-            that.list.push(value);
-          });
+          this.list = this.copyList;
+          console.log(this.copyList);
+          // $.each(this.copyList, function(i, value) {
+          //   that.list.push(value);
+          // });
         },
         sortPrice(e) {
           var that = this;
           this.list = [];
           this.cur = e.target.dataset.index;
-          $.each(this.copyList, function(i, value) {
-            that.list.push(value);
-          })
+          this.list = this.copyList;
+          // $.each(this.copyList, function(i, value) {
+          //   that.list.push(value);
+          // })
 
           if (this.counter % 2 == 0) {
             this.list.sort(function(a, b) {

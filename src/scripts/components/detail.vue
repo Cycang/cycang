@@ -1,9 +1,9 @@
 <template>
    <div class="detail-container">
       <header>
-         <img src="/images/back1.png" >
+         <a href="javascript:history.go(-1)"><img src="/images/back1.png"></a>
          <h2 v-for="item in goodsInfor">{{item.result.product_info.name}}</h2>
-         <img src="/images/home.png" >
+         <img src="/images/home.png"  v-link="{path: '/index'}">
       </header>
       <section id="detail-scroll">
          <div class="scrol-container">
@@ -75,7 +75,7 @@
                <b>收藏</b>
             </li>
             <li>
-               <img src="/images/cate-cart.png" v-link={path:'./buy'} />
+               <img src="/images/cate-cart.png" v-link={path:'/index/buy'} />
                <b>购物车(<i>{{cartnum}}</i>)</b>
             </li>
          </ul>
@@ -89,7 +89,6 @@
    import {getUserName} from '../vuex/getters';
    var myScroll=null;
    var timer="";
-
    export default{
       data(){
          return{
@@ -199,7 +198,6 @@
                   },100);
                });
             });
-
       },
          store(){
             this.isstore=!this.isstore;

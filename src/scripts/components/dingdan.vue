@@ -2,7 +2,7 @@
   <div class="dingdan-container">
     <!-- 订单列表top -->
       <div class="dingdan-top">
-        <div class="back" v-link="{path:'/my'}"><img src="/images/back1.png" alt="" /></div>
+        <div class="back" v-link="{path:'/index/my'}"><img src="/images/back1.png" alt="" /></div>
         <div class="ding">订单列表</div>
         <div class="search"><img src="/images/search2.png" alt="" /></div>
       </div>

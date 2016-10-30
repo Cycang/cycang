@@ -4,8 +4,8 @@
     <!--头部  -->
     <header>
       <div class="header-tpo">
-        <div class="touxiang" v-link="{path:'/person'}"><img src="/images/user_icon.png"  alt=""/></div>
-        <div class="header-name"><p>未命名的小仓</p></div>
+        <div class="touxiang" v-on:click="ziliao"><img src="/images/user_icon.png"  alt=""/></div>
+        <div class="header-name"><p>{{nicheng}}</p></div>
       </div>
     </header>
     <!--内容  -->
@@ -111,29 +111,24 @@
   </div>
 </template>
 <script>
-  var Vue = require('../libs/vue.js');
-  var VueResource = require('../libs/vue-resource.js');
-  Vue.use(VueResource);
-
-  import {changeIndex} from '../vuex/actions';
-  import {getIndex} from '../vuex/getters';
-
+var Vue = require('../libs/vue.js');
+var VueResource = require('../libs/vue-resource.js');
+var VueRouter=require('../libs/vue-router');
+Vue.use(VueRouter);
+Vue.use(VueResource);
   export default{
-    vuex: {
-      getters: {
-        curIndex: getIndex
-      },
-      actions: {
-        change: changeIndex
-      }
-    },
     data(){
       return{
-        list:[]
+        list:[],
+        nicheng:'',
+        username:''
       }
     },
     ready: function(){
-      this.change(4);
+      var zhanghao=this.$route.params.zhanghao;
+      this.username=zhanghao;
+      console.log(zhanghao);
+      this.nicheng=JSON.parse(localStorage.getItem(zhanghao)).nicheng;
       var that =this;
       this.$http.get('/mock/my-lsit.json')
       .then((res)=>{
@@ -141,6 +136,11 @@
         console.log(res.data.data);
       });
 
+    },
+    methods:{
+      ziliao:function(){
+      this.$router.go({path:'/person',params:{zhanghao:this.username}});
+      }
     }
   }
 </script>

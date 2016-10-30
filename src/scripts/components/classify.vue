@@ -26,17 +26,17 @@ export default {
   data() {
     return {
       shoplist:[
-        {name:'小裙子',path:'/classifyBox/'},
-        {name:'上衣',path:'/classifyBox/classifyJacket'},
-        {name:'下装',path:'/classifyBox/classifyPants'},
-        {name:'外套',path:'/classifyBox/classifyCoat'},
-        {name:'配件',path:'/classifyBox/classifyParts'},
-        {name:'包包',path:'/classifyBox/classifyBag'},
-        {name:'装扮',path:'/classifyBox/classifyAttire'},
-        {name:'居家宅品',path:'/classifyBox/classifyHome'},
-        {name:'办公文具',path:'/classifyBox/classifyStationery'},
-        {name:'数码周边',path:'/classifyBox/classifyNumeral'},
-        {name:'游戏专区',path:'/classifyBox/classifyPlay'}
+        {name:'小裙子',path:'/index/classifyBox/'},
+        {name:'上衣',path:'/index/classifyBox/classifyJacket'},
+        {name:'下装',path:'/index/classifyBox/classifyPants'},
+        {name:'外套',path:'/index/classifyBox/classifyCoat'},
+        {name:'配件',path:'/index/classifyBox/classifyParts'},
+        {name:'包包',path:'/index/classifyBox/classifyBag'},
+        {name:'装扮',path:'/index/classifyBox/classifyAttire'},
+        {name:'居家宅品',path:'/index/classifyBox/classifyHome'},
+        {name:'办公文具',path:'/index/classifyBox/classifyStationery'},
+        {name:'数码周边',path:'/index/classifyBox/classifyNumeral'},
+        {name:'游戏专区',path:'/index/classifyBox/classifyPlay'}
       ]
     }
   },

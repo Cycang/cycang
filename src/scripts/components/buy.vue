@@ -1,7 +1,7 @@
 <template>
    <div class="buy-container">
       <header>
-         <img src="/images/back1.png" />
+         <img src="/images/back1.png" v-link="{path: '/detail'}" />
          <h2>购物车</h2>
          <p v-on:click="edit" v-if="isedit">完成</p>
          <p v-on:click="edit" v-else>编辑</p>

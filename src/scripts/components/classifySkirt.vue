@@ -4,7 +4,7 @@
     <div class="hot-sale">
       <p>热卖推荐</p>
       <ul class="hotSale">
-        <li v-for="hot in hot_sale">
+        <li v-for="hot in hot_sale" v-link="{path: '/detail'}">
           <img v-bind:src="hot.figure"/>
           <p>￥{{hot.cover_price}}</p>
         </li>
@@ -13,7 +13,7 @@
     <div class="comm-cat">
       <p>常用分类</p>
       <ul class="commUl">
-        <li v-for="l in list">
+        <li v-for="l in list" v-link="{path: '/list'}">
           <img v-bind:src="l.pic"/>
           <p>{{l.name}}</p>
         </li>
@@ -23,7 +23,7 @@
 </template>
 <script>
 
-  import { classifyChanger } from "../vuex/actions";
+  import { classifyChanger } from "../vuex/action";
   var mySwiper = null;
   // console.log(classifyChanger);
   export default {
