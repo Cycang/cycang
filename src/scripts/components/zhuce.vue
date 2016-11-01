@@ -96,7 +96,7 @@ Vue.use(VueResource);
           if(value == ''||value===null){
             person.pwd=that.pwd;
             localStorage.setItem(that.zhanghao,JSON.stringify(person));
-            that.$router.go({path:'/index/my',params:{zhanghao:this.zhanghao}});
+            that.$router.go({path:'/my',params:{zhanghao:this.zhanghao}});
           }else{
               alert("用户已存在")
           }

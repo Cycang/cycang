@@ -1,8 +1,8 @@
 ##This project was generated with webpack.##
 
 * **项目介绍：**
- * 产品内容介绍/次元仓 
- * 
+ * 产品内容介绍/次元仓
+ *
   动漫周边
 
   动漫周边是以动漫为主题，囊括了当前热门的动漫以及即将上线的动漫周边产品，虚拟与现实的结合，让消费者对动漫的喜好延续到了现实。
@@ -26,4 +26,96 @@
  4.  还用到了vuex进行全局变量的定义以及控制
  5.  针对vue的特点自定义了指令
  6.  还用到了IScroll和Swiper实现滑动效果
- 
+
+* **APP路由**
+     router.map({
+       '/': {
+         component: guide,
+       },
+       //配置子路由 ，“/”是自动进入的路由页面
+       '/index': {
+         component: index,
+         subRoutes: {
+           '/': {
+             component: main
+           },
+           '/buy': {
+             component: buy
+           },
+
+           '/classifyBox': {
+             component: classifyBox,
+             subRoutes: {
+               '/': {
+                 component: classify,
+                 subRoutes: {
+                   '/': {
+                     component: classifySkirt
+                   },
+                   "/classifyJacket": {
+                     component: classifyJacket
+                   },
+                   "/classifyPants": {
+                     component: classifyPants
+                   },
+                   "/classifyCoat": {
+                     component: classifyCoat
+                   },
+                   "/classifyParts": {
+                     component: classifyParts
+                   },
+                   "/classifyBag": {
+                     component: classifyBag
+                   },
+                   "/classifyAttire": {
+                     component: classifyAttire
+                   },
+                   "/classifyHome": {
+                     component: classifyHome
+                   },
+                   "/classifyStationery": {
+                     component: classifyStationery
+                   },
+                   "/classifyNumeral": {
+                     component: classifyNumeral
+                   },
+                   "/classifyPlay": {
+                     component: classifyPlay
+                   }
+                 }
+               }
+             }
+           },
+           '/label': {
+             component: label
+           }
+         }
+       },
+       '/my': {
+         component: my
+       },
+       '/list': {
+         component: list
+       },
+       '/detail': {
+         component: detail
+       },
+       '/person/:zhanghao': {
+         component: person
+       },
+       '/login/:zhanghao': {
+         name: 'login',
+         component: login
+       },
+       '/zhuce': {
+         component: zhuce
+       },
+       '/bianji/:zhanghao': {
+         name: 'bianji',
+         component: bianji
+       },
+       '/dingdan/:id': {
+         name: 'dingdan',
+         component: dingdan
+       }
+     });

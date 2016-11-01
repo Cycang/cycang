@@ -122,9 +122,9 @@ router.map({
   '/person/:zhanghao': {
     component: person
   },
-  '/login/:zhanghao': {
-    name: 'login',
+  '/login': {
     component: login
+    // name: 'login'
   },
   '/zhuce': {
     component: zhuce
