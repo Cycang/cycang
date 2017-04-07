@@ -81,7 +81,7 @@ body > div {
       width: 100%;
       .c_banner-wrap{
         width: 100%;
-        height: 1.875rem;
+        height: 1.4rem;
         .swiper-container{
           width: 100%;
           height: 100%;
@@ -132,10 +132,10 @@ body > div {
         width: 100%;
         height: 1.48rem;
         @include box-sizing(border-box);
-        padding: .35rem 0 .2rem;
+        padding: .16rem 0 .16rem;
         .swiper-container{
           width: 100%;
-          height: .93rem;
+          height: 1.16rem;
           .swiper-wrapper{
             width: 100%;
             height: 100%;
@@ -193,8 +193,10 @@ body > div {
             height: 1.64rem;
             .seckill-slide-scroll{
               height: 100%;
+              @include flexbox();
+              // @include flex-direction(column);
               dl{
-                float: left;
+                // float: left;
                 width: 1rem;
                 height: 1.42rem;
                 padding: .05rem;
@@ -240,6 +242,7 @@ body > div {
           overflow: hidden;
           background: #fff;
           margin-top: .09rem;
+          padding-bottom: .09rem;
           .title-wrap{
             @include title-wrap();
             .title{
@@ -255,13 +258,16 @@ body > div {
             width: 100%;
             height: 3.82rem;
             padding: .1rem .1rem 0;
+            @include flexbox();
+            @include flex-wrap(wrap);
             .hot-sale-dl{
-              float: left;
+              // float: left;
               width: 1.1075rem;
               height: 1.81rem;
               margin: 0 .03rem .1rem;
-              @include flexbox();
-              @include flex-direction(column);
+              // @include flex(1);
+              // @include flexbox();
+              // @include flex-direction(column);
               dt{
                 width: 100%;
                 height: 1.1075rem;
@@ -296,6 +302,7 @@ body > div {
           }
         }
       .cyc_hot_title-wrap{
+        margin-bottom: .09rem;
         @include title-wrap();
         .title{
           @include title();
@@ -379,6 +386,7 @@ body > div {
       i{
         display: inline-block;
         @include flex(1);
+        margin-top: .06rem;
         width: .28rem;
         background: url('/images/main_home.png');
         background-size: 28px;

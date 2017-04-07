@@ -1,6 +1,5 @@
 <template>
-  <div id="classify
-  ">
+  <div id="classify ">
     <header class="classifyHeader">
       <ul>
         <li v-bind:class="classifyCur == $index ? 'active' : ''"

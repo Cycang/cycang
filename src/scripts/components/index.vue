@@ -6,7 +6,7 @@
     <footer id="footer" class="index-footer">
         <ul>
             <li
-               v-bind:class="cur == $index ? 'active' : ''"
+              v-bind:class="cur == $index ? 'active' : ''"
               v-on:click="changPage($index)"
               v-for="tab in tablist"
               v-link="{path: tab.path}">

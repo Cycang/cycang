@@ -8,7 +8,7 @@
         登录
       </div>
       <div class="header-right">
-        <a></a>
+        <a href="/#!/index"></a>
       </div>
     </header>
     <section>
@@ -28,10 +28,10 @@
             <a>注册账号</a>
           </div>
           <div class="remember">
-            <a href="">忘记密码</a>
+            <a href="#">忘记密码</a>
           </div>
           <div class="kefu">
-            <a href="">联系客服</a>
+            <a href="#">联系客服</a>
           </div>
         </div>
 

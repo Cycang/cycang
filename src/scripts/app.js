@@ -100,6 +100,9 @@ router.map({
               },
               "/classifyPlay": {
                 component: classifyPlay
+              },
+              '/label':{
+                  component:label
               }
             }
           }

@@ -1,5 +1,6 @@
 <template>
   <div class="main-container">
+    <!-- 搜索框部分 -->
     <header  class="main-header">
       <div class="main-search">
         <span></span>
@@ -9,12 +10,15 @@
     <section>
       <div class="main-scroll">
         <div class="c_banner-wrap">
+          <!-- banner图部分 -->
           <div class="swiper-container" id="banner-swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" v-for="banner in bannerInfo"><img v-bind:src="banner.image" alt="" /></div>
+              <div class="swiper-slide" v-for="banner in bannerInfo">
+                <img v-bind:src="banner.image" alt="" />
+              </div>
             </div>
             <div class="swiper-pagination"></div>
-        </div>
+          </div>
         </div>
 
         <div class="cyc_nav">
@@ -96,7 +100,8 @@
 <script type="text/javascript">
 
   var banSwiper = null,
-      actSwiper = null;
+      actSwiper = null,
+      secSwiper = null;
   export default {
     data(){
       return {
@@ -128,6 +133,9 @@
             loop: true,
             autoplay: 2000,
             pagination : '.swiper-pagination'
+          });
+
+          secSwiper = new Swiper('#sec-swiper', {
           });
         })
     }

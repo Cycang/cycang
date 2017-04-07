@@ -65,8 +65,8 @@
       <footer>
          <ul>
             <li>
-               <a href="https://static.meiqia.com/dist/standalone.html?eid=17853&metadata=%7B%22%5Cu5546%5Cu54c1%5Cu94fe%5Cu63a5%22%3A%22http%3A%5C%2F%5C%2Fcycang.com%5C%2Findex.php%3Fa%3Dp%26id%3D2855%22%7D">
-               <img src="/images/service_icon.png" v-link={path:'./service'} />
+               <a href="https://static.meiqia.com/dist/standalone.html?eid=17853&metadata=%7B%22%5Cu5546%5Cu54c1%5Cu94fe%5Cu63a5%22%3A%22http%3A%5C%2F%5C%2Fcycang.com%5C%2Findex.php%3Fa%3Dp%26id%3D1715%22%7D">
+               <img src="/images/service_icon.png" />
                <b>联系客服</b>
                </a>
             </li>
@@ -84,8 +84,8 @@
    </div>
 </template>
 <script type="text/javascript">
-  import Vue from "../libs/vue.js";
-  import VueRouter from "../libs/vue-router.js";
+   import Vue from "../libs/vue.js";
+   import VueRouter from "../libs/vue-router.js";
    import {getUserName} from '../vuex/getters';
    var myScroll=null;
    var timer="";
