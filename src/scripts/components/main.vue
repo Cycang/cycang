@@ -39,9 +39,9 @@
             <span class="title">
               <span class="title-name"> 闪购-距结束</span>
               <span class="cyc_seckill_time">
-                <i class="hour">13:</i>
-                <i class="minute">20:</i>
-                <i class="seconds">24</i>
+                <i class="hour">{{hour}} : </i>
+                <i class="minute">{{minute}} : </i>
+                <i class="seconds">{{seconds}}</i>
               </span>
             </span>
             <span class="cyc_more">查看更多</span>
@@ -110,7 +110,10 @@
         actInfo: [],
         seckillInfo: [],
         hotInfo: [],
-        recommendInfo: []
+        recommendInfo: [],
+        hour:23,
+        minute:59,
+        seconds:59
       }
     },
     ready(){
@@ -137,7 +140,21 @@
 
           secSwiper = new Swiper('#sec-swiper', {
           });
-        })
+        });
+
+        setInterval(function () {
+          if (that.seconds > 0) {
+            that.seconds -= 1;
+          }else{
+            that.seconds = 59;
+            if(that.minute > 0){
+              that.minute -= 1;
+            }else{
+              that.seconds =59;
+              that.hour -= 1;
+            }
+          }
+        },1000);
     }
 
   }

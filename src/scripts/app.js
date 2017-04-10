@@ -8,15 +8,17 @@ import index from "./components/index.vue";
 import main from "./components/main.vue";
 import list from "./components/list.vue";
 import my from "./components/my.vue";
-// import main from "./components/main.vue";
+
 import dingdan from "./components/dingdan.vue";
 import person from "./components/person.vue";
 import login from "./components/login.vue";
 import zhuce from "./components/zhuce.vue";
 import bianji from "./components/bianji.vue";
-// =======
+import zhizhi from "./components/zhizhi.vue";
+
 import detail from "./components/detail.vue";
 import buy from "./components/buy.vue";
+
 // router
 import Vue from "./libs/vue.js";
 import VueRouter from "./libs/vue-router.js";
@@ -100,9 +102,6 @@ router.map({
               },
               "/classifyPlay": {
                 component: classifyPlay
-              },
-              '/label':{
-                  component:label
               }
             }
           }
@@ -110,6 +109,9 @@ router.map({
       },
       '/label': {
         component: label
+      },
+      '/photo':{
+        component:zhizhi
       }
     }
   },
