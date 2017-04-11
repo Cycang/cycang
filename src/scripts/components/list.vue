@@ -2,7 +2,7 @@
   <div class="list-container">
     <div class="list-top">
       <header class="list-header">
-        <i class="list-back" v-link="{path: '/index'}"></i>
+        <i class="list-back" @click="back"></i>
         <div class="list-search">
           <span @click="searchPro"></span>
           <input v-model="message" type="text" placeholder="请输入关键字" name="name" value="">
@@ -195,7 +195,6 @@
             that.list.push(value);
           });
 
-          console.log(this.message);
           $.each(this.list, function(i, value) {
             if (value.name.indexOf(that.message) >= 0) {
               that.searchProduct.push(value);
@@ -205,6 +204,9 @@
           $.each(this.searchProduct, function(i, value) {
             that.list.push(value);
           });
+        },
+        back(){
+          window.history.go(-1);
         }
       }
 
