@@ -2,7 +2,7 @@
   <div class="login-container">
     <header>
       <div class="header-left">
-        <a></a>
+        <a @click="back"></a>
       </div>
       <div class="header-center">
         登录
@@ -80,7 +80,9 @@ Vue.use(VueResource);
               console.log(0);
             }
           }
-
+      },
+      back(){
+        window.history.go(-1);
       }
     }
   }

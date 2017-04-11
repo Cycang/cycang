@@ -14,7 +14,7 @@
           <div class="swiper-container" id="banner-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="banner in bannerInfo">
-                <img v-bind:src="banner.image" alt="" />
+                <img v-bind:src="banner.image" alt="此图片无法展示，请重新加载。" />
               </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -98,11 +98,17 @@
 </template>
 
 <script type="text/javascript">
+  import { tabChange } from '../vuex/actions';
 
   var banSwiper = null,
       actSwiper = null,
       secSwiper = null;
   export default {
+    vuex: {
+      actions: {
+        change: tabChange
+      }
+    },
     data(){
       return {
         bannerInfo: [],
@@ -118,6 +124,7 @@
     },
     ready(){
       var that = this;
+      that.change(1);
       this.$http.get('/mock/main.json')
         .then((res) => {
           that.bannerInfo = res.data.result.banner_info;
@@ -128,8 +135,8 @@
           that.recommendInfo = res.data.result.recommend_info;
           banSwiper = new Swiper('#banner-swiper', {
             loop: true,
-            autoplay: 3000,
-            pagination : '.swiper-pagination'
+            autoplay: 5000,
+            pagination: '.swiper-pagination'
           });
 
           actSwiper = new Swiper('#act-swiper', {

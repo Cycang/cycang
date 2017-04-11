@@ -1,7 +1,7 @@
 <template>
    <div class="buy-container">
       <header>
-         <img src="/images/back1.png" v-link="{path: '/detail'}" />
+         <img src="/images/back1.png" @click="back" />
          <h2>购物车</h2>
          <p v-on:click="edit" v-if="isedit">完成</p>
          <p v-on:click="edit" v-else>编辑</p>
@@ -82,11 +82,10 @@
 </template>
 
 <script type="text/javascript">
-
 import Vue from "../libs/vue.js";
 import VueRouter from "../libs/vue-router.js";
 import { getUserName } from '../vuex/getters';
-import { setUserName } from '../vuex/actions';;
+import { setUserName ,tabChange } from '../vuex/actions';;
 var timer="";
 var myScroll="";
 
@@ -105,7 +104,8 @@ export default{
    },
    vuex:{
       actions:{
-         setName:setUserName
+         setName:setUserName,
+         change: tabChange
       },
       getters:{
          getName:getUserName
@@ -113,6 +113,7 @@ export default{
    },
    ready:function () {
       var that=this;
+      this.change(3);
       this.$http.get('/mock/buy.json').then((res)=>{
          this.buylist=res.data.goodslist;
          //计算总价格和购买件数
@@ -252,6 +253,9 @@ export default{
       confirmcollect(){
          this.iscollect=false;
          this.ismark=false;
+      },
+      back(){
+        window.history.go(-1);
       }
    }
 }

@@ -32,8 +32,9 @@
       }
     },
     data() {
+      let that = this;
       return {
-        cur: 0,
+        cur: that.tabIndex,
         tablist: [
           {path: '/index', name: '首页'},
           {path: '/index/classifyBox', name: '分类'},
