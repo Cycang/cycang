@@ -11,7 +11,7 @@
             <ul>
                <li v-for="item in buylist" v-if="item.show">
                   <div class="part1">
-                     <img v-bind:src="item.choose? '/images/sel-order.png':'/images/unsel.png'" v-on:click="choose($index)"/>
+                     <img v-bind:src="item.choose ? '/images/sel-order.png':'/images/unsel.png'" v-on:click="choose($index)"/>
                      <h2>{{item.store}}</h2>
                      <p>{{item.deliverway}}</p>
                      <i>本单免邮</i>
@@ -125,15 +125,14 @@ export default{
 
          let imgs=that.buylist.length*5+2;
          //判断图片是否加载完成
-         timer=setInterval(function () {
-            if (imgs==document.getElementsByTagName('img').length) {
-               myScroll=new IScroll('#buy-scroll',{
-                  click:true
-               });
-               console.log("加载完成");
-               clearInterval(timer);
-            }
-         },200);
+        //  timer=setInterval(function () {
+        //     if (imgs==document.getElementsByTagName('img').length) {
+        //        myScroll=new IScroll('#buy-scroll',{
+        //           click:true
+        //        });
+        //        clearInterval(timer);
+        //     }
+        //  },2000);
       });
    },
    methods:{

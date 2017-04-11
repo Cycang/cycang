@@ -50,7 +50,8 @@
    section{
       @include flex();
       width: 100%;
-      overflow: hidden;
+      // overflow: hidden;
+      overflow-y: scroll;
       background: #eee;
       >div{
          // margin-top: 8px;
