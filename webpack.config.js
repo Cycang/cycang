@@ -20,12 +20,9 @@ module.exports = {
   // devserver配置
   devServer: {
     contentBase: __dirname + '/prd',
-// <<<<<<< HEAD
     // port: 80,
-// =======
     port: 8080,
     color:true,
-// >>>>>>> master
     inline: true
     //mock的配置
    //  proxy:{
@@ -67,8 +64,6 @@ module.exports = {
     ]
   },
 
-// <<<<<<< HEAD
-// =======
   //vue
   vue:{
      loaders:{
@@ -76,7 +71,6 @@ module.exports = {
         css:ET.extract('vue-style-loader','css','sass')
      }
  },
-// >>>>>>> master
   //plugins定义
   plugins: [
     // new webpack.optimize.UglifyJsPlugin(),
