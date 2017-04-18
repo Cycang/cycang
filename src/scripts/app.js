@@ -112,6 +112,9 @@ router.map({
       },
       '/photo':{
         component:zhizhi
+      },
+      '/my': {
+        component: my
       }
     }
   },

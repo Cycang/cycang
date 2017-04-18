@@ -87,9 +87,10 @@ Vue.use(VueResource);
           pwd:''
         };
         if(localStorage.length == 0){
+          console.log('/my');
           person.pwd=that.pwd;
           localStorage.setItem(that.zhanghao,JSON.stringify(person));
-          that.$router.go({name:'/index/my',params:{zhanghao:this.zhanghao}});
+          that.$router.go({name:'/my',params:{zhanghao:this.zhanghao}});
         }else{
           var value = localStorage.getItem(this.zhanghao);
           console.log(value);
